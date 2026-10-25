@@ -1,0 +1,14 @@
+{
+  "name": "firsttest-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web test automation for the TestverQA playground (https://testplay.venomva.com/) — Playwright + TypeScript, page-object based.",
+  "scripts": {
+    "test": "playwright test",
+    "test:home": "playwright test tests/home",
+    "reset-data": "node scripts/reset-data.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1"
+  }
+}

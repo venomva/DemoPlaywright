@@ -1,0 +1,181 @@
+name: Testver Gate
+
+# Delegated execution: tests run ON the Testver server, not this runner.
+# This job triggers the mapped run, waits for the verdict, and gates the
+# build. Setup: create the pipeline mapping + CI token under CI/CD
+# Pipelines in Testver, then add the token as the TESTVER_CI_TOKEN
+# repository secret (Settings -> Secrets and variables -> Actions).
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  testver-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    env:
+      TESTVER_URL: "http://localhost:3700"
+      TESTVER_CI_TOKEN: ${{ secrets.TESTVER_CI_TOKEN }}
+      TESTVER_MAPPING: "Sample CI Run"
+      GATE_TIMEOUT: "3600"
+      # A pull request's own commit and branch — not GitHub's temporary merge
+      # commit, which never appears on the PR. Passed as env vars so a branch
+      # name can never inject into the script.
+      GATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      GATE_BRANCH: ${{ github.head_ref || github.ref_name }}
+      GATE_BUILD_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - name: Trigger Testver run and gate on the verdict
+        run: |
+          set -eu
+
+          # Testver gate - exit codes: 0 passed, 1 tests failed, 2 no verdict
+          # (Testver unreachable, trigger refused, run errored/cancelled/timed out).
+          for tool in curl jq; do
+            if ! command -v "$tool" >/dev/null 2>&1; then
+              echo "::error::$tool is required on this runner"
+              exit 2
+            fi
+          done
+          if [ -z "${TESTVER_CI_TOKEN:-}" ]; then
+            echo "::error::TESTVER_CI_TOKEN is not set - add the Testver CI token as a secret"
+            exit 2
+          fi
+
+          # Calls the Testver API. The token reaches curl through stdin, never the
+          # command line. Sets $code (HTTP status, 000 = unreachable) and $body.
+          tv() {
+            out=$(printf 'header = "Authorization: Bearer %s"\n' "$TESTVER_CI_TOKEN" | curl -sS -K - --connect-timeout 10 --max-time 30 -H "Content-Type: application/json" -w '\n%{http_code}' "$@" 2>&1) || true
+            code=$(printf '%s' "$out" | tail -n 1)
+            body=$(printf '%s' "$out" | sed '$d')
+            case "$code" in
+              [0-9][0-9][0-9]) ;;
+              *) code=000; body=$out ;;
+            esac
+          }
+          field() { printf '%s' "$body" | jq -r "$1" 2>/dev/null || true; }
+
+
+          payload=$(jq -n \
+            --arg mapping "$TESTVER_MAPPING" \
+            --arg sha "$GATE_SHA" \
+            --arg branch "$GATE_BRANCH" \
+            --arg buildUrl "$GATE_BUILD_URL" \
+            --arg buildNumber "${GITHUB_RUN_NUMBER:-}" \
+            '{mapping: $mapping, sha: $sha, branch: $branch, buildUrl: $buildUrl, buildNumber: $buildNumber, provider: "github-actions"}')
+          echo "Triggering pipeline mapping \"$TESTVER_MAPPING\" on $TESTVER_URL ..."
+          tv -X POST --data "$payload" "$TESTVER_URL/api/ci/trigger"
+          case "$code" in
+            2??) ;;
+            000)
+              echo "::error::Could not reach Testver at $TESTVER_URL: $body"
+              exit 2 ;;
+            *)
+              msg=$(field '.error // empty')
+              if [ -z "$msg" ]; then msg=$(printf '%.200s' "$body"); fi
+              echo "::error::Testver refused the trigger ($code): $msg"
+              exit 2 ;;
+          esac
+          ci_run=$(field '.ciRunId // empty')
+          if [ -z "$ci_run" ]; then
+            echo "::error::Unexpected answer from $TESTVER_URL - is this the Testver server address?"
+            exit 2
+          fi
+          report=$(field '.reportUrl // empty')
+          qpos=$(field '.queuePosition // empty')
+          if [ -n "$qpos" ]; then
+            echo "Accepted - CI run $ci_run (queue position $qpos)"
+          else
+            echo "Accepted - CI run $ci_run"
+          fi
+          if [ -n "$report" ]; then echo "Testver report: $report"; fi
+
+
+          cancel_remote() {
+            echo "Cancelling the Testver run..."
+            tv -X DELETE "$TESTVER_URL/api/ci/runs/$ci_run"
+          }
+          on_signal() {
+            cancel_remote
+            exit 2
+          }
+          trap on_signal TERM INT HUP
+
+          start=$(date +%s)
+          fails=0
+          noted=""
+          while :; do
+            elapsed=$(( $(date +%s) - start ))
+            if [ "$elapsed" -ge "${GATE_TIMEOUT:-3600}" ]; then
+              echo "::error::No verdict after ${GATE_TIMEOUT:-3600}s - cancelling the Testver run"
+              cancel_remote
+              exit 2
+            fi
+            sleep "${GATE_POLL:-15}" &
+            wait $! || true
+            tv "$TESTVER_URL/api/ci/runs/$ci_run/status"
+            case "$code" in
+              200) fails=0 ;;
+              401|403)
+                msg=$(field '.error // empty')
+                echo "::error::Testver rejected the CI token ($code): ${msg:-it may have been revoked or expired}"
+                exit 2 ;;
+              404)
+                echo "::error::Testver no longer knows CI run $ci_run"
+                exit 2 ;;
+              *)
+                fails=$((fails + 1))
+                echo "  Testver did not answer ($code) - retry $fails of 20"
+                if [ "$fails" -ge 20 ]; then
+                  echo "::error::Lost contact with Testver at $TESTVER_URL"
+                  exit 2
+                fi
+                continue ;;
+            esac
+            state=$(field '.state // empty')
+            if [ -z "$state" ]; then
+              fails=$((fails + 1))
+              echo "  Unexpected answer from Testver - retry $fails of 20"
+              if [ "$fails" -ge 20 ]; then
+                echo "::error::Lost contact with Testver at $TESTVER_URL"
+                exit 2
+              fi
+              continue
+            fi
+            summary=$(field 'if .summary then "passed \(.summary.passed) / failed \(.summary.failed) / total \(.summary.total)" else "starting" end')
+            freport=$(field '.reportUrl // empty')
+            if [ -n "$freport" ]; then report="$freport"; fi
+            note=$(field '.gitWarning // empty')
+            if [ -n "$note" ] && [ "$note" != "$noted" ]; then
+              echo "  Note: $note"
+              noted="$note"
+            fi
+            mins=$((elapsed / 60))
+            secs=$((elapsed % 60))
+            case "$state" in
+              queued|running)
+                printf '  [%02d:%02d] %s - %s\n' "$mins" "$secs" "$state" "$summary" ;;
+              passed)
+                echo ""
+                echo "PASSED - $summary"
+                echo "Full report: $report"
+                exit 0 ;;
+              failed)
+                echo ""
+                echo "::error::FAILED - $summary"
+                echo "Full report: $report"
+                exit 1 ;;
+              *)
+                err=$(field '.error // empty')
+                echo ""
+                echo "::error::No verdict ($state)${err:+ - $err}"
+                echo "Full report: $report"
+                exit 2 ;;
+            esac
+          done
