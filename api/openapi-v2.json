@@ -1,0 +1,721 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Testver Playground API",
+    "version": "2.0.0",
+    "description": "A complete REST API surface for the Testver Playground. Use these endpoints for direct API testing with Postman, RestAssured, supertest, k6, or any other API tool. State lives in memory and is reset with `POST /api/reset`. No authentication required for the API endpoints below.",
+    "contact": {
+      "name": "Testver",
+      "url": "https://www.testver.com"
+    },
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4300",
+      "description": "Local in-memory server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Health & State",
+      "description": "App health and state-management endpoints"
+    },
+    {
+      "name": "Users",
+      "description": "Read-only user data"
+    },
+    {
+      "name": "Products",
+      "description": "Product catalog"
+    },
+    {
+      "name": "Orders",
+      "description": "Customer orders"
+    },
+    {
+      "name": "Categories",
+      "description": "Product categories"
+    },
+    {
+      "name": "Notifications",
+      "description": "In-app notifications"
+    },
+    {
+      "name": "AJAX scenarios",
+      "description": "Endpoints for HTTP testing scenarios"
+    },
+    {
+      "name": "Tables",
+      "description": "Server-side paginated/filtered/sorted dataset"
+    },
+    {
+      "name": "Forms",
+      "description": "Cascading dropdown data"
+    },
+    {
+      "name": "Files",
+      "description": "File upload + download endpoints"
+    },
+    {
+      "name": "Shop / Cart",
+      "description": "E-commerce cart and coupon endpoints"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "tags": [
+          "Health & State"
+        ],
+        "summary": "Health check",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "ok": true,
+                  "time": "2025-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reset": {
+      "post": {
+        "tags": [
+          "Health & State"
+        ],
+        "summary": "Reset & reseed in-memory state",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "size": {
+                    "type": "string",
+                    "enum": [
+                      "small",
+                      "medium",
+                      "large"
+                    ],
+                    "default": "medium"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "State reset",
+            "content": {
+              "application/json": {
+                "example": {
+                  "ok": true,
+                  "message": "State reset",
+                  "size": "medium"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "List all users",
+        "responses": {
+          "200": {
+            "description": "Array of users"
+          }
+        }
+      }
+    },
+    "/api/users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get a user by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User found"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
+    },
+    "/api/products": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "List products (first 50)",
+        "responses": {
+          "200": {
+            "description": "Array"
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      }
+    },
+    "/api/products/{id}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Get product by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
+    },
+    "/api/orders": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "List orders (first 50)",
+        "responses": {
+          "200": {
+            "description": "Array"
+          }
+        }
+      }
+    },
+    "/api/notifications": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "List notifications",
+        "responses": {
+          "200": {
+            "description": "Array"
+          }
+        }
+      }
+    },
+    "/ajax/get": {
+      "get": {
+        "tags": [
+          "AJAX scenarios"
+        ],
+        "summary": "Plain GET",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ajax/post": {
+      "post": {
+        "tags": [
+          "AJAX scenarios"
+        ],
+        "summary": "POST that echoes the body",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Echo"
+          }
+        }
+      }
+    },
+    "/ajax/put": {
+      "put": {
+        "tags": [
+          "AJAX scenarios"
+        ],
+        "summary": "PUT that echoes the body",
+        "responses": {
+          "200": {
+            "description": "Echo"
+          }
+        }
+      }
+    },
+    "/ajax/delete": {
+      "delete": {
+        "tags": [
+          "AJAX scenarios"
+        ],
+        "summary": "DELETE",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ajax/slow": {
+      "get": {
+        "tags": [
+          "AJAX scenarios"
+        ],
+        "summary": "4-second delayed response",
+        "responses": {
+          "200": {
+            "description": "OK after delay"
+          }
+        }
+      }
+    },
+    "/ajax/fail/{code}": {
+      "get": {
+        "tags": [
+          "AJAX scenarios"
+        ],
+        "summary": "Forced HTTP error",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "example": 500
+            }
+          }
+        ],
+        "responses": {
+          "4XX": {
+            "description": "Forced error"
+          },
+          "5XX": {
+            "description": "Forced error"
+          }
+        }
+      }
+    },
+    "/ajax/sse": {
+      "get": {
+        "tags": [
+          "AJAX scenarios"
+        ],
+        "summary": "Server-Sent Events stream",
+        "responses": {
+          "200": {
+            "description": "text/event-stream"
+          }
+        }
+      }
+    },
+    "/tables/data": {
+      "get": {
+        "tags": [
+          "Tables"
+        ],
+        "summary": "Server-side paginated/sorted/filtered products",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "id"
+            }
+          },
+          {
+            "name": "dir",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "default": "asc"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated rows"
+          }
+        }
+      }
+    },
+    "/tables/data/{id}": {
+      "put": {
+        "tags": [
+          "Tables"
+        ],
+        "summary": "Update a product row",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Tables"
+        ],
+        "summary": "Delete a product row",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
+    },
+    "/forms/cascade": {
+      "get": {
+        "tags": [
+          "Forms"
+        ],
+        "summary": "Cascading dropdown data",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of countries / states / cities depending on params"
+          }
+        }
+      }
+    },
+    "/files/upload": {
+      "post": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Upload one or more files (multipart/form-data, field \"files\")",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Upload metadata"
+          }
+        }
+      }
+    },
+    "/files/upload/{id}": {
+      "delete": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Delete an uploaded file",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
+    },
+    "/files/download/{type}": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Download a sample file",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "csv",
+                "json",
+                "txt",
+                "html"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File download"
+          }
+        }
+      }
+    },
+    "/shop/cart/add": {
+      "post": {
+        "tags": [
+          "Shop / Cart"
+        ],
+        "summary": "Add item to cart",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "productId"
+                ],
+                "properties": {
+                  "productId": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer",
+                    "default": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Cart summary"
+          }
+        }
+      }
+    },
+    "/shop/cart/update": {
+      "post": {
+        "tags": [
+          "Shop / Cart"
+        ],
+        "summary": "Update item quantity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "productId",
+                  "quantity"
+                ],
+                "properties": {
+                  "productId": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Cart summary"
+          }
+        }
+      }
+    },
+    "/shop/cart/remove": {
+      "post": {
+        "tags": [
+          "Shop / Cart"
+        ],
+        "summary": "Remove item",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "productId"
+                ],
+                "properties": {
+                  "productId": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Cart summary"
+          }
+        }
+      }
+    },
+    "/shop/cart/coupon": {
+      "post": {
+        "tags": [
+          "Shop / Cart"
+        ],
+        "summary": "Apply coupon (try SAVE10, WELCOME20, EXPIRED, MAXEDOUT)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "code"
+                ],
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Applied"
+          },
+          "400": {
+            "description": "Invalid / expired / maxed-out"
+          }
+        }
+      }
+    }
+  }
+}

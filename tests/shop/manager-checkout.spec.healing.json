@@ -1,0 +1,1209 @@
+[
+  {
+    "step": 1,
+    "type": "navigate",
+    "description": "Navigate to http://localhost:4300/auth/login",
+    "url": "http://localhost:4300/auth/login"
+  },
+  {
+    "step": 2,
+    "type": "custom",
+    "description": "Log in as the manager using @loginAsManager",
+    "instruction": "Log in as the manager using @loginAsManager",
+    "references": [
+      {
+        "kind": "method",
+        "label": "loginAsManager(loginPage)",
+        "file": "tests/helpers/auth.ts",
+        "line": 30,
+        "name": "loginAsManager",
+        "signature": "loginAsManager(loginPage)"
+      }
+    ],
+    "replacesRecordedSteps": [
+      {
+        "type": "click",
+        "description": "Click the 'Username or email *' field",
+        "locators": [
+          {
+            "strategy": "css",
+            "value": "[data-testid=\"username-input\"]",
+            "confidence": 0.99
+          },
+          {
+            "strategy": "css",
+            "value": "#username",
+            "confidence": 0.97
+          },
+          {
+            "strategy": "xpath",
+            "value": "//input[@name='username']",
+            "confidence": 0.94
+          }
+        ]
+      },
+      {
+        "type": "fill",
+        "description": "Enter \"manager\" in the 'Username or email *' field",
+        "locators": [
+          {
+            "strategy": "css",
+            "value": "[data-testid=\"username-input\"]",
+            "confidence": 0.99
+          },
+          {
+            "strategy": "css",
+            "value": "#username",
+            "confidence": 0.97
+          },
+          {
+            "strategy": "xpath",
+            "value": "//input[@name='username']",
+            "confidence": 0.94
+          }
+        ]
+      },
+      {
+        "type": "click",
+        "description": "Click the 'Password *' password field",
+        "locators": [
+          {
+            "strategy": "css",
+            "value": "[data-testid=\"password-input\"]",
+            "confidence": 0.99
+          },
+          {
+            "strategy": "css",
+            "value": "#password",
+            "confidence": 0.97
+          },
+          {
+            "strategy": "xpath",
+            "value": "//input[@name='password']",
+            "confidence": 0.94
+          }
+        ]
+      },
+      {
+        "type": "fill",
+        "description": "Enter \"••••••••\" in the 'Password *' password field",
+        "locators": [
+          {
+            "strategy": "css",
+            "value": "[data-testid=\"password-input\"]",
+            "confidence": 0.99
+          },
+          {
+            "strategy": "css",
+            "value": "#password",
+            "confidence": 0.97
+          },
+          {
+            "strategy": "xpath",
+            "value": "//input[@name='password']",
+            "confidence": 0.94
+          }
+        ]
+      },
+      {
+        "type": "click",
+        "description": "Click the 'Sign in' button",
+        "locators": [
+          {
+            "strategy": "css",
+            "value": "[data-testid=\"login-submit\"]",
+            "confidence": 0.99
+          },
+          {
+            "strategy": "xpath",
+            "value": "//button[normalize-space(text())='Sign in']",
+            "confidence": 0.9
+          },
+          {
+            "strategy": "css",
+            "value": "button.btn.btn-primary.btn-block",
+            "confidence": 0.87
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "step": 3,
+    "type": "navigate",
+    "description": "Navigate to http://localhost:4300/auth/profile",
+    "url": "http://localhost:4300/auth/profile"
+  },
+  {
+    "step": 4,
+    "type": "custom",
+    "description": "Read the Orders count on the profile and keep it as ordersBefore",
+    "instruction": "Read the Orders count on the profile and keep it as ordersBefore",
+    "outputs": [
+      "ordersBefore"
+    ]
+  },
+  {
+    "step": 5,
+    "type": "navigate",
+    "description": "Navigate to http://localhost:4300/shop",
+    "url": "http://localhost:4300/shop"
+  },
+  {
+    "step": 6,
+    "type": "select",
+    "description": "Select 'Electronics' from the 'All\nElectronics\nClothing\nBooks\nHome & Garden\nSport' dropdown",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"filter-category\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "select[name=\"category\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//select[@name='category']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<aside><form class=\"card\"><select class=\"form-control\" name=\"category\" data-testid=\"filter-category\">\n        <option value=\"\">All</option>\n        \n          <option value=\"Electronics\">Electronics</option>\n        \n          <option value=\"Clothing\">Clothing</option>\n        \n          <option value=\"Books\">Books</option>\n        \n          <option value=\"Home &amp; Garden\">Home &amp; Garden</option>\n        \n          <option value=\"Sports\">Sports</option>\n        \n          <option value=\"Toys\">Toys</option>\n        \n          <option value=\"Beauty\">Beauty</option>\n        \n          <option value=\"Automotive\">Automotive</option>\n        \n      </select></form></aside>",
+    "value": "Electronics",
+    "a11y": {
+      "role": "combobox",
+      "name": "All\nElectronics\nClothing\nBooks\nHome & Garden\nSports\nToys\nBeauty\nAutomotive"
+    }
+  },
+  {
+    "step": 7,
+    "type": "select",
+    "description": "Select 'Price (low → high)' from the 'Featured\nName (A-Z)\nPrice (low → high)\nPrice (high' dropdown",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"filter-sort\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "select[name=\"sort\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//select[@name='sort']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<aside><form class=\"card\"><select class=\"form-control\" name=\"sort\" data-testid=\"filter-sort\">\n        <option value=\"featured\">Featured</option>\n        <option value=\"name\">Name (A-Z)</option>\n        <option value=\"price-asc\">Price (low → high)</option>\n        <option value=\"price-desc\">Price (high → low)</option>\n        <option value=\"rating\">Top rated</option>\n      </select></form></aside>",
+    "value": "price-asc",
+    "a11y": {
+      "role": "combobox",
+      "name": "Featured\nName (A-Z)\nPrice (low → high)\nPrice (high → low)\nTop rated"
+    }
+  },
+  {
+    "step": 8,
+    "type": "click",
+    "description": "Click the 'Apply filters' button",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"filter-apply\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "xpath",
+        "value": "//button[normalize-space(text())='Apply filters']",
+        "confidence": 0.9
+      },
+      {
+        "strategy": "css",
+        "value": "button.btn.btn-primary.btn-block",
+        "confidence": 0.87
+      }
+    ],
+    "domContext": "<aside><form class=\"card\"><button class=\"btn btn-primary btn-block mt-3\" data-testid=\"filter-apply\">Apply filters</button></form></aside>",
+    "a11y": {
+      "role": "button",
+      "name": "Apply filters"
+    }
+  },
+  {
+    "step": 9,
+    "type": "annotate",
+    "description": "Check the products are sorted by price, cheapest first",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "img[alt=\"Unbranded Frozen Bike\"]",
+        "confidence": 0.9
+      },
+      {
+        "strategy": "css",
+        "value": "a[href*=\"/shop/product/442\"] img",
+        "confidence": 0.74
+      },
+      {
+        "strategy": "xpath",
+        "value": "/html/body/div[1]/main[1]/div[2]/div[1]/div[2]/div[1]/a[1]/img[1]",
+        "confidence": 0.52
+      }
+    ],
+    "domContext": "<div class=\"card\"><a><img src=\"https://picsum.photos/seed/product442/400/300\" alt=\"Unbranded Frozen Bike\" style=\"width:100%;height:160px;object-fit:cover;background:var(--gray-100);display:block\" loading=\"lazy\"></a></div>",
+    "userIntent": "Check the products are sorted by price, cheapest first",
+    "value": "Check the products are sorted by price, cheapest first",
+    "a11y": {
+      "role": "img",
+      "name": "Unbranded Frozen Bike"
+    }
+  },
+  {
+    "step": 10,
+    "type": "click",
+    "description": "Click the '+ Add' button",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"add-cart-442\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "xpath",
+        "value": "//button[normalize-space(text())='+ Add']",
+        "confidence": 0.73
+      },
+      {
+        "strategy": "css",
+        "value": "button.btn.btn-sm.btn-primary",
+        "confidence": 0.7
+      }
+    ],
+    "domContext": "<div><div class=\"flex-between mt-2\"><button class=\"btn btn-sm btn-primary add-to-cart\" data-id=\"442\" data-testid=\"add-cart-442\">+ Add</button></div></div>",
+    "a11y": {
+      "role": "button",
+      "name": "+ Add"
+    }
+  },
+  {
+    "step": 11,
+    "type": "click",
+    "description": "Click the '+ Add' button",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"add-cart-331\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "xpath",
+        "value": "//button[normalize-space(text())='+ Add']",
+        "confidence": 0.73
+      },
+      {
+        "strategy": "css",
+        "value": "button.btn.btn-sm.btn-primary",
+        "confidence": 0.7
+      }
+    ],
+    "domContext": "<div><div class=\"flex-between mt-2\"><button class=\"btn btn-sm btn-primary add-to-cart\" data-id=\"331\" data-testid=\"add-cart-331\">+ Add</button></div></div>",
+    "a11y": {
+      "role": "button",
+      "name": "+ Add"
+    }
+  },
+  {
+    "step": 12,
+    "type": "assert",
+    "description": "Verify '🛒 Cart ()' contains \"🛒 Cart (\n2\n)\"",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"cart-link\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "a.btn.btn-primary",
+        "confidence": 0.87
+      },
+      {
+        "strategy": "xpath",
+        "value": "//a[normalize-space(text())='🛒 Cart ()']",
+        "confidence": 0.73
+      }
+    ],
+    "domContext": "<main class=\"app-content\"><div class=\"page-header\"><a href=\"/shop/cart\" class=\"btn btn-primary\" data-testid=\"cart-link\">\n    🛒 Cart (<span data-testid=\"cart-count\">2</span>)\n  </a></div></main>",
+    "assertType": "text",
+    "expectedValue": "🛒 Cart (\n2\n)",
+    "a11y": {
+      "role": "link",
+      "name": "🛒 Cart ()"
+    }
+  },
+  {
+    "step": 13,
+    "type": "click",
+    "description": "Click the '🛒 Cart ()' link",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"cart-link\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "a.btn.btn-primary",
+        "confidence": 0.87
+      },
+      {
+        "strategy": "xpath",
+        "value": "//a[normalize-space(text())='🛒 Cart ()']",
+        "confidence": 0.73
+      }
+    ],
+    "domContext": "<main class=\"app-content\"><div class=\"page-header\"><a href=\"/shop/cart\" class=\"btn btn-primary\" data-testid=\"cart-link\">\n    🛒 Cart (<span data-testid=\"cart-count\">2</span>)\n  </a></div></main>",
+    "a11y": {
+      "role": "link",
+      "name": "🛒 Cart ()"
+    }
+  },
+  {
+    "step": 14,
+    "type": "click",
+    "description": "Click the 'SAVE10' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"coupon-input\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "#coupon",
+        "confidence": 0.97
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@placeholder='SAVE10']",
+        "confidence": 0.92
+      }
+    ],
+    "domContext": "<div class=\"card\"><div class=\"flex flex-gap-1\"><input class=\"form-control\" id=\"coupon\" data-testid=\"coupon-input\" placeholder=\"SAVE10\"></div></div>",
+    "a11y": {
+      "role": "textbox",
+      "name": "SAVE10"
+    }
+  },
+  {
+    "step": 15,
+    "type": "fill",
+    "description": "Enter \"SAVE10\" in the 'SAVE10' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"coupon-input\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "#coupon",
+        "confidence": 0.97
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@placeholder='SAVE10']",
+        "confidence": 0.92
+      }
+    ],
+    "domContext": "<div class=\"card\"><div class=\"flex flex-gap-1\"><input class=\"form-control\" id=\"coupon\" data-testid=\"coupon-input\" placeholder=\"SAVE10\"></div></div>",
+    "value": "SAVE10",
+    "a11y": {
+      "role": "textbox",
+      "name": "SAVE10"
+    }
+  },
+  {
+    "step": 16,
+    "type": "click",
+    "description": "Click the 'Apply' button",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"apply-coupon\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "#apply-coupon",
+        "confidence": 0.97
+      },
+      {
+        "strategy": "xpath",
+        "value": "//button[normalize-space(text())='Apply']",
+        "confidence": 0.9
+      }
+    ],
+    "domContext": "<div class=\"card\"><div class=\"flex flex-gap-1\"><button class=\"btn btn-secondary\" id=\"apply-coupon\" data-testid=\"apply-coupon\">Apply</button></div></div>",
+    "a11y": {
+      "role": "button",
+      "name": "Apply"
+    }
+  },
+  {
+    "step": 17,
+    "type": "annotate",
+    "description": "The total must equal subtotal minus discount plus shipping plus tax",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"sum-total\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "xpath",
+        "value": "//span[normalize-space(text())='$283.12']",
+        "confidence": 0.9
+      },
+      {
+        "strategy": "css",
+        "value": "body > div:nth-of-type(1) > main > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(6) > span:nth-of-type(2)",
+        "confidence": 0.42
+      }
+    ],
+    "domContext": "<div class=\"card\"><div class=\"flex-between\"><span data-testid=\"sum-total\">$283.12</span></div></div>",
+    "userIntent": "The total must equal subtotal minus discount plus shipping plus tax",
+    "value": "The total must equal subtotal minus discount plus shipping plus tax",
+    "a11y": {
+      "name": "$283.12"
+    }
+  },
+  {
+    "step": 18,
+    "type": "click",
+    "description": "Click the 'Proceed to checkout →' link",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"checkout-btn\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "xpath",
+        "value": "//a[normalize-space(text())='Proceed to checkout →']",
+        "confidence": 0.9
+      },
+      {
+        "strategy": "css",
+        "value": "a.btn.btn-primary.btn-block",
+        "confidence": 0.87
+      }
+    ],
+    "domContext": "<div><div class=\"card\"><a href=\"/shop/checkout/1\" class=\"btn btn-primary btn-block btn-lg mt-3\" data-testid=\"checkout-btn\">Proceed to checkout →</a></div></div>",
+    "a11y": {
+      "role": "link",
+      "name": "Proceed to checkout →"
+    }
+  },
+  {
+    "step": 19,
+    "type": "click",
+    "description": "Click the 'fullName' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-name\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"fullName\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='fullName']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"fullName\" required=\"\" data-testid=\"ck-name\" value=\"\"></div></div>",
+    "a11y": {
+      "role": "textbox"
+    }
+  },
+  {
+    "step": 20,
+    "type": "fill",
+    "description": "Enter \"Maya Patel\" in the 'fullName' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-name\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"fullName\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='fullName']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"fullName\" required=\"\" data-testid=\"ck-name\" value=\"\"></div></div>",
+    "value": "Maya Patel",
+    "a11y": {
+      "role": "textbox"
+    },
+    "valueFrom": "data.fullName"
+  },
+  {
+    "step": 21,
+    "type": "click",
+    "description": "Click the 'phone' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-phone\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"phone\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='phone']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"phone\" required=\"\" data-testid=\"ck-phone\" value=\"\"></div></div>",
+    "a11y": {
+      "role": "textbox"
+    }
+  },
+  {
+    "step": 22,
+    "type": "fill",
+    "description": "Enter \"5550142\" in the 'phone' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-phone\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"phone\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='phone']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"phone\" required=\"\" data-testid=\"ck-phone\" value=\"\"></div></div>",
+    "value": "5550142",
+    "a11y": {
+      "role": "textbox"
+    },
+    "valueFrom": "data.phone"
+  },
+  {
+    "step": 23,
+    "type": "click",
+    "description": "Click the 'address' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-address\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"address\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='address']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"address\" required=\"\" data-testid=\"ck-address\" value=\"\"></div></div>",
+    "a11y": {
+      "role": "textbox"
+    }
+  },
+  {
+    "step": 24,
+    "type": "fill",
+    "description": "Enter \"12 Lake Street\" in the 'address' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-address\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"address\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='address']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"address\" required=\"\" data-testid=\"ck-address\" value=\"\"></div></div>",
+    "value": "12 Lake Street",
+    "a11y": {
+      "role": "textbox"
+    },
+    "valueFrom": "data.address"
+  },
+  {
+    "step": 25,
+    "type": "click",
+    "description": "Click the 'city' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-city\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"city\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='city']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"city\" required=\"\" data-testid=\"ck-city\" value=\"\"></div></div>",
+    "a11y": {
+      "role": "textbox"
+    }
+  },
+  {
+    "step": 26,
+    "type": "fill",
+    "description": "Enter \"Austin\" in the 'city' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-city\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"city\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='city']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"city\" required=\"\" data-testid=\"ck-city\" value=\"\"></div></div>",
+    "value": "Austin",
+    "a11y": {
+      "role": "textbox"
+    },
+    "valueFrom": "data.city"
+  },
+  {
+    "step": 27,
+    "type": "click",
+    "description": "Click the 'zip' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-zip\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"zip\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='zip']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"zip\" required=\"\" pattern=\"[A-Za-z0-9\\- ]{3,10}\" data-testid=\"ck-zip\" value=\"\"></div></div>",
+    "a11y": {
+      "role": "textbox"
+    }
+  },
+  {
+    "step": 28,
+    "type": "fill",
+    "description": "Enter \"73301\" in the 'zip' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-zip\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"zip\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='zip']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"zip\" required=\"\" pattern=\"[A-Za-z0-9\\- ]{3,10}\" data-testid=\"ck-zip\" value=\"\"></div></div>",
+    "value": "73301",
+    "a11y": {
+      "role": "textbox"
+    },
+    "valueFrom": "data.zip"
+  },
+  {
+    "step": 29,
+    "type": "click",
+    "description": "Click the 'Continue →' button",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-next\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "xpath",
+        "value": "//button[normalize-space(text())='Continue →']",
+        "confidence": 0.9
+      },
+      {
+        "strategy": "css",
+        "value": "button.btn.btn-primary",
+        "confidence": 0.87
+      }
+    ],
+    "domContext": "<form class=\"card\"><div class=\"flex flex-gap-1 mt-3\"><button class=\"btn btn-primary\" type=\"submit\" data-testid=\"ck-next\">Continue →</button></div></form>",
+    "a11y": {
+      "role": "button",
+      "name": "Continue →"
+    }
+  },
+  {
+    "step": 30,
+    "type": "click",
+    "description": "Click the 'Continue →' button",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-next\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "xpath",
+        "value": "//button[normalize-space(text())='Continue →']",
+        "confidence": 0.9
+      },
+      {
+        "strategy": "css",
+        "value": "button.btn.btn-primary",
+        "confidence": 0.87
+      }
+    ],
+    "domContext": "<form class=\"card\"><div class=\"flex flex-gap-1 mt-3\"><button class=\"btn btn-primary\" type=\"submit\" data-testid=\"ck-next\">Continue →</button></div></form>",
+    "a11y": {
+      "role": "button",
+      "name": "Continue →"
+    }
+  },
+  {
+    "step": 31,
+    "type": "check",
+    "description": "Select the 'Express · 2-3 days · $19.99' option",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ship-exp\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "#m-exp",
+        "confidence": 0.97
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='shippingMethod']",
+        "confidence": 0.77
+      }
+    ],
+    "domContext": "<form class=\"card\"><div class=\"form-check\"><input type=\"radio\" name=\"shippingMethod\" value=\"express\" id=\"m-exp\" data-testid=\"ship-exp\"></div></form>",
+    "a11y": {
+      "role": "radio",
+      "name": "Express · 2-3 days · $19.99",
+      "label": "Express · 2-3 days · $19.99"
+    }
+  },
+  {
+    "step": 32,
+    "type": "click",
+    "description": "Click the 'Continue →' button",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-next\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "xpath",
+        "value": "//button[normalize-space(text())='Continue →']",
+        "confidence": 0.9
+      },
+      {
+        "strategy": "css",
+        "value": "button.btn.btn-primary",
+        "confidence": 0.87
+      }
+    ],
+    "domContext": "<form class=\"card\"><div class=\"flex flex-gap-1 mt-3\"><button class=\"btn btn-primary\" type=\"submit\" data-testid=\"ck-next\">Continue →</button></div></form>",
+    "a11y": {
+      "role": "button",
+      "name": "Continue →"
+    }
+  },
+  {
+    "step": 33,
+    "type": "click",
+    "description": "Click the '4242 4242 4242 4242' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"card-number\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"cardNumber\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='cardNumber']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div id=\"pay-card\" class=\"tab-pane active\"><div class=\"form-group\"><input class=\"form-control\" name=\"cardNumber\" placeholder=\"4242 4242 4242 4242\" data-testid=\"card-number\" required=\"\"></div></div>",
+    "a11y": {
+      "role": "textbox",
+      "name": "4242 4242 4242 4242"
+    }
+  },
+  {
+    "step": 34,
+    "type": "fill",
+    "description": "Enter \"4242 4242 4242 4242\" in the '4242 4242 4242 4242' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"card-number\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"cardNumber\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='cardNumber']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div id=\"pay-card\" class=\"tab-pane active\"><div class=\"form-group\"><input class=\"form-control\" name=\"cardNumber\" placeholder=\"4242 4242 4242 4242\" data-testid=\"card-number\" required=\"\"></div></div>",
+    "value": "4242 4242 4242 4242",
+    "a11y": {
+      "role": "textbox",
+      "name": "4242 4242 4242 4242"
+    }
+  },
+  {
+    "step": 35,
+    "type": "click",
+    "description": "Click the 'MM/YY' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"card-exp\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"cardExpiry\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='cardExpiry']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"cardExpiry\" placeholder=\"MM/YY\" data-testid=\"card-exp\" required=\"\"></div></div>",
+    "a11y": {
+      "role": "textbox",
+      "name": "MM/YY"
+    }
+  },
+  {
+    "step": 36,
+    "type": "fill",
+    "description": "Enter \"12/30\" in the 'MM/YY' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"card-exp\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"cardExpiry\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='cardExpiry']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"cardExpiry\" placeholder=\"MM/YY\" data-testid=\"card-exp\" required=\"\"></div></div>",
+    "value": "12/30",
+    "a11y": {
+      "role": "textbox",
+      "name": "MM/YY"
+    }
+  },
+  {
+    "step": 37,
+    "type": "click",
+    "description": "Click the '123' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"card-cvv\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"cardCvv\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='cardCvv']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"cardCvv\" placeholder=\"123\" data-testid=\"card-cvv\" required=\"\"></div></div>",
+    "a11y": {
+      "role": "textbox",
+      "name": "123"
+    }
+  },
+  {
+    "step": 38,
+    "type": "fill",
+    "description": "Enter \"123\" in the '123' field",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"card-cvv\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "input[name=\"cardCvv\"]",
+        "confidence": 0.95
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@name='cardCvv']",
+        "confidence": 0.94
+      }
+    ],
+    "domContext": "<div class=\"grid grid-2\"><div class=\"form-group\"><input class=\"form-control\" name=\"cardCvv\" placeholder=\"123\" data-testid=\"card-cvv\" required=\"\"></div></div>",
+    "value": "123",
+    "a11y": {
+      "role": "textbox",
+      "name": "123"
+    }
+  },
+  {
+    "step": 39,
+    "type": "click",
+    "description": "Click the 'Continue →' button",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-next\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "xpath",
+        "value": "//button[normalize-space(text())='Continue →']",
+        "confidence": 0.9
+      },
+      {
+        "strategy": "css",
+        "value": "button.btn.btn-primary",
+        "confidence": 0.87
+      }
+    ],
+    "domContext": "<form class=\"card\"><div class=\"flex flex-gap-1 mt-3\"><button class=\"btn btn-primary\" type=\"submit\" data-testid=\"ck-next\">Continue →</button></div></form>",
+    "a11y": {
+      "role": "button",
+      "name": "Continue →"
+    }
+  },
+  {
+    "step": 40,
+    "type": "check",
+    "description": "Check the 'I agree to the terms & conditions' checkbox",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-agree\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "#agree",
+        "confidence": 0.97
+      },
+      {
+        "strategy": "xpath",
+        "value": "//input[@id='agree']",
+        "confidence": 0.52
+      }
+    ],
+    "domContext": "<form class=\"card\"><div class=\"form-check mt-3\"><input type=\"checkbox\" required=\"\" id=\"agree\" data-testid=\"ck-agree\"></div></form>",
+    "a11y": {
+      "role": "checkbox",
+      "name": "I agree to the terms & conditions",
+      "label": "I agree to the terms & conditions"
+    }
+  },
+  {
+    "step": 41,
+    "type": "click",
+    "description": "Click the 'Place order' button",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"ck-next\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "xpath",
+        "value": "//button[normalize-space(text())='Place order']",
+        "confidence": 0.9
+      },
+      {
+        "strategy": "css",
+        "value": "button.btn.btn-primary",
+        "confidence": 0.87
+      }
+    ],
+    "domContext": "<form class=\"card\"><div class=\"flex flex-gap-1 mt-3\"><button class=\"btn btn-primary\" type=\"submit\" data-testid=\"ck-next\">Place order</button></div></form>",
+    "a11y": {
+      "role": "button",
+      "name": "Place order"
+    }
+  },
+  {
+    "step": 42,
+    "type": "assert",
+    "description": "Verify 'Order placed successfully!' is visible",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"page-title\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "xpath",
+        "value": "//h1[normalize-space(text())='Order placed successfully!']",
+        "confidence": 0.9
+      },
+      {
+        "strategy": "css",
+        "value": "body > div:nth-of-type(1) > main > div > h1",
+        "confidence": 0.42
+      }
+    ],
+    "domContext": "<main class=\"app-content\"><div class=\"card text-center\"><h1 data-testid=\"page-title\">Order placed successfully!</h1></div></main>",
+    "assertType": "visible",
+    "expectedValue": "",
+    "a11y": {
+      "role": "heading",
+      "name": "Order placed successfully!"
+    }
+  },
+  {
+    "step": 43,
+    "type": "custom",
+    "description": "Keep the order number shown on the confirmation as orderNumber",
+    "instruction": "Keep the order number shown on the confirmation as orderNumber",
+    "outputs": [
+      "orderNumber"
+    ]
+  },
+  {
+    "step": 44,
+    "type": "navigate",
+    "description": "Navigate to http://localhost:4300/auth/profile",
+    "url": "http://localhost:4300/auth/profile"
+  },
+  {
+    "step": 45,
+    "type": "annotate",
+    "description": "Orders must be one more than ordersBefore, and the newest recent order must be orderNumber",
+    "locators": [
+      {
+        "strategy": "css",
+        "value": "[data-testid=\"stat-orders\"]",
+        "confidence": 0.99
+      },
+      {
+        "strategy": "css",
+        "value": "div.value",
+        "confidence": 0.7
+      },
+      {
+        "strategy": "xpath",
+        "value": "/html/body/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[2]",
+        "confidence": 0.52
+      }
+    ],
+    "domContext": "<div class=\"grid grid-3\"><div class=\"stat-card brand\"><div class=\"value\" data-testid=\"stat-orders\">2</div></div></div>",
+    "userIntent": "Orders must be one more than ordersBefore, and the newest recent order must be orderNumber",
+    "value": "Orders must be one more than ordersBefore, and the newest recent order must be orderNumber",
+    "a11y": {
+      "name": "2"
+    }
+  }
+]

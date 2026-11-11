@@ -19,7 +19,7 @@ export async function loginAsAdmin(
 
   // Authenticated landing: home page with the user pill in the header.
   await expect(loginPage.page.getByTestId('user-pill')).toBeVisible({ timeout: 15000 });
-  await expect(loginPage.page).toHaveURL('https://testplay.venomva.com/');
+  await expect(loginPage.page).toHaveURL('/'); // home page of the baseURL (Development or Production)
 }
 
 /**
@@ -34,5 +34,5 @@ export async function loginAsManager(loginPage: LoginPage): Promise<void> {
 
   // Authenticated landing: home page with the user pill in the header.
   await expect(loginPage.page.getByTestId('user-pill')).toBeVisible({ timeout: 15000 });
-  await expect(loginPage.page).toHaveURL('https://testplay.venomva.com/');
+  await expect(loginPage.page).toHaveURL('/'); // home page of the baseURL (Development or Production)
 }

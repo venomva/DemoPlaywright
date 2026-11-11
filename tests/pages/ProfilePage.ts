@@ -150,4 +150,28 @@ export class ProfilePage extends BasePage {
     await expect(this.infoCard).toContainText('Email');
     await expect(this.infoCard).toContainText('Role');
   }
+
+  /** Number on the ORDERS PLACED stat card, e.g. 2. */
+  async ordersCount(): Promise<number> {
+    await expect(this.statOrders).toBeVisible();
+    const text = await this.statOrders.innerText();
+    const match = text.match(/(\d+)/);
+    if (!match) {
+      throw new Error(`Could not read the orders count from "${text}"`);
+    }
+    return parseInt(match[1], 10);
+  }
+
+  /** Order id of the first (newest) row in the Recent orders table, e.g. ORD-000202. */
+  async newestOrderId(): Promise<string> {
+    await expect(this.recentOrdersTable).toBeVisible();
+    const firstRow = this.recentOrdersTable.locator('tbody tr').first();
+    await expect(firstRow).toBeVisible();
+    const text = await firstRow.innerText();
+    const match = text.match(/ORD-\d+/);
+    if (!match) {
+      throw new Error(`No order id in the newest recent-orders row: "${text}"`);
+    }
+    return match[0];
+  }
 }

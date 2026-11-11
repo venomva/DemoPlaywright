@@ -20,7 +20,7 @@ export default defineConfig({
     // runs are unchanged; override per environment with BASE_URL=... (e.g.
     // BASE_URL=https://staging.example.com npx playwright test).
     baseURL: process.env.BASE_URL || 'https://testplay.venomva.com/',
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure', // Auto-Heal reads the failing page from the trace
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },

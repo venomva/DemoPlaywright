@@ -70,4 +70,39 @@ export class CartPage extends BasePage {
   async goToCheckout(): Promise<void> {
     await this.checkoutLink.click();
   }
+
+  /** Wait until the order summary re-renders with a Discount row (coupon accepted). */
+  async expectDiscountApplied(): Promise<void> {
+    await expect(this.page.locator('.flex-between', { hasText: /^\s*Discount/ })).toBeVisible({
+      timeout: 15000,
+    });
+  }
+
+  /**
+   * Order-summary amounts keyed by lower-cased label, e.g.
+   * { subtotal: 268.5, discount: 26.85, shipping: 9.99, tax: 20.13, total: 283.12 }.
+   * The discount is returned as a positive magnitude.
+   */
+  async summaryAmounts(): Promise<Record<string, number>> {
+    const summary: Record<string, number> = {};
+    const rowTexts = await this.page.locator('.flex-between').allInnerTexts();
+
+    for (const text of rowTexts) {
+      const label = text.match(/^\s*([A-Za-z][A-Za-z ]*)/);
+      const amount = text.match(/-?\$([0-9][0-9,]*\.?[0-9]*)/);
+      if (!label || !amount) {
+        continue;
+      }
+      const key = label[1].trim().toLowerCase().replace(/\s*\(.*\)$/, '');
+      summary[key] = Number(amount[1].replace(/,/g, ''));
+    }
+
+    // The Total cell carries its own test id — always prefer it.
+    const totalText = await this.page.getByTestId('sum-total').innerText();
+    const total = totalText.match(/-?\$([0-9][0-9,]*\.?[0-9]*)/);
+    if (total) {
+      summary.total = Number(total[1].replace(/,/g, ''));
+    }
+    return summary;
+  }
 }

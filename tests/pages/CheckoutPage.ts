@@ -5,6 +5,8 @@ export const CHECKOUT_TITLE = 'Checkout · TestverQA';
 export const CHECKOUT_HEADING = 'Checkout';
 /** Test card accepted by the sandbox gateway (placeholder on the payment step). */
 export const TEST_CARD_NUMBER = '4242 4242 4242 4242';
+/** Success heading shown on the order-confirmation page. */
+export const ORDER_CONFIRMED_HEADING = 'Order placed successfully!';
 
 /**
  * Checkout flow of the TestverQA shop — 5 steps.
@@ -32,6 +34,10 @@ export class CheckoutPage extends BasePage {
   readonly cardCvvInput: Locator;
   readonly agreeCheckbox: Locator;
   readonly placeOrderButton: Locator;
+  /** Express · 2-3 days · $19.99 shipping-method radio on step 3. */
+  readonly expressShippingRadio: Locator;
+  /** Success heading on the order-confirmation page. */
+  readonly confirmationHeading: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -49,6 +55,12 @@ export class CheckoutPage extends BasePage {
     this.cardCvvInput = page.getByTestId('card-cvv');
     this.agreeCheckbox = page.getByTestId('ck-agree');
     this.placeOrderButton = page.getByTestId('ck-next');
+    // Express shipping option radio on the shipping-method step
+    // Alt: [css] #m-exp (0.97), [xpath] //input[@name='shippingMethod'] (0.77)
+    this.expressShippingRadio = page.getByTestId('ship-exp');
+    // Order placed successfully heading on the confirmation page
+    // Alt: [xpath] //h1[normalize-space(text())='Order placed successfully!'] (0.9)
+    this.confirmationHeading = page.getByTestId('page-title');
   }
 
   async expectLoaded(): Promise<void> {
@@ -94,5 +106,32 @@ export class CheckoutPage extends BasePage {
 
   async goToNextStep(): Promise<void> {
     await this.continueButton.click();
+  }
+
+  /** Choose the Express shipping method on the shipping-method step. */
+  async selectExpressShipping(): Promise<void> {
+    await this.expressShippingRadio.check();
+    await expect(this.expressShippingRadio).toBeChecked();
+  }
+
+  /** Assert the order-confirmation page rendered its success heading. */
+  async expectOrderPlaced(): Promise<void> {
+    await expect(this.confirmationHeading).toBeVisible();
+    await expect(this.confirmationHeading).toHaveText(ORDER_CONFIRMED_HEADING);
+  }
+
+  /** The order number shown on the confirmation page, e.g. "ORD-000202". */
+  async orderNumber(): Promise<string> {
+    const url = this.page.url();
+    const fromUrl = url.match(/ORD-\d+/);
+    if (fromUrl) {
+      return fromUrl[0];
+    }
+    const text = await this.page.locator('body').innerText();
+    const fromPage = text.match(/ORD-\d+/);
+    if (!fromPage) {
+      throw new Error(`No order number found on the confirmation page (${url})`);
+    }
+    return fromPage[0];
   }
 }

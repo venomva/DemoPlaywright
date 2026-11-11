@@ -48,7 +48,7 @@ export class LoginPage extends BasePage {
     this.heading = page.getByRole('heading', { level: 1 });
     this.brandLink = page.getByRole('link', { name: 'Testver home' });
     this.forgotLink = page.getByTestId('forgot-link');
-    this.usernameInput = page.getByTestId('username');
+    this.usernameInput = page.getByTestId('username-input');
     // "Password" input on the sign-in form (required)
     this.passwordInput = page.getByTestId('password-input');
     this.rememberCheckbox = page.getByTestId('remember-checkbox');
