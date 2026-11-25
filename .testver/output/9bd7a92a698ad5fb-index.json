@@ -1,0 +1,27 @@
+[
+  {
+    "testName": "Manager settings: identity is read-only, 2FA controls are disabled",
+    "startLine": 0,
+    "endLine": 3
+  },
+  {
+    "testName": "Shop · TestverQA: page identity",
+    "startLine": 4,
+    "endLine": 4
+  },
+  {
+    "testName": "Shop: adding a product increments the cart badge",
+    "startLine": 5,
+    "endLine": 5
+  },
+  {
+    "testName": "Shop: cart total and coupon SAVE10 discount are applied",
+    "startLine": 6,
+    "endLine": 6
+  },
+  {
+    "testName": "Shop: full checkout journey places an order",
+    "startLine": 7,
+    "endLine": 7
+  }
+]

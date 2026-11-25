@@ -1,0 +1,36 @@
+{
+  "browsers": {
+    "argPattern": "--project={value}",
+    "default": "Chrome",
+    "options": [
+      {
+        "name": "Chrome",
+        "arg": "--project=chromium"
+      },
+      {
+        "name": "Firefox",
+        "arg": "--project=firefox"
+      }
+    ]
+  },
+  "environments": {
+    "argPattern": "--env {value}",
+    "default": "Production",
+    "options": [
+      {
+        "name": "Production",
+        "kind": "env",
+        "value": "BASE_URL=https://testplay.venomva.com/"
+      },
+      {
+        "name": "Development",
+        "kind": "env",
+        "value": "BASE_URL=http://localhost:4300/"
+      }
+    ]
+  },
+  "envVars": {
+    "DATA_SIZE": "small"
+  },
+  "beforeCommand": "npm run reset-data"
+}

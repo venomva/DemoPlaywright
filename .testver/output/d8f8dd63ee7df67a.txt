@@ -1,0 +1,88 @@
+
+Running 2 tests using 1 worker
+
+  x  1 [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Maya Patel (31.4s)
+  x  2 [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Leo Grant (31.3s)
+
+
+  1) [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Maya Patel 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('filter-category')
+
+
+       at pages\ShopPage.ts:90
+
+      88 |   /** Apply the sidebar category + sort filters and press Apply filters (e.g. Electronics / price-asc). */
+      89 |   async applyProductFilters(category: string, sort: string): Promise<void> {
+    > 90 |     await this.categoryFilter.selectOption(category);
+         |                               ^
+      91 |     await this.sortFilter.selectOption(sort);
+      92 |     await this.applyFilters.click();
+      93 |   }
+        at ShopPage.applyProductFilters (E:\TestverTesting\Agents\FirstTest\tests\pages\ShopPage.ts:90:31)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\manager-checkout.spec.ts:65:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Leo Grant 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('filter-category')
+
+
+       at pages\ShopPage.ts:90
+
+      88 |   /** Apply the sidebar category + sort filters and press Apply filters (e.g. Electronics / price-asc). */
+      89 |   async applyProductFilters(category: string, sort: string): Promise<void> {
+    > 90 |     await this.categoryFilter.selectOption(category);
+         |                               ^
+      91 |     await this.sortFilter.selectOption(sort);
+      92 |     await this.applyFilters.click();
+      93 |   }
+        at ShopPage.applyProductFilters (E:\TestverTesting\Agents\FirstTest\tests\pages\ShopPage.ts:90:31)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\manager-checkout.spec.ts:65:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Maya Patel 
+    [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Leo Grant 

@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ✓  1 [chromium] › tests\widgets\widgets.spec.ts:10:5 › Tabs & Accordions · TestverQA: page identity (2.0s)
+
+  1 passed (4.1s)

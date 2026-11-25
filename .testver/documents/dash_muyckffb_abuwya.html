@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Latest Executions Dashboard</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: #f7f8fa; color: #1f2937; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
+  .header { border-bottom: 1px solid #e5e7eb; padding-bottom: 16px; margin-bottom: 20px; }
+  .header h1 { margin: 0; font-size: 24px; color: #111827; }
+  .header .sub { color: #6b7280; margin-top: 4px; font-size: 13px; }
+  .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+  .cell { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+  .kpi-title { font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
+  .kpi-value { font-size: 28px; font-weight: 700; color: #111827; margin-top: 6px; }
+  .kpi-unit { font-size: 16px; color: #6b7280; margin-left: 2px; font-weight: 500; }
+  .kpi-hint, .hint { color: #6b7280; font-size: 11px; margin-top: 6px; }
+  .chart-title, .table-title { font-weight: 600; color: #374151; margin-bottom: 10px; }
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: #6b7280; font-weight: 600; padding: 8px 10px; border-bottom: 1px solid #e5e7eb; text-transform: uppercase; letter-spacing: 0.05em; font-size: 10px; background: #f9fafb; }
+  td { padding: 8px 10px; border-bottom: 1px solid #f3f4f6; color: #374151; max-width: 360px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  td.empty { text-align: center; color: #9ca3af; padding: 24px 10px; white-space: normal; }
+  tbody tr:hover { background: #f9fafb; }
+  .markdown h2 { font-size: 18px; color: #111827; margin: 0 0 8px; }
+  .markdown h3 { font-size: 15px; color: #374151; margin: 12px 0 6px; }
+  .markdown p { margin: 6px 0; color: #4b5563; }
+  .markdown ul { margin: 6px 0; padding-left: 22px; }
+  .markdown li { margin: 3px 0; color: #4b5563; }
+  .markdown strong { color: #111827; }
+  .markdown code { background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 4px; padding: 1px 5px; font-family: Consolas, Menlo, monospace; font-size: 12px; color: #374151; }
+  .footer { margin-top: 24px; color: #9ca3af; font-size: 11px; text-align: center; }
+  /* Responsive collapse — parity with ReportCard's col-span-12 md:col-span-N:
+     below tablet width every cell goes full-width (KPIs pair up two-across).
+     !important is required because each cell carries an inline grid-column. */
+  @media (max-width: 720px) {
+    .wrap { padding: 12px; }
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .cell { grid-column: span 2 !important; }
+    .cell.kpi { grid-column: span 1 !important; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>Latest Executions Dashboard</h1>
+      <div class="sub">Automation runs · window Sep 30 – Oct 7, 2026 (last 7 days) · data: automation_report</div>
+      <div class="sub">Generated Oct 7, 2026, 10:23 PM GMT+5:30</div>
+    </div>
+    <div class="grid">
+      <div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Pass Rate (7d)</div>
+      <div class="kpi-value">61.3<span class="kpi-unit">%</span></div>
+      
+      <div class="kpi-hint">passed ÷ executed across 4 finished runs</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Runs (7d)</div>
+      <div class="kpi-value">4</div>
+      
+      <div class="kpi-hint">finished runs; excludes re-runs</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Tests Executed</div>
+      <div class="kpi-value">31</div>
+      
+      <div class="kpi-hint">19 passed · 12 failed · 0 skipped</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Avg Run Pass Rate</div>
+      <div class="kpi-value">49.5<span class="kpi-unit">%</span></div>
+      
+      <div class="kpi-hint">mean of each run's own pass rate</div>
+    </div>
+<div class="cell markdown" style="grid-column: span 12;"><h3>Latest Executions Overview</h3>
+<ul><li><strong>Window:</strong> since Sep 30, 2026 — 4 finished automation runs, 31 tests executed (19 passed, 12 failed, 0 skipped).</li><li><strong>Pass rate:</strong> 61.3% across executed tests; <strong>Avg Run Pass Rate 49.5%</strong> (the Results-page metric) — dragged down by one cycle run at 9.1%.</li><li><strong>Latest run:</strong> <code>25218d6e4e4c9844</code> (Oct 6, 10:31 UTC) — a single manual test <strong>failed</strong> with a 30s timeout.</li><li><strong>Best recent run:</strong> suite *Sanity Test* (Oct 4) — 10/10 passed, 100%.</li><li><strong>Source:</strong> <code>automation_report</code> summary/trends. Exclusions: running/cancelled runs and Auto-Heal/AI-fix verification re-runs (0 left out).</li></ul></div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="chart-title">Result Breakdown — Recent Runs</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;max-width:100%;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1787 938">
+  <rect width="1787" height="938" fill="#FFFFFF" rx="12"/>
+  <text x="893.5" y="60" text-anchor="middle" fill="#1F2937" font-size="44px" font-weight="bold" font-family="Arial"></text>
+  <line x1="223" y1="778" x2="1716" y2="778" stroke="rgba(0,0,0,0.08)"/><text x="213" y="792" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">0</text><line x1="223" y1="651" x2="1716" y2="651" stroke="rgba(0,0,0,0.08)"/><text x="213" y="665" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">2.5</text><line x1="223" y1="524" x2="1716" y2="524" stroke="rgba(0,0,0,0.08)"/><text x="213" y="538" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">5</text><line x1="223" y1="397" x2="1716" y2="397" stroke="rgba(0,0,0,0.08)"/><text x="213" y="411" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">7.5</text><line x1="223" y1="270" x2="1716" y2="270" stroke="rgba(0,0,0,0.08)"/><text x="213" y="284" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">10</text><line x1="223" y1="143" x2="1716" y2="143" stroke="rgba(0,0,0,0.08)"/><text x="213" y="157" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">12.5</text><rect x="379.625" y="371.59999999999997" width="60" height="406.40000000000003" fill="#3B82F6"/><text x="409.625" y="578.8" text-anchor="middle" fill="white" font-size="40px" font-family="Arial">8</text><rect x="379.625" y="320.79999999999995" width="60" height="50.800000000000004" fill="#EF4444"/><text x="409.625" y="350.19999999999993" text-anchor="middle" fill="white" font-size="40px" font-family="Arial">1</text><rect x="379.625" y="320.79999999999995" width="60" height="0" fill="#10B981"/><text x="409.625" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 409.625 813)">Cycle One (…</text><rect x="752.875" y="727.2" width="60" height="50.800000000000004" fill="#3B82F6"/><text x="782.875" y="756.6" text-anchor="middle" fill="white" font-size="40px" font-family="Arial">1</text><rect x="752.875" y="219.20000000000005" width="60" height="508" fill="#EF4444"/><text x="782.875" y="477.20000000000005" text-anchor="middle" fill="white" font-size="40px" font-family="Arial">10</text><rect x="752.875" y="219.20000000000005" width="60" height="0" fill="#10B981"/><text x="782.875" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 782.875 813)">Test Cycle …</text><rect x="1126.125" y="270" width="60" height="508" fill="#3B82F6"/><text x="1156.125" y="528" text-anchor="middle" fill="white" font-size="40px" font-family="Arial">10</text><rect x="1126.125" y="270" width="60" height="0" fill="#EF4444"/><rect x="1126.125" y="270" width="60" height="0" fill="#10B981"/><text x="1156.125" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1156.125 813)">Sanity Test…</text><rect x="1499.375" y="778" width="60" height="0" fill="#3B82F6"/><rect x="1499.375" y="727.2" width="60" height="50.800000000000004" fill="#EF4444"/><text x="1529.375" y="756.6" text-anchor="middle" fill="white" font-size="40px" font-family="Arial">1</text><rect x="1499.375" y="727.2" width="60" height="0" fill="#10B981"/><text x="1529.375" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1529.375 813)">Manual (10-…</text><rect x="223" y="913" width="12" height="12" rx="2" fill="#3B82F6"/><text x="241" y="924" fill="#1F2937" font-size="40px" font-family="Arial">Passed</text><rect x="363" y="913" width="12" height="12" rx="2" fill="#EF4444"/><text x="381" y="924" fill="#1F2937" font-size="40px" font-family="Arial">Failed</text><rect x="503" y="913" width="12" height="12" rx="2" fill="#10B981"/><text x="521" y="924" fill="#1F2937" font-size="40px" font-family="Arial">Skipped</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="chart-title">Pass-Rate Trend (last 12 runs)</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;max-width:100%;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1787 938">
+  <rect width="1787" height="938" fill="#FFFFFF" rx="12"/>
+  <text x="893.5" y="60" text-anchor="middle" fill="#1F2937" font-size="44px" font-weight="bold" font-family="Arial"></text>
+  <line x1="223" y1="778" x2="1716" y2="778" stroke="rgba(0,0,0,0.08)"/><text x="213" y="792" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">0</text><line x1="223" y1="651" x2="1716" y2="651" stroke="rgba(0,0,0,0.08)"/><text x="213" y="665" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">20</text><line x1="223" y1="524" x2="1716" y2="524" stroke="rgba(0,0,0,0.08)"/><text x="213" y="538" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">40</text><line x1="223" y1="397" x2="1716" y2="397" stroke="rgba(0,0,0,0.08)"/><text x="213" y="411" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">60</text><line x1="223" y1="270" x2="1716" y2="270" stroke="rgba(0,0,0,0.08)"/><text x="213" y="284" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">80</text><line x1="223" y1="143" x2="1716" y2="143" stroke="rgba(0,0,0,0.08)"/><text x="213" y="157" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">100</text><text x="223" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 223 813)">09-26 11:34</text><text x="494.45454545454544" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 494.45454545454544 813)">09-26 15:11</text><text x="765.9090909090909" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 765.9090909090909 813)">09-26 16:29</text><text x="1037.3636363636363" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1037.3636363636363 813)">09-26 16:31</text><text x="1308.8181818181818" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1308.8181818181818 813)">10-04 16:24</text><text x="1580.2727272727273" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1580.2727272727273 813)">10-04 16:59</text><text x="1716" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1716 813)">10-06 10:31</text><path d="M223,778 L223,143 L358.72727272727275,143 L494.45454545454544,143 L630.1818181818181,143 L765.9090909090909,143 L901.6363636363636,778 L1037.3636363636363,143 L1173.090909090909,778 L1308.8181818181818,720.215 L1444.5454545454547,213.485 L1580.2727272727273,143 L1716,778 L1716,778 Z" fill="#3B82F6" opacity="0.1"/><polyline points="223,143 358.72727272727275,143 494.45454545454544,143 630.1818181818181,143 765.9090909090909,143 901.6363636363636,778 1037.3636363636363,143 1173.090909090909,778 1308.8181818181818,720.215 1444.5454545454547,213.485 1580.2727272727273,143 1716,778" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="223" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="223" y="129" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text><circle cx="358.72727272727275" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="494.45454545454544" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="494.45454545454544" y="129" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text><circle cx="630.1818181818181" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="765.9090909090909" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="765.9090909090909" y="129" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text><circle cx="901.6363636363636" cy="778" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="1037.3636363636363" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="1037.3636363636363" y="129" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text><circle cx="1173.090909090909" cy="778" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="1308.8181818181818" cy="720.215" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="1308.8181818181818" y="706.215" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">9.1</text><circle cx="1444.5454545454547" cy="213.485" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="1580.2727272727273" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="1580.2727272727273" y="129" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text><circle cx="1716" cy="778" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="1716" y="764" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">0</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="chart-title">Pass Rate by Origin (latest runs)</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;max-width:100%;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1787 938">
+  <rect width="1787" height="938" fill="#FFFFFF" rx="12"/>
+  <text x="893.5" y="60" text-anchor="middle" fill="#1F2937" font-size="44px" font-weight="bold" font-family="Arial"></text>
+  <line x1="223" y1="778" x2="1716" y2="778" stroke="rgba(0,0,0,0.08)"/><text x="213" y="792" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">0</text><line x1="223" y1="651" x2="1716" y2="651" stroke="rgba(0,0,0,0.08)"/><text x="213" y="665" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">20</text><line x1="223" y1="524" x2="1716" y2="524" stroke="rgba(0,0,0,0.08)"/><text x="213" y="538" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">40</text><line x1="223" y1="397" x2="1716" y2="397" stroke="rgba(0,0,0,0.08)"/><text x="213" y="411" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">60</text><line x1="223" y1="270" x2="1716" y2="270" stroke="rgba(0,0,0,0.08)"/><text x="213" y="284" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">80</text><line x1="223" y1="143" x2="1716" y2="143" stroke="rgba(0,0,0,0.08)"/><text x="213" y="157" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">100</text><rect x="446.83333333333337" y="143" width="48" height="635" rx="4" fill="#3B82F6"/><text x="470.83333333333337" y="137" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text><text x="471.83333333333337" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 471.83333333333337 813)">Suite</text><rect x="944.5000000000001" y="466.85" width="48" height="311.15" rx="4" fill="#EF4444"/><text x="968.5000000000001" y="460.85" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">49</text><text x="969.5000000000001" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 969.5000000000001 813)">Test Plan</text><rect x="1442.1666666666667" y="778" width="48" height="0" rx="4" fill="#10B981"/><text x="1467.1666666666667" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1467.1666666666667 813)">Manual</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="chart-title">Suite Pass Rate — Sanity Test</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;max-width:100%;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1787 938">
+  <rect width="1787" height="938" fill="#FFFFFF" rx="12"/>
+  <text x="893.5" y="60" text-anchor="middle" fill="#1F2937" font-size="44px" font-weight="bold" font-family="Arial"></text>
+  <path d="M679,60 A429,429 0 1,1 678.9999999999999,60 L679,253.04999999999998 A235.95000000000002,235.95000000000002 0 1,0 679,253.04999999999998 Z" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/><text x="679" y="821.475" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40px" font-weight="bold" font-family="Arial">100%</text><rect x="1358" y="98" width="28" height="28" rx="4" fill="#10B981"/><text x="1398" y="122" fill="#1F2937" font-size="40px" font-family="Arial">Passed (10)</text>
+</svg></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 12;">
+      <div class="table-title">Latest Runs</div>
+      <div class="table-scroll"><table><thead><tr><th>Run ID</th><th>Label / Origin</th><th>Started (UTC)</th><th>Tests</th><th>Passed</th><th>Failed</th><th>Pass Rate</th><th>Duration</th></tr></thead><tbody><tr><td title="25218d6e4e4c9844">25218d6e4e4c9844</td><td title="Manual">Manual</td><td title="2026-10-06 10:31">2026-10-06 10:31</td><td title="1">1</td><td title="0">0</td><td title="1">1</td><td title="0%">0%</td><td title="33s">33s</td></tr><tr><td title="srun_7dd68f4f587d30f0">srun_7dd68f4f587d30f0</td><td title="Sanity Test · suite">Sanity Test · suite</td><td title="2026-10-04 16:59">2026-10-04 16:59</td><td title="10">10</td><td title="10">10</td><td title="0">0</td><td title="100%">100%</td><td title="98s">98s</td></tr><tr><td title="crun_7fe8c1ab9cc9d561">crun_7fe8c1ab9cc9d561</td><td title="Test Release - Cycle One · testplan">Test Release - Cycle One · testplan</td><td title="2026-10-04 16:34">2026-10-04 16:34</td><td title="9">9</td><td title="8">8</td><td title="1">1</td><td title="88.9%">88.9%</td><td title="67s">67s</td></tr><tr><td title="crun_aaf24792d42fa94b">crun_aaf24792d42fa94b</td><td title="Test Release - Test Cycle One · testplan">Test Release - Test Cycle One · testplan</td><td title="2026-10-04 16:24">2026-10-04 16:24</td><td title="11">11</td><td title="1">1</td><td title="10">10</td><td title="9.1%">9.1%</td><td title="373s">373s</td></tr></tbody></table></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 12;">
+      <div class="table-title">Top Failures (since Sep 7)</div>
+      <div class="table-scroll"><table><thead><tr><th>Test</th><th>File</th><th>Failures</th><th>Last Failure</th><th>Last Error</th></tr></thead><tbody><tr><td title="Admin login completes 2FA and lands authenticated (home)">Admin login completes 2FA and lands authenticated (home)</td><td title="auth\profile.spec.ts">auth\profile.spec.ts</td><td title="3">3</td><td title="2026-10-06">2026-10-06</td><td title="Test timeout of 30000ms exceeded.">Test timeout of 30000ms exceeded.</td></tr><tr><td title="Home · TestverQA: page identity">Home · TestverQA: page identity</td><td title="tests/home/home.spec.ts">tests/home/home.spec.ts</td><td title="1">1</td><td title="2026-10-04">2026-10-04</td><td title="Failed">Failed</td></tr><tr><td title="Admin dashboard View shop link navigates to the shop module">Admin dashboard View shop link navigates to the shop module</td><td title="admin\admin.spec.ts">admin\admin.spec.ts</td><td title="1">1</td><td title="2026-10-04">2026-10-04</td><td title="Test timeout of 30000ms exceeded.">Test timeout of 30000ms exceeded.</td></tr><tr><td title="Admin dashboard notifications feed renders all seeded notifications">Admin dashboard notifications feed renders all seeded notifications</td><td title="admin\admin.spec.ts">admin\admin.spec.ts</td><td title="1">1</td><td title="2026-10-04">2026-10-04</td><td title="Test timeout of 30000ms exceeded.">Test timeout of 30000ms exceeded.</td></tr><tr><td title="Admin dashboard recent-orders table shows headers and seeded rows">Admin dashboard recent-orders table shows headers and seeded rows</td><td title="admin\admin.spec.ts">admin\admin.spec.ts</td><td title="1">1</td><td title="2026-10-04">2026-10-04</td><td title="Test timeout of 30000ms exceeded.">Test timeout of 30000ms exceeded.</td></tr><tr><td title="Admin dashboard renders with title, heading and nav active state">Admin dashboard renders with title, heading and nav active state</td><td title="admin\admin.spec.ts">admin\admin.spec.ts</td><td title="1">1</td><td title="2026-10-04">2026-10-04</td><td title="Test timeout of 30000ms exceeded.">Test timeout of 30000ms exceeded.</td></tr></tbody></table></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 12;">
+      <div class="table-title">Flaky Tests (threshold ≥20%, since Sep 7)</div>
+      <div class="table-scroll"><table><thead><tr><th>Test</th><th>File</th><th>Runs</th><th>Pass</th><th>Fail</th><th>Flakiness</th><th>Recent</th></tr></thead><tbody><tr><td title="Home page heading text matches expectations">Home page heading text matches expectations</td><td title="home\home.spec.ts">home\home.spec.ts</td><td title="6">6</td><td title="5">5</td><td title="1">1</td><td title="40%">40%</td><td title="P P P F P P">P P P F P P</td></tr><tr><td title="Admin login completes 2FA and lands authenticated (home)">Admin login completes 2FA and lands authenticated (home)</td><td title="auth\profile.spec.ts">auth\profile.spec.ts</td><td title="4">4</td><td title="1">1</td><td title="3">3</td><td title="33.3%">33.3%</td><td title="F F F P">F F F P</td></tr></tbody></table></div>
+      
+    </div>
+<div class="cell markdown" style="grid-column: span 12;"><h3>Notes &amp; Caveats</h3>
+<ul><li>Pass-rate figures come from <code>automation_report</code> (window <strong>since Sep 30, 2026</strong> / trend window *all recorded runs*). <strong>Skip count is 0</strong> across the window.</li><li>The Oct 4 *Test Cycle One* run (1/11) dominates the 7-day failure count; the Oct 6 manual run is a repeated <strong>2FA login timeout</strong> (already 3 failures since Sep 7).</li><li><strong>API testing:</strong> <code>api_report</code> (7d) returned <strong>0 calls</strong> — the API call log is empty, so no API metrics are shown.</li><li><strong>Suites:</strong> 1 suite (*Sanity Test*, 10 tests, 100% on last run); no schedules or notifications configured.</li><li><strong>No baseline run is currently set</strong> (<code>get_baseline</code> = null), so no run-over-run comparison is included.</li></ul></div>
+    </div>
+    <div class="footer">Generated by Testver</div>
+  </div>
+</body>
+</html>

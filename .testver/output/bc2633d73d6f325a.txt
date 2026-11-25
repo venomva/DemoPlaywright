@@ -1,0 +1,15 @@
+
+Running 10 tests using 1 worker
+
+  ✓   1 [chromium] › tests\auth\auth.spec.ts:13:5 › Sign in · TestverQA: page identity (1.8s)
+  ✓   2 [chromium] › tests\auth\auth.spec.ts:21:5 › Sign in: navigation from auth-card "Testver" link (2.9s)
+  ✓   3 [chromium] › tests\auth\auth.spec.ts:29:5 › Sign in: navigation via "Forgot password?" link (2.9s)
+  ✓   4 [chromium] › tests\auth\auth.spec.ts:37:5 › Forgot password · TestverQA: page identity (1.8s)
+  ✓   5 [chromium] › tests\auth\auth.spec.ts:45:5 › Sign in form exposes required username/password fields (guest, read-only) (1.7s)
+  ✓   6 [firefox] › tests\auth\auth.spec.ts:13:5 › Sign in · TestverQA: page identity (5.0s)
+  ✓   7 [firefox] › tests\auth\auth.spec.ts:21:5 › Sign in: navigation from auth-card "Testver" link (2.6s)
+  ✓   8 [firefox] › tests\auth\auth.spec.ts:29:5 › Sign in: navigation via "Forgot password?" link (2.9s)
+  ✓   9 [firefox] › tests\auth\auth.spec.ts:37:5 › Forgot password · TestverQA: page identity (2.2s)
+  ✓  10 [firefox] › tests\auth\auth.spec.ts:45:5 › Sign in form exposes required username/password fields (guest, read-only) (2.4s)
+
+  10 passed (30.3s)

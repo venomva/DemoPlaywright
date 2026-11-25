@@ -1,0 +1,234 @@
+{
+  "id": "dash_muu4km8h_u98y0t",
+  "version": 1,
+  "title": "QA Summary Report",
+  "subtitle": "TestverQA playground · automation window 2026-09-18 → 2026-10-04 · sources: automation_report, suites_report, api_report, testver",
+  "generatedAt": "2026-10-04T17:59:05.873Z",
+  "cells": [
+    {
+      "type": "kpi",
+      "title": "Latest Run Pass Rate",
+      "value": 100,
+      "unit": "%",
+      "delta": 11.1,
+      "deltaDirection": "up",
+      "deltaGood": "up",
+      "hint": "Sanity Test · 10/10 vs 88.9% prior run",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Overall Pass Rate (window)",
+      "value": 79.7,
+      "unit": "%",
+      "hint": "51 passed / 13 failed of 64 tests, 20 runs",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Automation Coverage",
+      "value": 88,
+      "unit": "%",
+      "hint": "44 of 50 test cases automated",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Test Mgmt Health",
+      "value": 64,
+      "unit": "/100",
+      "hint": "Req coverage 50 · Freshness 38 · Sync 96",
+      "span": 3
+    },
+    {
+      "type": "chart",
+      "title": "Pass Rate by Run (last 10 runs)",
+      "chartType": "line",
+      "labels": [
+        "09-26 14:55",
+        "09-26 15:11",
+        "09-26 15:14",
+        "09-26 16:29",
+        "09-26 16:30",
+        "09-26 16:31",
+        "09-26 16:54",
+        "10-04 16:24",
+        "10-04 16:34",
+        "10-04 16:59"
+      ],
+      "data": [
+        100,
+        100,
+        100,
+        100,
+        0,
+        100,
+        0,
+        9.1,
+        88.9,
+        100
+      ],
+      "colorScheme": "vibrant",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Failure Categories (13 failures in window)",
+      "chartType": "doughnut",
+      "labels": [
+        "Timeout",
+        "Unknown",
+        "Environment"
+      ],
+      "data": [
+        11,
+        1,
+        1
+      ],
+      "colors": "[\"#EF4444\",\"#94A3B8\",\"#F59E0B\"]",
+      "span": 6
+    },
+    {
+      "type": "table",
+      "title": "Top Failing Tests",
+      "headers": [
+        "Test",
+        "File",
+        "Failures",
+        "Last Error"
+      ],
+      "rows": [
+        [
+          "Admin login completes 2FA and lands authenticated (home)",
+          "auth/profile.spec.ts",
+          2,
+          "Test timeout of 30000ms exceeded"
+        ],
+        [
+          "Home · TestverQA: page identity",
+          "tests/home/home.spec.ts",
+          1,
+          "Failed"
+        ],
+        [
+          "Admin dashboard View shop link navigates to the shop module",
+          "admin/admin.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded"
+        ],
+        [
+          "Admin dashboard notifications feed renders all seeded notifications",
+          "admin/admin.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded"
+        ],
+        [
+          "Admin dashboard recent-orders table shows headers and seeded rows",
+          "admin/admin.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded"
+        ],
+        [
+          "Admin dashboard renders with title, heading and nav active state",
+          "admin/admin.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded"
+        ],
+        [
+          "Admin dashboard shows all four KPI stat cards with seeded values",
+          "admin/admin.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded"
+        ],
+        [
+          "Admin profile page shows identity, account stats and recent orders",
+          "auth/profile.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded"
+        ],
+        [
+          "Admin settings: identity is read-only, preferences render as toggles",
+          "auth/profile.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded"
+        ],
+        [
+          "Admin settings: saving notification preferences confirms with success alert",
+          "auth/profile.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded"
+        ]
+      ],
+      "span": 7
+    },
+    {
+      "type": "table",
+      "title": "Flaky Tests (threshold ≥20%)",
+      "headers": [
+        "Test",
+        "Runs",
+        "Pass",
+        "Fail",
+        "Flakiness"
+      ],
+      "rows": [
+        [
+          "Admin login completes 2FA and lands authenticated (home)",
+          "3",
+          "1",
+          "2",
+          "50%"
+        ],
+        [
+          "Home page heading text matches expectations",
+          "6",
+          "5",
+          "1",
+          "40%"
+        ]
+      ],
+      "span": 5
+    },
+    {
+      "type": "markdown",
+      "content": "## Root Cause & Signals\n- **11 of 13 failures are 30s timeouts**, all in `admin/admin.spec.ts` and `auth/profile.spec.ts`. The `get_slowest_tests` action shows these same tests averaging **30.5–31.1s** against Playwright's 30000ms limit — they are failing *at the boundary*, not on assertions.\n- The failing run `crun_aaf24792d42fa94b` (10/11 failed, 9.1%) was followed by `crun_7fe8c1ab9cc9d561` (88.9%) and then the suite run at **100%** — so the defect is intermittent load/timing, not a broken feature.\n- Lowest health scores track the same cluster: Admin 2FA login **42/100**, Home heading text **73/100**; Shop cart/coupon **98/100** and Home identity **92/100** are stable.",
+      "span": 12
+    },
+    {
+      "type": "table",
+      "title": "Test Plans",
+      "headers": [
+        "Plan",
+        "Release / Sprint",
+        "Cases",
+        "Executed",
+        "Passed",
+        "Failed"
+      ],
+      "rows": [
+        [
+          "TP-2 · Test Release",
+          "V1.1 / Sprint 2",
+          "9",
+          "9",
+          "8",
+          "1"
+        ],
+        [
+          "TP-1 · Test Release",
+          "V1.0 / Sprint 1",
+          "11",
+          "11",
+          "1",
+          "10"
+        ]
+      ],
+      "span": 6
+    },
+    {
+      "type": "markdown",
+      "content": "## Coverage & Quality Gaps\n- **Requirements: 1 of 2 covered (50%)** — `REQ-2 KAN-1: Checkout flow` (high) and `REQ-1 Shopping Flow` (medium); one is uncovered.\n- **Critical priority is the weak spot:** 6 critical cases, only **1 automated** (high: 27/28, medium: 16/16).\n- **44 orphan test cases** are not linked to any requirement — this is the main drag on requirement-coverage reporting.\n- **Quality score 0 test cases scored** → Quality Score metric pinned at 50.\n- **Execution freshness 38/100** — only 19 cases executed in the last 7 days.\n- Defects: **1 total, 0 open** (D-1, minor, resolved, KAN-2).\n- **API testing: no data** — 0 calls recorded; `api_report` returned an empty history.",
+      "span": 6
+    }
+  ]
+}

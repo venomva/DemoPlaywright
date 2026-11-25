@@ -1,0 +1,185 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\TestverTesting\\Agents\\FirstTest\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "playwright.testver.3c5c9791.config.ts",
+      "tests/shop/shop.spec.ts",
+      "-g",
+      "Shop: cart total and coupon SAVE10 discount are applied",
+      "--project=chromium"
+    ],
+    "configFile": "E:\\TestverTesting\\Agents\\FirstTest\\playwright.testver.3c5c9791.config.ts",
+    "rootDir": "E:/TestverTesting/Agents/FirstTest/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/TestverTesting/Agents/FirstTest/.testver/runs/3c5c97917bc85c1d/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "E:/TestverTesting/Agents/FirstTest/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/TestverTesting/Agents/FirstTest/.testver/runs/3c5c97917bc85c1d/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "E:/TestverTesting/Agents/FirstTest/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\3c5c97917bc85c1d\\playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\3c5c97917bc85c1d\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "shop\\shop.spec.ts",
+      "file": "shop/shop.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Shop: cart total and coupon SAVE10 discount are applied",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 31580,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "E:\\TestverTesting\\Agents\\FirstTest\\tests\\pages\\ShopPage.ts",
+                        "column": 37,
+                        "line": 78
+                      },
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('add-cart-1')\u001b[22m\n\n\n   at pages\\ShopPage.ts:78\n\n  76 |   /** Add the first product on the current page to the cart. */\n  77 |   async addFirstProductToCart(): Promise<void> {\n> 78 |     await this.firstAddToCartButton.click();\n     |                                     ^\n  79 |   }\n  80 |\n  81 |   /** Read the cart badge line-item count as an integer (e.g. \"🛒 Cart (3)\" → 3). */\n    at ShopPage.addFirstProductToCart (E:\\TestverTesting\\Agents\\FirstTest\\tests\\pages\\ShopPage.ts:78:37)\n    at E:\\TestverTesting\\Agents\\FirstTest\\tests\\shop\\shop.spec.ts:51:18"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-14T11:03:28.094Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\3c5c97917bc85c1d\\test-results\\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\3c5c97917bc85c1d\\test-results\\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\3c5c97917bc85c1d\\test-results\\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\3c5c97917bc85c1d\\test-results\\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "85f010ed1f7ec000d5f7-670e13aa493fe2d189a8",
+          "file": "shop/shop.spec.ts",
+          "line": 44,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-14T11:03:27.228Z",
+    "duration": 33393.002,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

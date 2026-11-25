@@ -1,0 +1,48 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests\auth\profile.spec.ts:73:5 › Admin settings: save profile shows success and persists to profile (self-restoring) (31.0s)
+
+
+  1) [chromium] › tests\auth\profile.spec.ts:73:5 › Admin settings: save profile shows success and persists to profile (self-restoring) 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('password')
+
+
+       at pages\LoginPage.ts:78
+
+      76 |   ): Promise<void> {
+      77 |     await this.usernameInput.fill(username);
+    > 78 |     await this.passwordInput.fill(password);
+         |                              ^
+      79 |     await this.submitButton.click();
+      80 |   }
+      81 |
+        at LoginPage.submitAdminCredentials (E:\TestverTesting\Agents\FirstTest\tests\pages\LoginPage.ts:78:30)
+        at loginAsAdmin (E:\TestverTesting\Agents\FirstTest\tests\auth\profile.spec.ts:25:3)
+        at E:\TestverTesting\Agents\FirstTest\tests\auth\profile.spec.ts:79:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .testver\runs\4f676ce1c1af92b8\test-results\auth-profile-Admin-setting-a35f2--to-profile-self-restoring--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    .testver\runs\4f676ce1c1af92b8\test-results\auth-profile-Admin-setting-a35f2--to-profile-self-restoring--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .testver\runs\4f676ce1c1af92b8\test-results\auth-profile-Admin-setting-a35f2--to-profile-self-restoring--chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    .testver\runs\4f676ce1c1af92b8\test-results\auth-profile-Admin-setting-a35f2--to-profile-self-restoring--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace .testver\runs\4f676ce1c1af92b8\test-results\auth-profile-Admin-setting-a35f2--to-profile-self-restoring--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\auth\profile.spec.ts:73:5 › Admin settings: save profile shows success and persists to profile (self-restoring) 

@@ -1,0 +1,16 @@
+{
+  "targets": [
+    {
+      "file": "tests/pages/CheckoutPage.ts",
+      "find": "getByTestId('ship-exp')",
+      "replace": "getByTestId('ship-express')"
+    }
+  ],
+  "patchedHash": {
+    "tests/pages/CheckoutPage.ts": "e1f27efb6693db6291e4bc397e5ac8f0bcf611633f731dd37eee696cb652a7a9"
+  },
+  "encodings": {
+    "tests/pages/CheckoutPage.ts": "utf8"
+  },
+  "at": "2026-10-28T14:16:04.207Z"
+}

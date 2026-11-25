@@ -1,0 +1,203 @@
+
+Running 6 tests using 1 worker
+
+  x  1 [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Maya Patel (2.7s)
+  x  2 [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Leo Grant (2.7s)
+  ok 3 [chromium] › tests\shop\shop.spec.ts:24:5 › Shop · TestverQA: page identity (1.5s)
+  x  4 [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge (31.3s)
+  x  5 [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied (31.4s)
+  x  6 [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order (31.2s)
+
+
+  1) [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Maya Patel 
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 1
+    Received:   0
+
+      67 |     // Check the products are sorted by price, cheapest first.
+      68 |     const prices = await shopPage.listedPrices();
+    > 69 |     expect(prices.length).toBeGreaterThan(1);
+         |                           ^
+      70 |     const ascending = [...prices].sort((a, b) => a - b);
+      71 |     expect(prices).toEqual(ascending);
+      72 |
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\manager-checkout.spec.ts:69:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Leo Grant 
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 1
+    Received:   0
+
+      67 |     // Check the products are sorted by price, cheapest first.
+      68 |     const prices = await shopPage.listedPrices();
+    > 69 |     expect(prices.length).toBeGreaterThan(1);
+         |                           ^
+      70 |     const ascending = [...prices].sort((a, b) => a - b);
+      71 |     expect(prices).toEqual(ascending);
+      72 |
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\manager-checkout.spec.ts:69:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge ──
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('add-cart-1')
+
+
+       at pages\ShopPage.ts:78
+
+      76 |   /** Add the first product on the current page to the cart. */
+      77 |   async addFirstProductToCart(): Promise<void> {
+    > 78 |     await this.firstAddToCartButton.click();
+         |                                     ^
+      79 |   }
+      80 |
+      81 |   /** Read the cart badge line-item count as an integer (e.g. "🛒 Cart (3)" → 3). */
+        at ShopPage.addFirstProductToCart (E:\TestverTesting\Agents\FirstTest\tests\pages\ShopPage.ts:78:37)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:39:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('add-cart-1')
+
+
+       at pages\ShopPage.ts:78
+
+      76 |   /** Add the first product on the current page to the cart. */
+      77 |   async addFirstProductToCart(): Promise<void> {
+    > 78 |     await this.firstAddToCartButton.click();
+         |                                     ^
+      79 |   }
+      80 |
+      81 |   /** Read the cart badge line-item count as an integer (e.g. "🛒 Cart (3)" → 3). */
+        at ShopPage.addFirstProductToCart (E:\TestverTesting\Agents\FirstTest\tests\pages\ShopPage.ts:78:37)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:51:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order ───────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('add-cart-1')
+
+
+       at pages\ShopPage.ts:78
+
+      76 |   /** Add the first product on the current page to the cart. */
+      77 |   async addFirstProductToCart(): Promise<void> {
+    > 78 |     await this.firstAddToCartButton.click();
+         |                                     ^
+      79 |   }
+      80 |
+      81 |   /** Read the cart badge line-item count as an integer (e.g. "🛒 Cart (3)" → 3). */
+        at ShopPage.addFirstProductToCart (E:\TestverTesting\Agents\FirstTest\tests\pages\ShopPage.ts:78:37)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:81:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Maya Patel 
+    [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Leo Grant 
+    [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge ───
+    [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied 
+    [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order ────────
+  1 passed (1.8m)

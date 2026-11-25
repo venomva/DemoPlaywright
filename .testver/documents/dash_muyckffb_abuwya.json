@@ -1,0 +1,307 @@
+{
+  "id": "dash_muyckffb_abuwya",
+  "version": 1,
+  "title": "Latest Executions Dashboard",
+  "subtitle": "Automation runs · window Sep 30 – Oct 7, 2026 (last 7 days) · data: automation_report",
+  "generatedAt": "2026-10-07T16:53:58.679Z",
+  "cells": [
+    {
+      "type": "kpi",
+      "title": "Pass Rate (7d)",
+      "value": 61.3,
+      "unit": "%",
+      "deltaDirection": "down",
+      "deltaGood": "up",
+      "hint": "passed ÷ executed across 4 finished runs",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Runs (7d)",
+      "value": 4,
+      "hint": "finished runs; excludes re-runs",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Tests Executed",
+      "value": 31,
+      "hint": "19 passed · 12 failed · 0 skipped",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Avg Run Pass Rate",
+      "value": 49.5,
+      "unit": "%",
+      "hint": "mean of each run's own pass rate",
+      "span": 3
+    },
+    {
+      "type": "markdown",
+      "content": "## Latest Executions Overview\n- **Window:** since Sep 30, 2026 — 4 finished automation runs, 31 tests executed (19 passed, 12 failed, 0 skipped).\n- **Pass rate:** 61.3% across executed tests; **Avg Run Pass Rate 49.5%** (the Results-page metric) — dragged down by one cycle run at 9.1%.\n- **Latest run:** `25218d6e4e4c9844` (Oct 6, 10:31 UTC) — a single manual test **failed** with a 30s timeout.\n- **Best recent run:** suite *Sanity Test* (Oct 4) — 10/10 passed, 100%.\n- **Source:** `automation_report` summary/trends. Exclusions: running/cancelled runs and Auto-Heal/AI-fix verification re-runs (0 left out).",
+      "span": 12
+    },
+    {
+      "type": "chart",
+      "title": "Result Breakdown — Recent Runs",
+      "chartType": "stacked_bar",
+      "labels": [
+        "Cycle One (10-04)",
+        "Test Cycle One (10-04)",
+        "Sanity Test (10-04)",
+        "Manual (10-06)"
+      ],
+      "datasets": [
+        {
+          "label": "Passed",
+          "data": [
+            8,
+            1,
+            10,
+            0
+          ]
+        },
+        {
+          "label": "Failed",
+          "data": [
+            1,
+            10,
+            0,
+            1
+          ]
+        },
+        {
+          "label": "Skipped",
+          "data": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "colorScheme": "status",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Pass-Rate Trend (last 12 runs)",
+      "chartType": "line",
+      "labels": [
+        "09-26 11:34",
+        "09-26 14:55",
+        "09-26 15:11",
+        "09-26 15:14",
+        "09-26 16:29",
+        "09-26 16:30",
+        "09-26 16:31",
+        "09-26 16:54",
+        "10-04 16:24",
+        "10-04 16:34",
+        "10-04 16:59",
+        "10-06 10:31"
+      ],
+      "data": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        0,
+        100,
+        0,
+        9.1,
+        88.9,
+        100,
+        0
+      ],
+      "colorScheme": "vibrant",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Pass Rate by Origin (latest runs)",
+      "chartType": "bar",
+      "labels": [
+        "Suite",
+        "Test Plan",
+        "Manual"
+      ],
+      "data": [
+        100,
+        49,
+        0
+      ],
+      "colorScheme": "status",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Suite Pass Rate — Sanity Test",
+      "chartType": "doughnut",
+      "labels": [
+        "Passed",
+        "Failed"
+      ],
+      "data": [
+        10,
+        0
+      ],
+      "colorScheme": "status",
+      "span": 6
+    },
+    {
+      "type": "table",
+      "title": "Latest Runs",
+      "headers": [
+        "Run ID",
+        "Label / Origin",
+        "Started (UTC)",
+        "Tests",
+        "Passed",
+        "Failed",
+        "Pass Rate",
+        "Duration"
+      ],
+      "rows": [
+        [
+          "25218d6e4e4c9844",
+          "Manual",
+          "2026-10-06 10:31",
+          "1",
+          "0",
+          "1",
+          "0%",
+          "33s"
+        ],
+        [
+          "srun_7dd68f4f587d30f0",
+          "Sanity Test · suite",
+          "2026-10-04 16:59",
+          "10",
+          "10",
+          "0",
+          "100%",
+          "98s"
+        ],
+        [
+          "crun_7fe8c1ab9cc9d561",
+          "Test Release - Cycle One · testplan",
+          "2026-10-04 16:34",
+          "9",
+          "8",
+          "1",
+          "88.9%",
+          "67s"
+        ],
+        [
+          "crun_aaf24792d42fa94b",
+          "Test Release - Test Cycle One · testplan",
+          "2026-10-04 16:24",
+          "11",
+          "1",
+          "10",
+          "9.1%",
+          "373s"
+        ]
+      ],
+      "span": 12
+    },
+    {
+      "type": "table",
+      "title": "Top Failures (since Sep 7)",
+      "headers": [
+        "Test",
+        "File",
+        "Failures",
+        "Last Failure",
+        "Last Error"
+      ],
+      "rows": [
+        [
+          "Admin login completes 2FA and lands authenticated (home)",
+          "auth\\profile.spec.ts",
+          "3",
+          "2026-10-06",
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Home · TestverQA: page identity",
+          "tests/home/home.spec.ts",
+          "1",
+          "2026-10-04",
+          "Failed"
+        ],
+        [
+          "Admin dashboard View shop link navigates to the shop module",
+          "admin\\admin.spec.ts",
+          "1",
+          "2026-10-04",
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Admin dashboard notifications feed renders all seeded notifications",
+          "admin\\admin.spec.ts",
+          "1",
+          "2026-10-04",
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Admin dashboard recent-orders table shows headers and seeded rows",
+          "admin\\admin.spec.ts",
+          "1",
+          "2026-10-04",
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Admin dashboard renders with title, heading and nav active state",
+          "admin\\admin.spec.ts",
+          "1",
+          "2026-10-04",
+          "Test timeout of 30000ms exceeded."
+        ]
+      ],
+      "span": 12
+    },
+    {
+      "type": "table",
+      "title": "Flaky Tests (threshold ≥20%, since Sep 7)",
+      "headers": [
+        "Test",
+        "File",
+        "Runs",
+        "Pass",
+        "Fail",
+        "Flakiness",
+        "Recent"
+      ],
+      "rows": [
+        [
+          "Home page heading text matches expectations",
+          "home\\home.spec.ts",
+          "6",
+          "5",
+          "1",
+          "40%",
+          "P P P F P P"
+        ],
+        [
+          "Admin login completes 2FA and lands authenticated (home)",
+          "auth\\profile.spec.ts",
+          "4",
+          "1",
+          "3",
+          "33.3%",
+          "F F F P"
+        ]
+      ],
+      "span": 12
+    },
+    {
+      "type": "markdown",
+      "content": "## Notes & Caveats\n- Pass-rate figures come from `automation_report` (window **since Sep 30, 2026** / trend window *all recorded runs*). **Skip count is 0** across the window.\n- The Oct 4 *Test Cycle One* run (1/11) dominates the 7-day failure count; the Oct 6 manual run is a repeated **2FA login timeout** (already 3 failures since Sep 7).\n- **API testing:** `api_report` (7d) returned **0 calls** — the API call log is empty, so no API metrics are shown.\n- **Suites:** 1 suite (*Sanity Test*, 10 tests, 100% on last run); no schedules or notifications configured.\n- **No baseline run is currently set** (`get_baseline` = null), so no run-over-run comparison is included.",
+      "span": 12
+    }
+  ]
+}

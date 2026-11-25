@@ -1,0 +1,64 @@
+{
+  "tests": [
+    {
+      "scenario": "Manager login lands directly authenticated (no 2FA step)",
+      "testCaseId": null,
+      "specPath": "tests/auth/manager-profile.spec.ts",
+      "testName": "Manager login lands directly authenticated (no 2FA step)",
+      "runs": { "passed": 2, "total": 2 },
+      "status": "pass",
+      "requirementId": null,
+      "note": "TM test-case creation was denied by user; script verified green in two consecutive scoped runs"
+    },
+    {
+      "scenario": "Manager profile shows identity, account stats and recent orders",
+      "testCaseId": null,
+      "specPath": "tests/auth/manager-profile.spec.ts",
+      "testName": "Manager profile shows identity, account stats and recent orders",
+      "runs": { "passed": 2, "total": 2 },
+      "status": "pass",
+      "requirementId": null,
+      "note": "TM test-case creation was denied by user; script verified green in two consecutive scoped runs"
+    },
+    {
+      "scenario": "Manager recent-order View opens the order confirmation",
+      "testCaseId": null,
+      "specPath": "tests/auth/manager-profile.spec.ts",
+      "testName": "Manager recent-order View opens the order confirmation",
+      "runs": { "passed": 2, "total": 2 },
+      "status": "pass",
+      "requirementId": null,
+      "note": "TM test-case creation was denied by user; script verified green in two consecutive scoped runs"
+    },
+    {
+      "scenario": "Manager settings: identity is read-only, 2FA controls are disabled",
+      "testCaseId": null,
+      "specPath": "tests/auth/manager-profile.spec.ts",
+      "testName": "Manager settings: identity is read-only, 2FA controls are disabled",
+      "runs": { "passed": 2, "total": 2 },
+      "status": "pass",
+      "requirementId": null,
+      "note": "TM test-case creation was denied by user; script verified green in two consecutive scoped runs"
+    },
+    {
+      "scenario": "Manager settings: save profile shows success and persists to profile (self-restoring)",
+      "testCaseId": null,
+      "specPath": "tests/auth/manager-profile.spec.ts",
+      "testName": "Manager settings: save profile shows success and persists to profile (self-restoring)",
+      "runs": { "passed": 2, "total": 2 },
+      "status": "pass",
+      "requirementId": null,
+      "note": "TM test-case creation was denied by user; script verified green in two consecutive scoped runs"
+    },
+    {
+      "scenario": "Manager settings: saving notification preferences confirms with success alert",
+      "testCaseId": null,
+      "specPath": "tests/auth/manager-profile.spec.ts",
+      "testName": "Manager settings: saving notification preferences confirms with success alert",
+      "runs": { "passed": 2, "total": 2 },
+      "status": "pass",
+      "requirementId": null,
+      "note": "TM test-case creation was denied by user; script verified green in two consecutive scoped runs"
+    }
+  ]
+}

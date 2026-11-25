@@ -1,0 +1,22 @@
+[
+  {
+    "testName": "Buttons & Interactions · TestverQA: page identity",
+    "startLine": 0,
+    "endLine": 3
+  },
+  {
+    "testName": "Buttons & Interactions: single click emits visible feedback",
+    "startLine": 4,
+    "endLine": 4
+  },
+  {
+    "testName": "Buttons & Interactions · TestverQA: page identity",
+    "startLine": 5,
+    "endLine": 5
+  },
+  {
+    "testName": "Buttons & Interactions: single click emits visible feedback",
+    "startLine": 6,
+    "endLine": 6
+  }
+]

@@ -1,0 +1,3920 @@
+{
+  "suites": [
+    {
+      "id": "suite_572170d33084b186",
+      "name": "Sanity Test",
+      "createdAt": 1791133168560,
+      "updatedAt": 1791133168560,
+      "tests": [
+        {
+          "file": "tests/auth/auth.spec.ts",
+          "name": "Forgot password · TestverQA: page identity",
+          "framework": "playwright",
+          "line": 37,
+          "suite": "auth",
+          "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\""
+        },
+        {
+          "file": "tests/auth/auth.spec.ts",
+          "name": "Sign in form exposes required username/password fields (guest, read-only)",
+          "framework": "playwright",
+          "line": 45,
+          "suite": "auth",
+          "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\""
+        },
+        {
+          "file": "tests/home/home.spec.ts",
+          "name": "Home page loads with expected identity",
+          "framework": "playwright",
+          "line": 9,
+          "suite": "home",
+          "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\""
+        },
+        {
+          "file": "tests/home/home.spec.ts",
+          "name": "Home page heading text matches expectations",
+          "framework": "playwright",
+          "line": 20,
+          "suite": "home",
+          "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\""
+        },
+        {
+          "file": "tests/shop/shop.spec.ts",
+          "name": "Shop · TestverQA: page identity",
+          "framework": "playwright",
+          "line": 24,
+          "suite": "shop",
+          "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\""
+        },
+        {
+          "file": "tests/shop/shop.spec.ts",
+          "name": "Shop: adding a product increments the cart badge",
+          "framework": "playwright",
+          "line": 32,
+          "suite": "shop",
+          "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\""
+        },
+        {
+          "file": "tests/shop/shop.spec.ts",
+          "name": "Shop: cart total and coupon SAVE10 discount are applied",
+          "framework": "playwright",
+          "line": 44,
+          "suite": "shop",
+          "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\""
+        },
+        {
+          "file": "tests/shop/shop.spec.ts",
+          "name": "Shop: full checkout journey places an order",
+          "framework": "playwright",
+          "line": 71,
+          "suite": "shop",
+          "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\""
+        },
+        {
+          "file": "tests/tables/tables.spec.ts",
+          "name": "Tables & Grids: limit selector changes page size",
+          "framework": "playwright",
+          "line": 61,
+          "suite": "tables",
+          "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\""
+        },
+        {
+          "file": "tests/tables/tables.spec.ts",
+          "name": "Tables & Grids: master checkbox selects all rows on the page",
+          "framework": "playwright",
+          "line": 70,
+          "suite": "tables",
+          "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\""
+        }
+      ],
+      "lastRun": {
+        "id": "srun_0f8136726c14a3fe",
+        "suiteId": "suite_572170d33084b186",
+        "startedAt": 1795503030497,
+        "status": "completed",
+        "target": "local",
+        "concurrency": 1,
+        "results": [
+          {
+            "file": "tests/auth/auth.spec.ts",
+            "name": "Forgot password · TestverQA: page identity",
+            "framework": "playwright",
+            "line": 37,
+            "suite": "auth",
+            "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+            "status": "passed",
+            "startedAt": 1795503030500,
+            "attemptRuns": [
+              {
+                "runId": "af715dd46551670c",
+                "status": "passed",
+                "durationMs": 4304
+              }
+            ],
+            "runId": "af715dd46551670c",
+            "durationMs": 4304,
+            "finishedAt": 1795503036651,
+            "attempts": 1
+          },
+          {
+            "file": "tests/auth/auth.spec.ts",
+            "name": "Sign in form exposes required username/password fields (guest, read-only)",
+            "framework": "playwright",
+            "line": 45,
+            "suite": "auth",
+            "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+            "status": "passed",
+            "startedAt": 1795503036652,
+            "attemptRuns": [
+              {
+                "runId": "756cf05be31200af",
+                "status": "passed",
+                "durationMs": 4261
+              }
+            ],
+            "runId": "756cf05be31200af",
+            "durationMs": 4261,
+            "finishedAt": 1795503042815,
+            "attempts": 1
+          },
+          {
+            "file": "tests/home/home.spec.ts",
+            "name": "Home page loads with expected identity",
+            "framework": "playwright",
+            "line": 9,
+            "suite": "home",
+            "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+            "status": "passed",
+            "startedAt": 1795503042815,
+            "attemptRuns": [
+              {
+                "runId": "b04b8a9d3f5c54a3",
+                "status": "passed",
+                "durationMs": 4235
+              }
+            ],
+            "runId": "b04b8a9d3f5c54a3",
+            "durationMs": 4235,
+            "finishedAt": 1795503049017,
+            "attempts": 1
+          },
+          {
+            "file": "tests/home/home.spec.ts",
+            "name": "Home page heading text matches expectations",
+            "framework": "playwright",
+            "line": 20,
+            "suite": "home",
+            "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+            "status": "passed",
+            "startedAt": 1795503049018,
+            "attemptRuns": [
+              {
+                "runId": "b9f471b47bb733bc",
+                "status": "passed",
+                "durationMs": 4903
+              }
+            ],
+            "runId": "b9f471b47bb733bc",
+            "durationMs": 4903,
+            "finishedAt": 1795503055100,
+            "attempts": 1
+          },
+          {
+            "file": "tests/shop/shop.spec.ts",
+            "name": "Shop · TestverQA: page identity",
+            "framework": "playwright",
+            "line": 24,
+            "suite": "shop",
+            "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+            "status": "passed",
+            "startedAt": 1795503055100,
+            "attemptRuns": [
+              {
+                "runId": "37817bcc4006436a",
+                "status": "passed",
+                "durationMs": 4568
+              }
+            ],
+            "runId": "37817bcc4006436a",
+            "durationMs": 4568,
+            "finishedAt": 1795503061171,
+            "attempts": 1
+          },
+          {
+            "file": "tests/shop/shop.spec.ts",
+            "name": "Shop: adding a product increments the cart badge",
+            "framework": "playwright",
+            "line": 32,
+            "suite": "shop",
+            "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+            "status": "passed",
+            "startedAt": 1795503061171,
+            "attemptRuns": [
+              {
+                "runId": "51a47dd53b3b03ff",
+                "status": "passed",
+                "durationMs": 5703
+              }
+            ],
+            "runId": "51a47dd53b3b03ff",
+            "durationMs": 5703,
+            "finishedAt": 1795503068285,
+            "attempts": 1
+          },
+          {
+            "file": "tests/shop/shop.spec.ts",
+            "name": "Shop: cart total and coupon SAVE10 discount are applied",
+            "framework": "playwright",
+            "line": 44,
+            "suite": "shop",
+            "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+            "status": "passed",
+            "startedAt": 1795503068285,
+            "attemptRuns": [
+              {
+                "runId": "7d20823158031eff",
+                "status": "passed",
+                "durationMs": 8069
+              }
+            ],
+            "runId": "7d20823158031eff",
+            "durationMs": 8069,
+            "finishedAt": 1795503077452,
+            "attempts": 1
+          },
+          {
+            "file": "tests/shop/shop.spec.ts",
+            "name": "Shop: full checkout journey places an order",
+            "framework": "playwright",
+            "line": 71,
+            "suite": "shop",
+            "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+            "status": "passed",
+            "startedAt": 1795503077452,
+            "attemptRuns": [
+              {
+                "runId": "10e930323f15dbef",
+                "status": "passed",
+                "durationMs": 13741
+              }
+            ],
+            "runId": "10e930323f15dbef",
+            "durationMs": 13741,
+            "finishedAt": 1795503092635,
+            "attempts": 1
+          },
+          {
+            "file": "tests/tables/tables.spec.ts",
+            "name": "Tables & Grids: limit selector changes page size",
+            "framework": "playwright",
+            "line": 61,
+            "suite": "tables",
+            "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+            "status": "passed",
+            "startedAt": 1795503092636,
+            "attemptRuns": [
+              {
+                "runId": "0934787bff42f32f",
+                "status": "passed",
+                "durationMs": 4955
+              }
+            ],
+            "runId": "0934787bff42f32f",
+            "durationMs": 4955,
+            "finishedAt": 1795503098730,
+            "attempts": 1
+          },
+          {
+            "file": "tests/tables/tables.spec.ts",
+            "name": "Tables & Grids: master checkbox selects all rows on the page",
+            "framework": "playwright",
+            "line": 70,
+            "suite": "tables",
+            "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+            "status": "passed",
+            "startedAt": 1795503098730,
+            "attemptRuns": [
+              {
+                "runId": "ee823e2ae300c64d",
+                "status": "passed",
+                "durationMs": 4474
+              }
+            ],
+            "runId": "ee823e2ae300c64d",
+            "durationMs": 4474,
+            "finishedAt": 1795503104870,
+            "attempts": 1
+          }
+        ],
+        "summary": {
+          "total": 10,
+          "passed": 10,
+          "failed": 0,
+          "skipped": 0
+        },
+        "onlyFailed": false,
+        "browser": "Chrome",
+        "environment": "Production",
+        "finishedAt": 1795503104871
+      },
+      "history": [
+        {
+          "id": "srun_0f8136726c14a3fe",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1795503030497,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1795503030500,
+              "attemptRuns": [
+                {
+                  "runId": "af715dd46551670c",
+                  "status": "passed",
+                  "durationMs": 4304
+                }
+              ],
+              "runId": "af715dd46551670c",
+              "durationMs": 4304,
+              "finishedAt": 1795503036651,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "passed",
+              "startedAt": 1795503036652,
+              "attemptRuns": [
+                {
+                  "runId": "756cf05be31200af",
+                  "status": "passed",
+                  "durationMs": 4261
+                }
+              ],
+              "runId": "756cf05be31200af",
+              "durationMs": 4261,
+              "finishedAt": 1795503042815,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1795503042815,
+              "attemptRuns": [
+                {
+                  "runId": "b04b8a9d3f5c54a3",
+                  "status": "passed",
+                  "durationMs": 4235
+                }
+              ],
+              "runId": "b04b8a9d3f5c54a3",
+              "durationMs": 4235,
+              "finishedAt": 1795503049017,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1795503049018,
+              "attemptRuns": [
+                {
+                  "runId": "b9f471b47bb733bc",
+                  "status": "passed",
+                  "durationMs": 4903
+                }
+              ],
+              "runId": "b9f471b47bb733bc",
+              "durationMs": 4903,
+              "finishedAt": 1795503055100,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1795503055100,
+              "attemptRuns": [
+                {
+                  "runId": "37817bcc4006436a",
+                  "status": "passed",
+                  "durationMs": 4568
+                }
+              ],
+              "runId": "37817bcc4006436a",
+              "durationMs": 4568,
+              "finishedAt": 1795503061171,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1795503061171,
+              "attemptRuns": [
+                {
+                  "runId": "51a47dd53b3b03ff",
+                  "status": "passed",
+                  "durationMs": 5703
+                }
+              ],
+              "runId": "51a47dd53b3b03ff",
+              "durationMs": 5703,
+              "finishedAt": 1795503068285,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1795503068285,
+              "attemptRuns": [
+                {
+                  "runId": "7d20823158031eff",
+                  "status": "passed",
+                  "durationMs": 8069
+                }
+              ],
+              "runId": "7d20823158031eff",
+              "durationMs": 8069,
+              "finishedAt": 1795503077452,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1795503077452,
+              "attemptRuns": [
+                {
+                  "runId": "10e930323f15dbef",
+                  "status": "passed",
+                  "durationMs": 13741
+                }
+              ],
+              "runId": "10e930323f15dbef",
+              "durationMs": 13741,
+              "finishedAt": 1795503092635,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1795503092636,
+              "attemptRuns": [
+                {
+                  "runId": "0934787bff42f32f",
+                  "status": "passed",
+                  "durationMs": 4955
+                }
+              ],
+              "runId": "0934787bff42f32f",
+              "durationMs": 4955,
+              "finishedAt": 1795503098730,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1795503098730,
+              "attemptRuns": [
+                {
+                  "runId": "ee823e2ae300c64d",
+                  "status": "passed",
+                  "durationMs": 4474
+                }
+              ],
+              "runId": "ee823e2ae300c64d",
+              "durationMs": 4474,
+              "finishedAt": 1795503104870,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "Production",
+          "finishedAt": 1795503104871
+        },
+        {
+          "id": "srun_3d337a9a211813a9",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1795409649742,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1795409649747,
+              "attemptRuns": [
+                {
+                  "runId": "e05ac4f708e189a4",
+                  "status": "passed",
+                  "durationMs": 6372
+                }
+              ],
+              "runId": "e05ac4f708e189a4",
+              "durationMs": 6372,
+              "finishedAt": 1795409660007,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "passed",
+              "startedAt": 1795409660008,
+              "attemptRuns": [
+                {
+                  "runId": "df68b5fb6a33fc64",
+                  "status": "passed",
+                  "durationMs": 6309
+                }
+              ],
+              "runId": "df68b5fb6a33fc64",
+              "durationMs": 6309,
+              "finishedAt": 1795409668159,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1795409668160,
+              "attemptRuns": [
+                {
+                  "runId": "28a1b91d3136aebb",
+                  "status": "passed",
+                  "durationMs": 6461
+                }
+              ],
+              "runId": "28a1b91d3136aebb",
+              "durationMs": 6461,
+              "finishedAt": 1795409676297,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1795409676297,
+              "attemptRuns": [
+                {
+                  "runId": "cdadef44d190570a",
+                  "status": "passed",
+                  "durationMs": 6299
+                }
+              ],
+              "runId": "cdadef44d190570a",
+              "durationMs": 6299,
+              "finishedAt": 1795409684430,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1795409684431,
+              "attemptRuns": [
+                {
+                  "runId": "de7f53247bfa9696",
+                  "status": "passed",
+                  "durationMs": 6255
+                }
+              ],
+              "runId": "de7f53247bfa9696",
+              "durationMs": 6255,
+              "finishedAt": 1795409692578,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1795409692579,
+              "attemptRuns": [
+                {
+                  "runId": "90437a4c02bac74a",
+                  "status": "passed",
+                  "durationMs": 8073
+                }
+              ],
+              "runId": "90437a4c02bac74a",
+              "durationMs": 8073,
+              "finishedAt": 1795409702792,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1795409702792,
+              "attemptRuns": [
+                {
+                  "runId": "5019ffcc0a2eef5e",
+                  "status": "passed",
+                  "durationMs": 10430
+                }
+              ],
+              "runId": "5019ffcc0a2eef5e",
+              "durationMs": 10430,
+              "finishedAt": 1795409715017,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1795409715018,
+              "attemptRuns": [
+                {
+                  "runId": "6a27b12c62f0779a",
+                  "status": "passed",
+                  "durationMs": 17520
+                }
+              ],
+              "runId": "6a27b12c62f0779a",
+              "durationMs": 17520,
+              "finishedAt": 1795409734330,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1795409734331,
+              "attemptRuns": [
+                {
+                  "runId": "26cfc898ab61ff6c",
+                  "status": "passed",
+                  "durationMs": 6840
+                }
+              ],
+              "runId": "26cfc898ab61ff6c",
+              "durationMs": 6840,
+              "finishedAt": 1795409743448,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1795409743448,
+              "attemptRuns": [
+                {
+                  "runId": "a496078149c79293",
+                  "status": "passed",
+                  "durationMs": 6219
+                }
+              ],
+              "runId": "a496078149c79293",
+              "durationMs": 6219,
+              "finishedAt": 1795409751571,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "Production",
+          "finishedAt": 1795409751571
+        },
+        {
+          "id": "srun_3149573e8e0c2fea",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1795406543448,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1795406543451,
+              "attemptRuns": [
+                {
+                  "runId": "e3b86af6191dbda6",
+                  "status": "passed",
+                  "durationMs": 4668
+                }
+              ],
+              "runId": "e3b86af6191dbda6",
+              "durationMs": 4668,
+              "finishedAt": 1795406550639,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "passed",
+              "startedAt": 1795406550640,
+              "attemptRuns": [
+                {
+                  "runId": "d7594a690a6877a5",
+                  "status": "passed",
+                  "durationMs": 4094
+                }
+              ],
+              "runId": "d7594a690a6877a5",
+              "durationMs": 4094,
+              "finishedAt": 1795406556737,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1795406556737,
+              "attemptRuns": [
+                {
+                  "runId": "e4fd39363abcaf01",
+                  "status": "passed",
+                  "durationMs": 6297
+                }
+              ],
+              "runId": "e4fd39363abcaf01",
+              "durationMs": 6297,
+              "finishedAt": 1795406564886,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1795406564887,
+              "attemptRuns": [
+                {
+                  "runId": "a128f0d9e8fc653f",
+                  "status": "passed",
+                  "durationMs": 6170
+                }
+              ],
+              "runId": "a128f0d9e8fc653f",
+              "durationMs": 6170,
+              "finishedAt": 1795406573034,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1795406573036,
+              "attemptRuns": [
+                {
+                  "runId": "767a88ecd2a819fd",
+                  "status": "passed",
+                  "durationMs": 6588
+                }
+              ],
+              "runId": "767a88ecd2a819fd",
+              "durationMs": 6588,
+              "finishedAt": 1795406581149,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1795406581149,
+              "attemptRuns": [
+                {
+                  "runId": "0cbd3816231d63fd",
+                  "status": "passed",
+                  "durationMs": 7417
+                }
+              ],
+              "runId": "0cbd3816231d63fd",
+              "durationMs": 7417,
+              "finishedAt": 1795406590303,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1795406590303,
+              "attemptRuns": [
+                {
+                  "runId": "1a2af14f271c023c",
+                  "status": "passed",
+                  "durationMs": 10787
+                }
+              ],
+              "runId": "1a2af14f271c023c",
+              "durationMs": 10787,
+              "finishedAt": 1795406603511,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1795406603512,
+              "attemptRuns": [
+                {
+                  "runId": "0da26f25c928d77b",
+                  "status": "passed",
+                  "durationMs": 16071
+                }
+              ],
+              "runId": "0da26f25c928d77b",
+              "durationMs": 16071,
+              "finishedAt": 1795406621786,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1795406621787,
+              "attemptRuns": [
+                {
+                  "runId": "9a6d8c3b1c1c4561",
+                  "status": "passed",
+                  "durationMs": 6718
+                }
+              ],
+              "runId": "9a6d8c3b1c1c4561",
+              "durationMs": 6718,
+              "finishedAt": 1795406629894,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1795406629895,
+              "attemptRuns": [
+                {
+                  "runId": "2684e03d2357114d",
+                  "status": "passed",
+                  "durationMs": 6443
+                }
+              ],
+              "runId": "2684e03d2357114d",
+              "durationMs": 6443,
+              "finishedAt": 1795406638008,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "Production",
+          "finishedAt": 1795406638008
+        },
+        {
+          "id": "srun_7a914ed3ebc5793c",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1795159228187,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1795159228189,
+              "attemptRuns": [
+                {
+                  "runId": "c40281f6bc62513d",
+                  "status": "passed",
+                  "durationMs": 4351
+                }
+              ],
+              "runId": "c40281f6bc62513d",
+              "durationMs": 4351,
+              "finishedAt": 1795159234306,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "passed",
+              "startedAt": 1795159234306,
+              "attemptRuns": [
+                {
+                  "runId": "5007d08070845c07",
+                  "status": "passed",
+                  "durationMs": 4596
+                }
+              ],
+              "runId": "5007d08070845c07",
+              "durationMs": 4596,
+              "finishedAt": 1795159240371,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1795159240371,
+              "attemptRuns": [
+                {
+                  "runId": "b23e9d9ec3964d3e",
+                  "status": "passed",
+                  "durationMs": 5256
+                }
+              ],
+              "runId": "b23e9d9ec3964d3e",
+              "durationMs": 5256,
+              "finishedAt": 1795159247455,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1795159247455,
+              "attemptRuns": [
+                {
+                  "runId": "35dccfac4e8bc7ac",
+                  "status": "passed",
+                  "durationMs": 4775
+                }
+              ],
+              "runId": "35dccfac4e8bc7ac",
+              "durationMs": 4775,
+              "finishedAt": 1795159253553,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1795159253553,
+              "attemptRuns": [
+                {
+                  "runId": "5e16291d7443cb66",
+                  "status": "passed",
+                  "durationMs": 4400
+                }
+              ],
+              "runId": "5e16291d7443cb66",
+              "durationMs": 4400,
+              "finishedAt": 1795159259642,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1795159259642,
+              "attemptRuns": [
+                {
+                  "runId": "d3f5e444ddb8e4c5",
+                  "status": "passed",
+                  "durationMs": 5900
+                }
+              ],
+              "runId": "d3f5e444ddb8e4c5",
+              "durationMs": 5900,
+              "finishedAt": 1795159266763,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1795159266763,
+              "attemptRuns": [
+                {
+                  "runId": "4b8673400f9c6105",
+                  "status": "passed",
+                  "durationMs": 9533
+                }
+              ],
+              "runId": "4b8673400f9c6105",
+              "durationMs": 9533,
+              "finishedAt": 1795159277909,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1795159277909,
+              "attemptRuns": [
+                {
+                  "runId": "2f3a7e7acb361927",
+                  "status": "passed",
+                  "durationMs": 12756
+                }
+              ],
+              "runId": "2f3a7e7acb361927",
+              "durationMs": 12756,
+              "finishedAt": 1795159292141,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1795159292141,
+              "attemptRuns": [
+                {
+                  "runId": "6b215d542c1f8bd3",
+                  "status": "passed",
+                  "durationMs": 7726
+                }
+              ],
+              "runId": "6b215d542c1f8bd3",
+              "durationMs": 7726,
+              "finishedAt": 1795159302266,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1795159302266,
+              "attemptRuns": [
+                {
+                  "runId": "c271f1f67a1e55c4",
+                  "status": "passed",
+                  "durationMs": 4945
+                }
+              ],
+              "runId": "c271f1f67a1e55c4",
+              "durationMs": 4945,
+              "finishedAt": 1795159308337,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "Production",
+          "finishedAt": 1795159308337
+        },
+        {
+          "id": "srun_a902ff369be40b70",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1794663021788,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1794663021800,
+              "attemptRuns": [
+                {
+                  "runId": "095f9d5677451d68",
+                  "status": "passed",
+                  "durationMs": 6824
+                }
+              ],
+              "runId": "095f9d5677451d68",
+              "durationMs": 6824,
+              "finishedAt": 1794663030074,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "failed",
+              "startedAt": 1794663030086,
+              "attemptRuns": [
+                {
+                  "runId": "df597eda92947dd0",
+                  "status": "failed",
+                  "durationMs": 11797,
+                  "message": "Exit code 1"
+                }
+              ],
+              "runId": "df597eda92947dd0",
+              "durationMs": 11797,
+              "finishedAt": 1794663043371,
+              "message": "Exit code 1",
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1794663043393,
+              "attemptRuns": [
+                {
+                  "runId": "b887f717ce328fe2",
+                  "status": "passed",
+                  "durationMs": 6802
+                }
+              ],
+              "runId": "b887f717ce328fe2",
+              "durationMs": 6802,
+              "finishedAt": 1794663051627,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1794663051639,
+              "attemptRuns": [
+                {
+                  "runId": "3f427e16d478d634",
+                  "status": "passed",
+                  "durationMs": 7032
+                }
+              ],
+              "runId": "3f427e16d478d634",
+              "durationMs": 7032,
+              "finishedAt": 1794663060932,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1794663060946,
+              "attemptRuns": [
+                {
+                  "runId": "4cd7e213d58636f0",
+                  "status": "passed",
+                  "durationMs": 6958
+                }
+              ],
+              "runId": "4cd7e213d58636f0",
+              "durationMs": 6958,
+              "finishedAt": 1794663069307,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1794663069319,
+              "attemptRuns": [
+                {
+                  "runId": "c9533849bab60166",
+                  "status": "passed",
+                  "durationMs": 6919
+                }
+              ],
+              "runId": "c9533849bab60166",
+              "durationMs": 6919,
+              "finishedAt": 1794663077685,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1794663077697,
+              "attemptRuns": [
+                {
+                  "runId": "ddb55587914d4fa8",
+                  "status": "passed",
+                  "durationMs": 7783
+                }
+              ],
+              "runId": "ddb55587914d4fa8",
+              "durationMs": 7783,
+              "finishedAt": 1794663086914,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1794663086930,
+              "attemptRuns": [
+                {
+                  "runId": "a8a6fe400c3793e2",
+                  "status": "passed",
+                  "durationMs": 8473
+                }
+              ],
+              "runId": "a8a6fe400c3793e2",
+              "durationMs": 8473,
+              "finishedAt": 1794663097152,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1794663097165,
+              "attemptRuns": [
+                {
+                  "runId": "1bd0dbdf4af32a6f",
+                  "status": "passed",
+                  "durationMs": 6588
+                }
+              ],
+              "runId": "1bd0dbdf4af32a6f",
+              "durationMs": 6588,
+              "finishedAt": 1794663105356,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1794663105373,
+              "attemptRuns": [
+                {
+                  "runId": "8f3e49b1ab24df31",
+                  "status": "passed",
+                  "durationMs": 6749
+                }
+              ],
+              "runId": "8f3e49b1ab24df31",
+              "durationMs": 6749,
+              "finishedAt": 1794663113655,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 9,
+            "failed": 1,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "Development",
+          "finishedAt": 1794663113671
+        },
+        {
+          "id": "srun_7613e85653a6288f",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1794662831148,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1794662831162,
+              "attemptRuns": [
+                {
+                  "runId": "c14569b87e4cd0cb",
+                  "status": "passed",
+                  "durationMs": 6539
+                }
+              ],
+              "runId": "c14569b87e4cd0cb",
+              "durationMs": 6539,
+              "finishedAt": 1794662839348,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "failed",
+              "startedAt": 1794662839361,
+              "attemptRuns": [
+                {
+                  "runId": "c059ad52a7412687",
+                  "status": "failed",
+                  "durationMs": 11607,
+                  "message": "Exit code 1"
+                }
+              ],
+              "runId": "c059ad52a7412687",
+              "durationMs": 11607,
+              "finishedAt": 1794662852638,
+              "message": "Exit code 1",
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1794662852660,
+              "attemptRuns": [
+                {
+                  "runId": "4ec8b04c62fdc947",
+                  "status": "passed",
+                  "durationMs": 6873
+                }
+              ],
+              "runId": "4ec8b04c62fdc947",
+              "durationMs": 6873,
+              "finishedAt": 1794662861065,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1794662861077,
+              "attemptRuns": [
+                {
+                  "runId": "d34a1f27c8151dbe",
+                  "status": "passed",
+                  "durationMs": 6683
+                }
+              ],
+              "runId": "d34a1f27c8151dbe",
+              "durationMs": 6683,
+              "finishedAt": 1794662869233,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1794662869244,
+              "attemptRuns": [
+                {
+                  "runId": "95406f26d2acf58d",
+                  "status": "passed",
+                  "durationMs": 6212
+                }
+              ],
+              "runId": "95406f26d2acf58d",
+              "durationMs": 6212,
+              "finishedAt": 1794662877395,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1794662877407,
+              "attemptRuns": [
+                {
+                  "runId": "0ea5a87c65375928",
+                  "status": "passed",
+                  "durationMs": 6876
+                }
+              ],
+              "runId": "0ea5a87c65375928",
+              "durationMs": 6876,
+              "finishedAt": 1794662885786,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1794662885796,
+              "attemptRuns": [
+                {
+                  "runId": "13518143afa358f9",
+                  "status": "passed",
+                  "durationMs": 7980
+                }
+              ],
+              "runId": "13518143afa358f9",
+              "durationMs": 7980,
+              "finishedAt": 1794662896024,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1794662896039,
+              "attemptRuns": [
+                {
+                  "runId": "4957d649b46bc3df",
+                  "status": "passed",
+                  "durationMs": 8352
+                }
+              ],
+              "runId": "4957d649b46bc3df",
+              "durationMs": 8352,
+              "finishedAt": 1794662906245,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1794662906258,
+              "attemptRuns": [
+                {
+                  "runId": "c04a2eeec25eaf83",
+                  "status": "passed",
+                  "durationMs": 6736
+                }
+              ],
+              "runId": "c04a2eeec25eaf83",
+              "durationMs": 6736,
+              "finishedAt": 1794662914511,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1794662914523,
+              "attemptRuns": [
+                {
+                  "runId": "a0009deaf3e92412",
+                  "status": "passed",
+                  "durationMs": 6731
+                }
+              ],
+              "runId": "a0009deaf3e92412",
+              "durationMs": 6731,
+              "finishedAt": 1794662922715,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 9,
+            "failed": 1,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "Development",
+          "finishedAt": 1794662922727
+        },
+        {
+          "id": "srun_1b0332f77173ebb7",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1794654347755,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1794654347764,
+              "attemptRuns": [
+                {
+                  "runId": "99f67e1f4d472b7f",
+                  "status": "passed",
+                  "durationMs": 6567
+                }
+              ],
+              "runId": "99f67e1f4d472b7f",
+              "durationMs": 6567,
+              "finishedAt": 1794654355880,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "failed",
+              "startedAt": 1794654355888,
+              "attemptRuns": [
+                {
+                  "runId": "02f8de2c69bc64bb",
+                  "status": "failed",
+                  "durationMs": 11728,
+                  "message": "Exit code 1"
+                }
+              ],
+              "runId": "02f8de2c69bc64bb",
+              "durationMs": 11728,
+              "finishedAt": 1794654369105,
+              "message": "Exit code 1",
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1794654369119,
+              "attemptRuns": [
+                {
+                  "runId": "d31740073709d3a5",
+                  "status": "passed",
+                  "durationMs": 6545
+                }
+              ],
+              "runId": "d31740073709d3a5",
+              "durationMs": 6545,
+              "finishedAt": 1794654377288,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1794654377299,
+              "attemptRuns": [
+                {
+                  "runId": "0932dd10a048a19b",
+                  "status": "passed",
+                  "durationMs": 6721
+                }
+              ],
+              "runId": "0932dd10a048a19b",
+              "durationMs": 6721,
+              "finishedAt": 1794654385424,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1794654385432,
+              "attemptRuns": [
+                {
+                  "runId": "3a145055ec56772d",
+                  "status": "passed",
+                  "durationMs": 6421
+                }
+              ],
+              "runId": "3a145055ec56772d",
+              "durationMs": 6421,
+              "finishedAt": 1794654393546,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1794654393553,
+              "attemptRuns": [
+                {
+                  "runId": "9440d1f27ae6c7bc",
+                  "status": "passed",
+                  "durationMs": 6527
+                }
+              ],
+              "runId": "9440d1f27ae6c7bc",
+              "durationMs": 6527,
+              "finishedAt": 1794654401651,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1794654401659,
+              "attemptRuns": [
+                {
+                  "runId": "16ec7f005095781a",
+                  "status": "passed",
+                  "durationMs": 7665
+                }
+              ],
+              "runId": "16ec7f005095781a",
+              "durationMs": 7665,
+              "finishedAt": 1794654410775,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1794654410786,
+              "attemptRuns": [
+                {
+                  "runId": "08bbad4e8c11b94f",
+                  "status": "passed",
+                  "durationMs": 7839
+                }
+              ],
+              "runId": "08bbad4e8c11b94f",
+              "durationMs": 7839,
+              "finishedAt": 1794654419884,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1794654419893,
+              "attemptRuns": [
+                {
+                  "runId": "547b00a9381a95dd",
+                  "status": "passed",
+                  "durationMs": 6333
+                }
+              ],
+              "runId": "547b00a9381a95dd",
+              "durationMs": 6333,
+              "finishedAt": 1794654428053,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1794654428063,
+              "attemptRuns": [
+                {
+                  "runId": "033a8b532ed5091a",
+                  "status": "passed",
+                  "durationMs": 6397
+                }
+              ],
+              "runId": "033a8b532ed5091a",
+              "durationMs": 6397,
+              "finishedAt": 1794654436170,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 9,
+            "failed": 1,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "Development",
+          "finishedAt": 1794654436178
+        },
+        {
+          "id": "srun_c58725f23cb31ca4",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1794654123568,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1794654123580,
+              "attemptRuns": [
+                {
+                  "runId": "75a16443c2c10711",
+                  "status": "passed",
+                  "durationMs": 6629
+                }
+              ],
+              "runId": "75a16443c2c10711",
+              "durationMs": 6629,
+              "finishedAt": 1794654131788,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "passed",
+              "startedAt": 1794654131797,
+              "attemptRuns": [
+                {
+                  "runId": "c60f056bb70b85da",
+                  "status": "passed",
+                  "durationMs": 5992
+                }
+              ],
+              "runId": "c60f056bb70b85da",
+              "durationMs": 5992,
+              "finishedAt": 1794654138957,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1794654138966,
+              "attemptRuns": [
+                {
+                  "runId": "e62ee64d3869803d",
+                  "status": "passed",
+                  "durationMs": 6434
+                }
+              ],
+              "runId": "e62ee64d3869803d",
+              "durationMs": 6434,
+              "finishedAt": 1794654147099,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1794654147110,
+              "attemptRuns": [
+                {
+                  "runId": "0c96572428f45945",
+                  "status": "passed",
+                  "durationMs": 7097
+                }
+              ],
+              "runId": "0c96572428f45945",
+              "durationMs": 7097,
+              "finishedAt": 1794654156289,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1794654156301,
+              "attemptRuns": [
+                {
+                  "runId": "6011692afbcf4381",
+                  "status": "passed",
+                  "durationMs": 6288
+                }
+              ],
+              "runId": "6011692afbcf4381",
+              "durationMs": 6288,
+              "finishedAt": 1794654164450,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "failed",
+              "startedAt": 1794654164461,
+              "attemptRuns": [
+                {
+                  "runId": "b605814c36b1898a",
+                  "status": "failed",
+                  "durationMs": 36658,
+                  "message": "Exit code 1"
+                }
+              ],
+              "runId": "b605814c36b1898a",
+              "durationMs": 36658,
+              "finishedAt": 1794654202932,
+              "message": "Exit code 1",
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "failed",
+              "startedAt": 1794654202949,
+              "attemptRuns": [
+                {
+                  "runId": "3c5c97917bc85c1d",
+                  "status": "failed",
+                  "durationMs": 36781,
+                  "message": "Exit code 1"
+                }
+              ],
+              "runId": "3c5c97917bc85c1d",
+              "durationMs": 36781,
+              "finishedAt": 1794654241499,
+              "message": "Exit code 1",
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "failed",
+              "startedAt": 1794654241514,
+              "attemptRuns": [
+                {
+                  "runId": "fe925f4b43da27db",
+                  "status": "failed",
+                  "durationMs": 36916,
+                  "message": "Exit code 1"
+                }
+              ],
+              "runId": "fe925f4b43da27db",
+              "durationMs": 36916,
+              "finishedAt": 1794654280057,
+              "message": "Exit code 1",
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1794654280069,
+              "attemptRuns": [
+                {
+                  "runId": "46cf43fa34914d34",
+                  "status": "passed",
+                  "durationMs": 6351
+                }
+              ],
+              "runId": "46cf43fa34914d34",
+              "durationMs": 6351,
+              "finishedAt": 1794654288193,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1794654288203,
+              "attemptRuns": [
+                {
+                  "runId": "3ec5dac77ded8c8c",
+                  "status": "passed",
+                  "durationMs": 6540
+                }
+              ],
+              "runId": "3ec5dac77ded8c8c",
+              "durationMs": 6540,
+              "finishedAt": 1794654296335,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 7,
+            "failed": 3,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "Development",
+          "finishedAt": 1794654296345
+        },
+        {
+          "id": "srun_3487e87428c0deb2",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1794653087925,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1794653087935,
+              "attemptRuns": [
+                {
+                  "runId": "b0f0495fd3bf16f4",
+                  "status": "passed",
+                  "durationMs": 6485
+                }
+              ],
+              "runId": "b0f0495fd3bf16f4",
+              "durationMs": 6485,
+              "finishedAt": 1794653096173,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "passed",
+              "startedAt": 1794653096181,
+              "attemptRuns": [
+                {
+                  "runId": "59e31a68caf2d422",
+                  "status": "passed",
+                  "durationMs": 6419
+                }
+              ],
+              "runId": "59e31a68caf2d422",
+              "durationMs": 6419,
+              "finishedAt": 1794653104298,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1794653104306,
+              "attemptRuns": [
+                {
+                  "runId": "19da79be81ce8c36",
+                  "status": "passed",
+                  "durationMs": 6623
+                }
+              ],
+              "runId": "19da79be81ce8c36",
+              "durationMs": 6623,
+              "finishedAt": 1794653112394,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1794653112402,
+              "attemptRuns": [
+                {
+                  "runId": "b60b3110c9564100",
+                  "status": "passed",
+                  "durationMs": 6350
+                }
+              ],
+              "runId": "b60b3110c9564100",
+              "durationMs": 6350,
+              "finishedAt": 1794653120569,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1794653120577,
+              "attemptRuns": [
+                {
+                  "runId": "8f8e33721a3c0b24",
+                  "status": "passed",
+                  "durationMs": 6183
+                }
+              ],
+              "runId": "8f8e33721a3c0b24",
+              "durationMs": 6183,
+              "finishedAt": 1794653128688,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "failed",
+              "startedAt": 1794653128698,
+              "attemptRuns": [
+                {
+                  "runId": "c661382c6c5e39ee",
+                  "status": "failed",
+                  "durationMs": 36921,
+                  "message": "Exit code 1"
+                }
+              ],
+              "runId": "c661382c6c5e39ee",
+              "durationMs": 36921,
+              "finishedAt": 1794653167251,
+              "message": "Exit code 1",
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1794653167267,
+              "attemptRuns": [
+                {
+                  "runId": "52f21fc10116d45f",
+                  "status": "passed",
+                  "durationMs": 7687
+                }
+              ],
+              "runId": "52f21fc10116d45f",
+              "durationMs": 7687,
+              "finishedAt": 1794653176439,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1794653176455,
+              "attemptRuns": [
+                {
+                  "runId": "77b1dcb93782cdb3",
+                  "status": "passed",
+                  "durationMs": 7978
+                }
+              ],
+              "runId": "77b1dcb93782cdb3",
+              "durationMs": 7978,
+              "finishedAt": 1794653186656,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1794653186667,
+              "attemptRuns": [
+                {
+                  "runId": "fc75a9341fb7f325",
+                  "status": "passed",
+                  "durationMs": 6491
+                }
+              ],
+              "runId": "fc75a9341fb7f325",
+              "durationMs": 6491,
+              "finishedAt": 1794653194825,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1794653194834,
+              "attemptRuns": [
+                {
+                  "runId": "b04ad8ad2dc395bd",
+                  "status": "passed",
+                  "durationMs": 6307
+                }
+              ],
+              "runId": "b04ad8ad2dc395bd",
+              "durationMs": 6307,
+              "finishedAt": 1794653202960,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 9,
+            "failed": 1,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "Development",
+          "finishedAt": 1794653202967
+        },
+        {
+          "id": "srun_440a856b167436a5",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1792422774139,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1792422774143,
+              "attemptRuns": [
+                {
+                  "runId": "71e2c7e3c3a4d5ca",
+                  "status": "passed",
+                  "durationMs": 4772
+                }
+              ],
+              "runId": "71e2c7e3c3a4d5ca",
+              "durationMs": 4772,
+              "finishedAt": 1792422779277,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "passed",
+              "startedAt": 1792422779283,
+              "attemptRuns": [
+                {
+                  "runId": "792acf74da6984e4",
+                  "status": "passed",
+                  "durationMs": 6423
+                }
+              ],
+              "runId": "792acf74da6984e4",
+              "durationMs": 6423,
+              "finishedAt": 1792422786415,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1792422786423,
+              "attemptRuns": [
+                {
+                  "runId": "7f4e552283ec9aaf",
+                  "status": "passed",
+                  "durationMs": 7675
+                }
+              ],
+              "runId": "7f4e552283ec9aaf",
+              "durationMs": 7675,
+              "finishedAt": 1792422794587,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1792422794597,
+              "attemptRuns": [
+                {
+                  "runId": "c8639a8c3181634a",
+                  "status": "passed",
+                  "durationMs": 8666
+                }
+              ],
+              "runId": "c8639a8c3181634a",
+              "durationMs": 8666,
+              "finishedAt": 1792422803767,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1792422803776,
+              "attemptRuns": [
+                {
+                  "runId": "ee4a3d6f3fa7b129",
+                  "status": "passed",
+                  "durationMs": 8642
+                }
+              ],
+              "runId": "ee4a3d6f3fa7b129",
+              "durationMs": 8642,
+              "finishedAt": 1792422812918,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1792422812922,
+              "attemptRuns": [
+                {
+                  "runId": "ead1cf49d8381924",
+                  "status": "passed",
+                  "durationMs": 13370
+                }
+              ],
+              "runId": "ead1cf49d8381924",
+              "durationMs": 13370,
+              "finishedAt": 1792422827184,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1792422827189,
+              "attemptRuns": [
+                {
+                  "runId": "1ea7e123abb2dabf",
+                  "status": "passed",
+                  "durationMs": 15833
+                }
+              ],
+              "runId": "1ea7e123abb2dabf",
+              "durationMs": 15833,
+              "finishedAt": 1792422843416,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1792422843424,
+              "attemptRuns": [
+                {
+                  "runId": "f4efcc5b685c3432",
+                  "status": "passed",
+                  "durationMs": 24873
+                }
+              ],
+              "runId": "f4efcc5b685c3432",
+              "durationMs": 24873,
+              "finishedAt": 1792422868759,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1792422868765,
+              "attemptRuns": [
+                {
+                  "runId": "73ecc52b89a568b5",
+                  "status": "passed",
+                  "durationMs": 9439
+                }
+              ],
+              "runId": "73ecc52b89a568b5",
+              "durationMs": 9439,
+              "finishedAt": 1792422878931,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1792422878936,
+              "attemptRuns": [
+                {
+                  "runId": "a2ef0f11e05a4f6b",
+                  "status": "passed",
+                  "durationMs": 9658
+                }
+              ],
+              "runId": "a2ef0f11e05a4f6b",
+              "durationMs": 9658,
+              "finishedAt": 1792422889118,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "Production",
+          "finishedAt": 1792422889127
+        },
+        {
+          "id": "srun_3b621dda8926a53e",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1791562040290,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1791562040294,
+              "attemptRuns": [
+                {
+                  "runId": "0863336eaddc59c1",
+                  "status": "passed",
+                  "durationMs": 4202
+                }
+              ],
+              "runId": "0863336eaddc59c1",
+              "durationMs": 4202,
+              "finishedAt": 1791562045378,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "passed",
+              "startedAt": 1791562045381,
+              "attemptRuns": [
+                {
+                  "runId": "8cc0ba220421aed5",
+                  "status": "passed",
+                  "durationMs": 5572
+                }
+              ],
+              "runId": "8cc0ba220421aed5",
+              "durationMs": 5572,
+              "finishedAt": 1791562051530,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1791562051536,
+              "attemptRuns": [
+                {
+                  "runId": "46056df764a48ed8",
+                  "status": "passed",
+                  "durationMs": 8801
+                }
+              ],
+              "runId": "46056df764a48ed8",
+              "durationMs": 8801,
+              "finishedAt": 1791562060699,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1791562060707,
+              "attemptRuns": [
+                {
+                  "runId": "9cacb8a0ab14012f",
+                  "status": "passed",
+                  "durationMs": 7869
+                }
+              ],
+              "runId": "9cacb8a0ab14012f",
+              "durationMs": 7869,
+              "finishedAt": 1791562068859,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1791562068864,
+              "attemptRuns": [
+                {
+                  "runId": "a4a2835324f5c738",
+                  "status": "passed",
+                  "durationMs": 6133
+                }
+              ],
+              "runId": "a4a2835324f5c738",
+              "durationMs": 6133,
+              "finishedAt": 1791562075973,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1791562075980,
+              "attemptRuns": [
+                {
+                  "runId": "7979834161701cc3",
+                  "status": "passed",
+                  "durationMs": 8433
+                }
+              ],
+              "runId": "7979834161701cc3",
+              "durationMs": 8433,
+              "finishedAt": 1791562085135,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1791562085139,
+              "attemptRuns": [
+                {
+                  "runId": "ab95f5ba64637f8f",
+                  "status": "passed",
+                  "durationMs": 10249
+                }
+              ],
+              "runId": "ab95f5ba64637f8f",
+              "durationMs": 10249,
+              "finishedAt": 1791562096302,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1791562096307,
+              "attemptRuns": [
+                {
+                  "runId": "f859aad6e5332322",
+                  "status": "passed",
+                  "durationMs": 15522
+                }
+              ],
+              "runId": "f859aad6e5332322",
+              "durationMs": 15522,
+              "finishedAt": 1791562112521,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1791562112527,
+              "attemptRuns": [
+                {
+                  "runId": "cf6d935a9d725a5e",
+                  "status": "passed",
+                  "durationMs": 6992
+                }
+              ],
+              "runId": "cf6d935a9d725a5e",
+              "durationMs": 6992,
+              "finishedAt": 1791562119638,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1791562119644,
+              "attemptRuns": [
+                {
+                  "runId": "95a9e928ad26d4e1",
+                  "status": "passed",
+                  "durationMs": 6211
+                }
+              ],
+              "runId": "95a9e928ad26d4e1",
+              "durationMs": 6211,
+              "finishedAt": 1791562126823,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "QA (playground)",
+          "finishedAt": 1791562126831
+        },
+        {
+          "id": "srun_55f680fe042b41e9",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1791484817658,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1791484817662,
+              "attemptRuns": [
+                {
+                  "runId": "d9287c56e1278194",
+                  "status": "passed",
+                  "durationMs": 6250
+                }
+              ],
+              "runId": "d9287c56e1278194",
+              "durationMs": 6250,
+              "finishedAt": 1791484824786,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "passed",
+              "startedAt": 1791484824791,
+              "attemptRuns": [
+                {
+                  "runId": "189fefb34d04b2ba",
+                  "status": "passed",
+                  "durationMs": 8398
+                }
+              ],
+              "runId": "189fefb34d04b2ba",
+              "durationMs": 8398,
+              "finishedAt": 1791484833959,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1791484833965,
+              "attemptRuns": [
+                {
+                  "runId": "adb218a5a49a07de",
+                  "status": "passed",
+                  "durationMs": 6153
+                }
+              ],
+              "runId": "adb218a5a49a07de",
+              "durationMs": 6153,
+              "finishedAt": 1791484841118,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1791484841123,
+              "attemptRuns": [
+                {
+                  "runId": "64bf5e6e4251bd0d",
+                  "status": "passed",
+                  "durationMs": 6931
+                }
+              ],
+              "runId": "64bf5e6e4251bd0d",
+              "durationMs": 6931,
+              "finishedAt": 1791484848251,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1791484848257,
+              "attemptRuns": [
+                {
+                  "runId": "d37c12e6e61d4393",
+                  "status": "passed",
+                  "durationMs": 6634
+                }
+              ],
+              "runId": "d37c12e6e61d4393",
+              "durationMs": 6634,
+              "finishedAt": 1791484855400,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1791484855405,
+              "attemptRuns": [
+                {
+                  "runId": "360ad883a94c8b3a",
+                  "status": "passed",
+                  "durationMs": 8894
+                }
+              ],
+              "runId": "360ad883a94c8b3a",
+              "durationMs": 8894,
+              "finishedAt": 1791484864574,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "failed",
+              "startedAt": 1791484864578,
+              "attemptRuns": [
+                {
+                  "runId": "c9cb1628d7ce36c9",
+                  "status": "failed",
+                  "durationMs": 12644,
+                  "message": "Exit code 1"
+                }
+              ],
+              "runId": "c9cb1628d7ce36c9",
+              "durationMs": 12644,
+              "finishedAt": 1791484877751,
+              "message": "Exit code 1",
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1791484877755,
+              "attemptRuns": [
+                {
+                  "runId": "5be31662695ec729",
+                  "status": "passed",
+                  "durationMs": 24734
+                }
+              ],
+              "runId": "5be31662695ec729",
+              "durationMs": 24734,
+              "finishedAt": 1791484903128,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1791484903132,
+              "attemptRuns": [
+                {
+                  "runId": "649caf0d2b55a289",
+                  "status": "passed",
+                  "durationMs": 7336
+                }
+              ],
+              "runId": "649caf0d2b55a289",
+              "durationMs": 7336,
+              "finishedAt": 1791484911268,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1791484911273,
+              "attemptRuns": [
+                {
+                  "runId": "dd4142bf29293bc0",
+                  "status": "passed",
+                  "durationMs": 7366
+                }
+              ],
+              "runId": "dd4142bf29293bc0",
+              "durationMs": 7366,
+              "finishedAt": 1791484919421,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 9,
+            "failed": 1,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "QA (playground)",
+          "finishedAt": 1791484919427
+        },
+        {
+          "id": "srun_749df0360eee22fc",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1791478600857,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1791478600860,
+              "attemptRuns": [
+                {
+                  "runId": "6dc6469ea28dc38a",
+                  "status": "passed",
+                  "durationMs": 6380
+                }
+              ],
+              "runId": "6dc6469ea28dc38a",
+              "durationMs": 6380,
+              "finishedAt": 1791478608044,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "passed",
+              "startedAt": 1791478608047,
+              "attemptRuns": [
+                {
+                  "runId": "3f8ff1f5a359fceb",
+                  "status": "passed",
+                  "durationMs": 7366
+                }
+              ],
+              "runId": "3f8ff1f5a359fceb",
+              "durationMs": 7366,
+              "finishedAt": 1791478616177,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1791478616182,
+              "attemptRuns": [
+                {
+                  "runId": "e262c4e9fd782df0",
+                  "status": "passed",
+                  "durationMs": 6755
+                }
+              ],
+              "runId": "e262c4e9fd782df0",
+              "durationMs": 6755,
+              "finishedAt": 1791478623295,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1791478623301,
+              "attemptRuns": [
+                {
+                  "runId": "27c8b0d2c0fca382",
+                  "status": "passed",
+                  "durationMs": 7244
+                }
+              ],
+              "runId": "27c8b0d2c0fca382",
+              "durationMs": 7244,
+              "finishedAt": 1791478631538,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1791478631542,
+              "attemptRuns": [
+                {
+                  "runId": "6b4301fec24407d7",
+                  "status": "passed",
+                  "durationMs": 6446
+                }
+              ],
+              "runId": "6b4301fec24407d7",
+              "durationMs": 6446,
+              "finishedAt": 1791478638682,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1791478638687,
+              "attemptRuns": [
+                {
+                  "runId": "adfe646347f35bf3",
+                  "status": "passed",
+                  "durationMs": 7794
+                }
+              ],
+              "runId": "adfe646347f35bf3",
+              "durationMs": 7794,
+              "finishedAt": 1791478646824,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1791478646827,
+              "attemptRuns": [
+                {
+                  "runId": "47dea56bb1e76c92",
+                  "status": "passed",
+                  "durationMs": 10790
+                }
+              ],
+              "runId": "47dea56bb1e76c92",
+              "durationMs": 10790,
+              "finishedAt": 1791478658010,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1791478658013,
+              "attemptRuns": [
+                {
+                  "runId": "1da6cca7d80417a3",
+                  "status": "passed",
+                  "durationMs": 15045
+                }
+              ],
+              "runId": "1da6cca7d80417a3",
+              "durationMs": 15045,
+              "finishedAt": 1791478673257,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "failed",
+              "startedAt": 1791478673260,
+              "attemptRuns": [
+                {
+                  "runId": "f174317e6e6f0858",
+                  "status": "failed",
+                  "durationMs": 12304,
+                  "message": "Exit code 1"
+                }
+              ],
+              "runId": "f174317e6e6f0858",
+              "durationMs": 12304,
+              "finishedAt": 1791478686459,
+              "message": "Exit code 1",
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "failed",
+              "startedAt": 1791478686462,
+              "attemptRuns": [
+                {
+                  "runId": "529743488fc92d63",
+                  "status": "failed",
+                  "durationMs": 11314,
+                  "message": "Exit code 1"
+                }
+              ],
+              "runId": "529743488fc92d63",
+              "durationMs": 11314,
+              "finishedAt": 1791478698637,
+              "message": "Exit code 1",
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 8,
+            "failed": 2,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "QA (playground)",
+          "finishedAt": 1791478698640
+        },
+        {
+          "id": "srun_7dd68f4f587d30f0",
+          "suiteId": "suite_572170d33084b186",
+          "startedAt": 1791133176302,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Forgot password · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 37,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Forgot password · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1791133176305,
+              "attemptRuns": [
+                {
+                  "runId": "a1a9b546f5f8b52d",
+                  "status": "passed",
+                  "durationMs": 6561
+                }
+              ],
+              "runId": "a1a9b546f5f8b52d",
+              "durationMs": 6561,
+              "finishedAt": 1791133183438,
+              "attempts": 1
+            },
+            {
+              "file": "tests/auth/auth.spec.ts",
+              "name": "Sign in form exposes required username/password fields (guest, read-only)",
+              "framework": "playwright",
+              "line": 45,
+              "suite": "auth",
+              "command": "npx playwright test \"tests/auth/auth.spec.ts\" -g \"Sign in form exposes required username/password fields \\(guest, read-only\\)\"",
+              "status": "passed",
+              "startedAt": 1791133183442,
+              "attemptRuns": [
+                {
+                  "runId": "a902263f4009097b",
+                  "status": "passed",
+                  "durationMs": 8789
+                }
+              ],
+              "runId": "a902263f4009097b",
+              "durationMs": 8789,
+              "finishedAt": 1791133192606,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page loads with expected identity",
+              "framework": "playwright",
+              "line": 9,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page loads with expected identity\"",
+              "status": "passed",
+              "startedAt": 1791133192612,
+              "attemptRuns": [
+                {
+                  "runId": "b3dbc9434b3bdf0a",
+                  "status": "passed",
+                  "durationMs": 7004
+                }
+              ],
+              "runId": "b3dbc9434b3bdf0a",
+              "durationMs": 7004,
+              "finishedAt": 1791133199789,
+              "attempts": 1
+            },
+            {
+              "file": "tests/home/home.spec.ts",
+              "name": "Home page heading text matches expectations",
+              "framework": "playwright",
+              "line": 20,
+              "suite": "home",
+              "command": "npx playwright test \"tests/home/home.spec.ts\" -g \"Home page heading text matches expectations\"",
+              "status": "passed",
+              "startedAt": 1791133199795,
+              "attemptRuns": [
+                {
+                  "runId": "69d3c20a8bee317b",
+                  "status": "passed",
+                  "durationMs": 8134
+                }
+              ],
+              "runId": "69d3c20a8bee317b",
+              "durationMs": 8134,
+              "finishedAt": 1791133208992,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1791133208996,
+              "attemptRuns": [
+                {
+                  "runId": "3e0e3e75c04ccbf4",
+                  "status": "passed",
+                  "durationMs": 6334
+                }
+              ],
+              "runId": "3e0e3e75c04ccbf4",
+              "durationMs": 6334,
+              "finishedAt": 1791133216147,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1791133216152,
+              "attemptRuns": [
+                {
+                  "runId": "3d2786588d6debaa",
+                  "status": "passed",
+                  "durationMs": 9476
+                }
+              ],
+              "runId": "3d2786588d6debaa",
+              "durationMs": 9476,
+              "finishedAt": 1791133226312,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: cart total and coupon SAVE10 discount are applied",
+              "framework": "playwright",
+              "line": 44,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: cart total and coupon SAVE10 discount are applied\"",
+              "status": "passed",
+              "startedAt": 1791133226315,
+              "attemptRuns": [
+                {
+                  "runId": "9e266d9e9580773f",
+                  "status": "passed",
+                  "durationMs": 12348
+                }
+              ],
+              "runId": "9e266d9e9580773f",
+              "durationMs": 12348,
+              "finishedAt": 1791133239505,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1791133239510,
+              "attemptRuns": [
+                {
+                  "runId": "513a2580702129b2",
+                  "status": "passed",
+                  "durationMs": 17736
+                }
+              ],
+              "runId": "513a2580702129b2",
+              "durationMs": 17736,
+              "finishedAt": 1791133257764,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: limit selector changes page size",
+              "framework": "playwright",
+              "line": 61,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: limit selector changes page size\"",
+              "status": "passed",
+              "startedAt": 1791133257767,
+              "attemptRuns": [
+                {
+                  "runId": "7725c84b1aade01d",
+                  "status": "passed",
+                  "durationMs": 7300
+                }
+              ],
+              "runId": "7725c84b1aade01d",
+              "durationMs": 7300,
+              "finishedAt": 1791133265926,
+              "attempts": 1
+            },
+            {
+              "file": "tests/tables/tables.spec.ts",
+              "name": "Tables & Grids: master checkbox selects all rows on the page",
+              "framework": "playwright",
+              "line": 70,
+              "suite": "tables",
+              "command": "npx playwright test \"tests/tables/tables.spec.ts\" -g \"Tables & Grids: master checkbox selects all rows on the page\"",
+              "status": "passed",
+              "startedAt": 1791133265931,
+              "attemptRuns": [
+                {
+                  "runId": "07b5fabb1a30430e",
+                  "status": "passed",
+                  "durationMs": 7160
+                }
+              ],
+              "runId": "07b5fabb1a30430e",
+              "durationMs": 7160,
+              "finishedAt": 1791133274064,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "QA (playground)",
+          "finishedAt": 1791133274069
+        }
+      ]
+    },
+    {
+      "id": "suite_2198f121a26b2daa",
+      "name": "Self Check",
+      "createdAt": 1791550157783,
+      "updatedAt": 1791550157783,
+      "tests": [
+        {
+          "file": "tests/auth/profile.spec.ts",
+          "name": "Admin login completes 2FA and lands authenticated (home)",
+          "framework": "playwright",
+          "line": 35,
+          "suite": "profile",
+          "command": "npx playwright test \"tests/auth/profile.spec.ts\" -g \"Admin login completes 2FA and lands authenticated \\(home\\)\""
+        },
+        {
+          "file": "tests/shop/shop.spec.ts",
+          "name": "Shop · TestverQA: page identity",
+          "framework": "playwright",
+          "line": 24,
+          "suite": "shop",
+          "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\""
+        },
+        {
+          "file": "tests/shop/shop.spec.ts",
+          "name": "Shop: adding a product increments the cart badge",
+          "framework": "playwright",
+          "line": 32,
+          "suite": "shop",
+          "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\""
+        },
+        {
+          "file": "tests/shop/shop.spec.ts",
+          "name": "Shop: full checkout journey places an order",
+          "framework": "playwright",
+          "line": 71,
+          "suite": "shop",
+          "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\""
+        }
+      ],
+      "lastRun": {
+        "id": "srun_2a76c0eee3c316c8",
+        "suiteId": "suite_2198f121a26b2daa",
+        "startedAt": 1795158233339,
+        "status": "completed",
+        "target": "local",
+        "concurrency": 1,
+        "results": [
+          {
+            "file": "tests/auth/profile.spec.ts",
+            "name": "Admin login completes 2FA and lands authenticated (home)",
+            "framework": "playwright",
+            "line": 35,
+            "suite": "profile",
+            "command": "npx playwright test \"tests/auth/profile.spec.ts\" -g \"Admin login completes 2FA and lands authenticated \\(home\\)\"",
+            "status": "passed",
+            "startedAt": 1795158233341,
+            "attemptRuns": [
+              {
+                "runId": "b359b250ed30d278",
+                "status": "passed",
+                "durationMs": 6213
+              }
+            ],
+            "runId": "b359b250ed30d278",
+            "durationMs": 6213,
+            "finishedAt": 1795158241447,
+            "attempts": 1
+          },
+          {
+            "file": "tests/shop/shop.spec.ts",
+            "name": "Shop · TestverQA: page identity",
+            "framework": "playwright",
+            "line": 24,
+            "suite": "shop",
+            "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+            "status": "passed",
+            "startedAt": 1795158241448,
+            "attemptRuns": [
+              {
+                "runId": "6122c36d25539e8d",
+                "status": "passed",
+                "durationMs": 4309
+              }
+            ],
+            "runId": "6122c36d25539e8d",
+            "durationMs": 4309,
+            "finishedAt": 1795158247524,
+            "attempts": 1
+          },
+          {
+            "file": "tests/shop/shop.spec.ts",
+            "name": "Shop: adding a product increments the cart badge",
+            "framework": "playwright",
+            "line": 32,
+            "suite": "shop",
+            "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+            "status": "passed",
+            "startedAt": 1795158247525,
+            "attemptRuns": [
+              {
+                "runId": "0afa040742532a48",
+                "status": "passed",
+                "durationMs": 5802
+              }
+            ],
+            "runId": "0afa040742532a48",
+            "durationMs": 5802,
+            "finishedAt": 1795158254659,
+            "attempts": 1
+          },
+          {
+            "file": "tests/shop/shop.spec.ts",
+            "name": "Shop: full checkout journey places an order",
+            "framework": "playwright",
+            "line": 71,
+            "suite": "shop",
+            "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+            "status": "passed",
+            "startedAt": 1795158254660,
+            "attemptRuns": [
+              {
+                "runId": "60893862d786b67a",
+                "status": "passed",
+                "durationMs": 12529
+              }
+            ],
+            "runId": "60893862d786b67a",
+            "durationMs": 12529,
+            "finishedAt": 1795158268868,
+            "attempts": 1
+          }
+        ],
+        "summary": {
+          "total": 4,
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0
+        },
+        "onlyFailed": false,
+        "browser": "Chrome",
+        "environment": "Production",
+        "finishedAt": 1795158268868
+      },
+      "history": [
+        {
+          "id": "srun_2a76c0eee3c316c8",
+          "suiteId": "suite_2198f121a26b2daa",
+          "startedAt": 1795158233339,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/profile.spec.ts",
+              "name": "Admin login completes 2FA and lands authenticated (home)",
+              "framework": "playwright",
+              "line": 35,
+              "suite": "profile",
+              "command": "npx playwright test \"tests/auth/profile.spec.ts\" -g \"Admin login completes 2FA and lands authenticated \\(home\\)\"",
+              "status": "passed",
+              "startedAt": 1795158233341,
+              "attemptRuns": [
+                {
+                  "runId": "b359b250ed30d278",
+                  "status": "passed",
+                  "durationMs": 6213
+                }
+              ],
+              "runId": "b359b250ed30d278",
+              "durationMs": 6213,
+              "finishedAt": 1795158241447,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1795158241448,
+              "attemptRuns": [
+                {
+                  "runId": "6122c36d25539e8d",
+                  "status": "passed",
+                  "durationMs": 4309
+                }
+              ],
+              "runId": "6122c36d25539e8d",
+              "durationMs": 4309,
+              "finishedAt": 1795158247524,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1795158247525,
+              "attemptRuns": [
+                {
+                  "runId": "0afa040742532a48",
+                  "status": "passed",
+                  "durationMs": 5802
+                }
+              ],
+              "runId": "0afa040742532a48",
+              "durationMs": 5802,
+              "finishedAt": 1795158254659,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1795158254660,
+              "attemptRuns": [
+                {
+                  "runId": "60893862d786b67a",
+                  "status": "passed",
+                  "durationMs": 12529
+                }
+              ],
+              "runId": "60893862d786b67a",
+              "durationMs": 12529,
+              "finishedAt": 1795158268868,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 4,
+            "passed": 4,
+            "failed": 0,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "Production",
+          "finishedAt": 1795158268868
+        },
+        {
+          "id": "srun_005b04ac84b3afe1",
+          "suiteId": "suite_2198f121a26b2daa",
+          "startedAt": 1791550207173,
+          "status": "completed",
+          "target": "local",
+          "concurrency": 1,
+          "results": [
+            {
+              "file": "tests/auth/profile.spec.ts",
+              "name": "Admin login completes 2FA and lands authenticated (home)",
+              "framework": "playwright",
+              "line": 35,
+              "suite": "profile",
+              "command": "npx playwright test \"tests/auth/profile.spec.ts\" -g \"Admin login completes 2FA and lands authenticated \\(home\\)\"",
+              "status": "failed",
+              "startedAt": 1791550207175,
+              "attemptRuns": [
+                {
+                  "runId": "a6747fc5cef6d583",
+                  "status": "failed",
+                  "durationMs": 19660,
+                  "message": "Exit code 1"
+                }
+              ],
+              "runId": "a6747fc5cef6d583",
+              "durationMs": 19660,
+              "finishedAt": 1791550227499,
+              "message": "Exit code 1",
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop · TestverQA: page identity",
+              "framework": "playwright",
+              "line": 24,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop · TestverQA: page identity\"",
+              "status": "passed",
+              "startedAt": 1791550227502,
+              "attemptRuns": [
+                {
+                  "runId": "43b43287b1ce9c4c",
+                  "status": "passed",
+                  "durationMs": 6889
+                }
+              ],
+              "runId": "43b43287b1ce9c4c",
+              "durationMs": 6889,
+              "finishedAt": 1791550234633,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: adding a product increments the cart badge",
+              "framework": "playwright",
+              "line": 32,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: adding a product increments the cart badge\"",
+              "status": "passed",
+              "startedAt": 1791550234638,
+              "attemptRuns": [
+                {
+                  "runId": "5f8502ab3b440c58",
+                  "status": "passed",
+                  "durationMs": 8748
+                }
+              ],
+              "runId": "5f8502ab3b440c58",
+              "durationMs": 8748,
+              "finishedAt": 1791550243817,
+              "attempts": 1
+            },
+            {
+              "file": "tests/shop/shop.spec.ts",
+              "name": "Shop: full checkout journey places an order",
+              "framework": "playwright",
+              "line": 71,
+              "suite": "shop",
+              "command": "npx playwright test \"tests/shop/shop.spec.ts\" -g \"Shop: full checkout journey places an order\"",
+              "status": "passed",
+              "startedAt": 1791550243821,
+              "attemptRuns": [
+                {
+                  "runId": "6f62192cf586e5c1",
+                  "status": "passed",
+                  "durationMs": 24795
+                }
+              ],
+              "runId": "6f62192cf586e5c1",
+              "durationMs": 24795,
+              "finishedAt": 1791550269167,
+              "attempts": 1
+            }
+          ],
+          "summary": {
+            "total": 4,
+            "passed": 3,
+            "failed": 1,
+            "skipped": 0
+          },
+          "onlyFailed": false,
+          "browser": "Chrome",
+          "environment": "QA (playground)",
+          "finishedAt": 1791550269174
+        }
+      ]
+    }
+  ]
+}

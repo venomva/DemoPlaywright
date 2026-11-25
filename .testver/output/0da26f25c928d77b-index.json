@@ -1,0 +1,7 @@
+[
+  {
+    "testName": "Shop: full checkout journey places an order",
+    "startLine": 0,
+    "endLine": 3
+  }
+]

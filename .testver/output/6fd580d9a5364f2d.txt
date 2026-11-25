@@ -1,0 +1,9 @@
+
+Running 4 tests using 1 worker
+
+  ✓  1 [chromium] › tests\elements\elements.spec.ts:11:5 › Buttons & Interactions · TestverQA: page identity (1.4s)
+  ✓  2 [chromium] › tests\elements\elements.spec.ts:19:5 › Buttons & Interactions: single click emits visible feedback (1.2s)
+  ✓  3 [firefox] › tests\elements\elements.spec.ts:11:5 › Buttons & Interactions · TestverQA: page identity (2.5s)
+  ✓  4 [firefox] › tests\elements\elements.spec.ts:19:5 › Buttons & Interactions: single click emits visible feedback (1.4s)
+
+  4 passed (9.2s)

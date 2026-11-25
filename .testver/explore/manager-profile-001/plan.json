@@ -1,0 +1,25 @@
+{
+  "runId": "manager-profile-001",
+  "createdAt": "recorded at start of run",
+  "target": "https://testplay.venomva.com/",
+  "environment": "staging",
+  "scope": {
+    "origins": ["https://testplay.venomva.com"],
+    "pathPrefix": "/",
+    "include": "all paths under https://testplay.venomva.com/",
+    "exclude": []
+  },
+  "restrictions": "Explore and Automate ONLY the logged-in user Profile for the Manager role; no guest/other-role flows, no purchases/payments, no destructive actions, no logouts, no contacting real people",
+  "role": "manager",
+  "credentials": "manager role — seeded manager/manager123 documented on /debug/state 'Test credentials'; session captured via browser_auth_state save (never in chat)",
+  "documents": "none",
+  "plan": [
+    "Persist intake to plan.json (this file)",
+    "Log in as manager (manager/manager123 from /debug/state test credentials) — note: no 2FA step for manager (unlike admin)",
+    "Capture manager session via browser_auth_state save",
+    "Crawl the manager profile area: /auth/profile, /auth/settings, order detail reached from profile recent orders; snapshot + page-issues + screenshot per page; record findings.json",
+    "Automate critical manager-profile journeys depth-first in existing Playwright+TS framework (additive only: new page object additions + new spec + fixture registration) -> scoped run -> fix -> green twice",
+    "Register green tests in Test Management (create_test_case with scriptPath/testName, automationStatus=automated)",
+    "Final report: pages visited, findings, tests added, testver records"
+  ]
+}

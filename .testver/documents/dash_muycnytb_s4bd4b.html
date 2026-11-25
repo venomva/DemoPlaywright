@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Automation Scripts — Summary Dashboard</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: #f7f8fa; color: #1f2937; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
+  .header { border-bottom: 1px solid #e5e7eb; padding-bottom: 16px; margin-bottom: 20px; }
+  .header h1 { margin: 0; font-size: 24px; color: #111827; }
+  .header .sub { color: #6b7280; margin-top: 4px; font-size: 13px; }
+  .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+  .cell { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+  .kpi-title { font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
+  .kpi-value { font-size: 28px; font-weight: 700; color: #111827; margin-top: 6px; }
+  .kpi-unit { font-size: 16px; color: #6b7280; margin-left: 2px; font-weight: 500; }
+  .kpi-hint, .hint { color: #6b7280; font-size: 11px; margin-top: 6px; }
+  .chart-title, .table-title { font-weight: 600; color: #374151; margin-bottom: 10px; }
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: #6b7280; font-weight: 600; padding: 8px 10px; border-bottom: 1px solid #e5e7eb; text-transform: uppercase; letter-spacing: 0.05em; font-size: 10px; background: #f9fafb; }
+  td { padding: 8px 10px; border-bottom: 1px solid #f3f4f6; color: #374151; max-width: 360px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  td.empty { text-align: center; color: #9ca3af; padding: 24px 10px; white-space: normal; }
+  tbody tr:hover { background: #f9fafb; }
+  .markdown h2 { font-size: 18px; color: #111827; margin: 0 0 8px; }
+  .markdown h3 { font-size: 15px; color: #374151; margin: 12px 0 6px; }
+  .markdown p { margin: 6px 0; color: #4b5563; }
+  .markdown ul { margin: 6px 0; padding-left: 22px; }
+  .markdown li { margin: 3px 0; color: #4b5563; }
+  .markdown strong { color: #111827; }
+  .markdown code { background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 4px; padding: 1px 5px; font-family: Consolas, Menlo, monospace; font-size: 12px; color: #374151; }
+  .footer { margin-top: 24px; color: #9ca3af; font-size: 11px; text-align: center; }
+  /* Responsive collapse — parity with ReportCard's col-span-12 md:col-span-N:
+     below tablet width every cell goes full-width (KPIs pair up two-across).
+     !important is required because each cell carries an inline grid-column. */
+  @media (max-width: 720px) {
+    .wrap { padding: 12px; }
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .cell { grid-column: span 2 !important; }
+    .cell.kpi { grid-column: span 1 !important; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>Automation Scripts — Summary Dashboard</h1>
+      <div class="sub">Project test suite · window: Sep 7 – Oct 6, 2026 (source: automation_report, testver, suites_report)</div>
+      <div class="sub">Generated Oct 7, 2026, 10:26 PM GMT+5:30</div>
+    </div>
+    <div class="grid">
+      <div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Pass Rate (across runs)</div>
+      <div class="kpi-value">77.8<span class="kpi-unit">%</span></div>
+      
+      <div class="kpi-hint">49 passed / 63 executed · newest 20 finished runs · automation_report summary</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Avg Run Pass Rate</div>
+      <div class="kpi-value">74.9<span class="kpi-unit">%</span></div>
+      
+      <div class="kpi-hint">mean of each run's own rate (Results page metric)</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Total Runs</div>
+      <div class="kpi-value">20</div>
+      
+      <div class="kpi-hint">finished runs, all recorded (verification re-runs excluded)</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Avg Run Duration</div>
+      <div class="kpi-value">46<span class="kpi-unit">s</span></div>
+      
+      <div class="kpi-hint">across the newest 20 finished runs</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Scripts Automated</div>
+      <div class="kpi-value">45</div>
+      
+      <div class="kpi-hint">45 of 51 test cases (88%) automated · testver get_automation_stats</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Script Mappings</div>
+      <div class="kpi-value">44</div>
+      
+      <div class="kpi-hint">44 mapped, 6 unmapped · 43 synced, 2 case-updated</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Failing Tests (top offenders)</div>
+      <div class="kpi-value">14</div>
+      
+      <div class="kpi-hint">total failed results across the 20-run window</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Flaky Tests</div>
+      <div class="kpi-value">2</div>
+      
+      <div class="kpi-hint">≥ 20% outcome flips · automation_report get_flaky_tests</div>
+    </div>
+<div class="cell chart" style="grid-column: span 4;">
+      <div class="chart-title">Execution Outcome — newest 20 finished runs</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;max-width:100%;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1137 597">
+  <rect width="1137" height="597" fill="#FFFFFF" rx="12"/>
+  <text x="568.5" y="60" text-anchor="middle" fill="#1F2937" font-size="44px" font-weight="bold" font-family="Arial"></text>
+  <path d="M432,60 A258.5,258.5 0 1,1 177.4271958463442,273.6119460730986 L291.98495771548926,293.81157034020424 A142.175,142.175 0 1,0 432,176.325 Z" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/><text x="560.7744627555771" y="471.96742862334827" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40px" font-weight="bold" font-family="Arial">78%</text><path d="M177.4271958463442,273.6119460730986 A258.5,258.5 0 0,1 431.99999999999994,60 L432,176.325 A142.175,142.175 0 0,0 291.98495771548926,293.81157034020424 Z" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/><text x="303.22553724442287" y="165.03257137665176" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40px" font-weight="bold" font-family="Arial">22%</text><rect x="864" y="63" width="28" height="28" rx="4" fill="#10B981"/><text x="904" y="87" fill="#1F2937" font-size="40px" font-family="Arial">Passed (49)</text><rect x="864" y="119" width="28" height="28" rx="4" fill="#EF4444"/><text x="904" y="143" fill="#1F2937" font-size="40px" font-family="Arial">Failed (14)</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 8;">
+      <div class="chart-title">Pass Rate Trend by Run (Sep 18 – Oct 6)</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;max-width:100%;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 2433 1277">
+  <rect width="2433" height="1277" fill="#FFFFFF" rx="12"/>
+  <text x="1216.5" y="60" text-anchor="middle" fill="#1F2937" font-size="44px" font-weight="bold" font-family="Arial"></text>
+  <line x1="304" y1="1059" x2="2336" y2="1059" stroke="rgba(0,0,0,0.08)"/><text x="294" y="1073" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">0</text><line x1="304" y1="886" x2="2336" y2="886" stroke="rgba(0,0,0,0.08)"/><text x="294" y="900" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">20</text><line x1="304" y1="713" x2="2336" y2="713" stroke="rgba(0,0,0,0.08)"/><text x="294" y="727" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">40</text><line x1="304" y1="540" x2="2336" y2="540" stroke="rgba(0,0,0,0.08)"/><text x="294" y="554" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">60</text><line x1="304" y1="367" x2="2336" y2="367" stroke="rgba(0,0,0,0.08)"/><text x="294" y="381" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">80</text><line x1="304" y1="194" x2="2336" y2="194" stroke="rgba(0,0,0,0.08)"/><text x="294" y="208" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">100</text><text x="304" y="1094" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 304 1094)">09-18</text><text x="884.5714285714286" y="1094" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 884.5714285714286 1094)">09-26 b</text><text x="1465.142857142857" y="1094" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1465.142857142857 1094)">10-04 a</text><text x="2045.7142857142856" y="1094" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 2045.7142857142856 1094)">10-04 c</text><text x="2336" y="1094" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 2336 1094)">10-06</text><path d="M304,1059 L304,194 L594.2857142857142,1059 L884.5714285714286,194 L1174.8571428571427,1059 L1465.142857142857,980.285 L1755.4285714285716,290.015 L2045.7142857142856,194 L2336,1059 L2336,1059 Z" fill="#3B82F6" opacity="0.1"/><polyline points="304,194 594.2857142857142,1059 884.5714285714286,194 1174.8571428571427,1059 1465.142857142857,980.285 1755.4285714285716,290.015 2045.7142857142856,194 2336,1059" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="304" cy="194" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="304" y="180" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text><circle cx="594.2857142857142" cy="1059" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="884.5714285714286" cy="194" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="884.5714285714286" y="180" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text><circle cx="1174.8571428571427" cy="1059" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="1465.142857142857" cy="980.285" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="1465.142857142857" y="966.285" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">9.1</text><circle cx="1755.4285714285716" cy="290.015" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="2045.7142857142856" cy="194" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="2045.7142857142856" y="180" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text><circle cx="2336" cy="1059" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="2336" y="1045" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">0</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 5;">
+      <div class="chart-title">Failure Categories (window since Sep 7)</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;max-width:100%;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1463 768">
+  <rect width="1463" height="768" fill="#FFFFFF" rx="12"/>
+  <text x="731.5" y="60" text-anchor="middle" fill="#1F2937" font-size="44px" font-weight="bold" font-family="Arial"></text>
+  <line x1="183" y1="637" x2="1404" y2="637" stroke="rgba(0,0,0,0.08)"/><text x="173" y="651" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">0</text><line x1="183" y1="533" x2="1404" y2="533" stroke="rgba(0,0,0,0.08)"/><text x="173" y="547" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">2.5</text><line x1="183" y1="429" x2="1404" y2="429" stroke="rgba(0,0,0,0.08)"/><text x="173" y="443" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">5</text><line x1="183" y1="325" x2="1404" y2="325" stroke="rgba(0,0,0,0.08)"/><text x="173" y="339" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">7.5</text><line x1="183" y1="221" x2="1404" y2="221" stroke="rgba(0,0,0,0.08)"/><text x="173" y="235" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">10</text><line x1="183" y1="117" x2="1404" y2="117" stroke="rgba(0,0,0,0.08)"/><text x="173" y="131" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">12.5</text><rect x="361.5" y="137.8" width="48" height="499.2" rx="4" fill="#3B82F6"/><text x="385.5" y="131.8" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">12</text><text x="386.5" y="672" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 386.5 672)">Timeout</text><rect x="768.5" y="595.4" width="48" height="41.6" rx="4" fill="#EF4444"/><text x="792.5" y="589.4" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">1</text><text x="793.5" y="672" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 793.5 672)">Environment</text><rect x="1175.5" y="595.4" width="48" height="41.6" rx="4" fill="#10B981"/><text x="1199.5" y="589.4" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">1</text><text x="1200.5" y="672" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1200.5 672)">Unknown</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 7;">
+      <div class="chart-title">Automation Coverage by Priority</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;max-width:100%;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 2110 1108">
+  <rect width="2110" height="1108" fill="#FFFFFF" rx="12"/>
+  <text x="1055" y="60" text-anchor="middle" fill="#1F2937" font-size="44px" font-weight="bold" font-family="Arial"></text>
+  <line x1="264" y1="919" x2="2026" y2="919" stroke="rgba(0,0,0,0.08)"/><text x="254" y="933" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">0</text><line x1="264" y1="768.8" x2="2026" y2="768.8" stroke="rgba(0,0,0,0.08)"/><text x="254" y="782.8" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">10</text><line x1="264" y1="618.5999999999999" x2="2026" y2="618.5999999999999" stroke="rgba(0,0,0,0.08)"/><text x="254" y="632.5999999999999" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">20</text><line x1="264" y1="468.40000000000003" x2="2026" y2="468.40000000000003" stroke="rgba(0,0,0,0.08)"/><text x="254" y="482.40000000000003" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">30</text><line x1="264" y1="318.19999999999993" x2="2026" y2="318.19999999999993" stroke="rgba(0,0,0,0.08)"/><text x="254" y="332.19999999999993" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">40</text><line x1="264" y1="168" x2="2026" y2="168" stroke="rgba(0,0,0,0.08)"/><text x="254" y="182" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">50</text><rect x="527.6666666666667" y="903.98" width="60" height="15.02" fill="#3B82F6"/><text x="557.6666666666667" y="915.49" text-anchor="middle" fill="white" font-size="40px" font-family="Arial">1</text><rect x="527.6666666666667" y="828.88" width="60" height="75.10000000000001" fill="#EF4444"/><text x="557.6666666666667" y="870.43" text-anchor="middle" fill="white" font-size="40px" font-family="Arial">5</text><text x="557.6666666666667" y="954" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 557.6666666666667 954)">Critical</text><rect x="1115" y="498.43999999999994" width="60" height="420.56000000000006" fill="#3B82F6"/><text x="1145" y="712.72" text-anchor="middle" fill="white" font-size="40px" font-family="Arial">28</text><rect x="1115" y="483.41999999999996" width="60" height="15.02" fill="#EF4444"/><text x="1145" y="494.92999999999995" text-anchor="middle" fill="white" font-size="40px" font-family="Arial">1</text><text x="1145" y="954" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1145 954)">High</text><rect x="1702.3333333333335" y="678.6800000000001" width="60" height="240.32" fill="#3B82F6"/><text x="1732.3333333333335" y="802.84" text-anchor="middle" fill="white" font-size="40px" font-family="Arial">16</text><rect x="1702.3333333333335" y="678.6800000000001" width="60" height="0" fill="#EF4444"/><text x="1732.3333333333335" y="954" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1732.3333333333335 954)">Medium</text><rect x="264" y="1083" width="12" height="12" rx="2" fill="#3B82F6"/><text x="282" y="1094" fill="#1F2937" font-size="40px" font-family="Arial">Automated</text><rect x="404" y="1083" width="12" height="12" rx="2" fill="#EF4444"/><text x="422" y="1094" fill="#1F2937" font-size="40px" font-family="Arial">Manual</text>
+</svg></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 12;">
+      <div class="table-title">Top Failing Tests</div>
+      <div class="table-scroll"><table><thead><tr><th>Test</th><th>File</th><th>Failures</th><th>Last Error</th><th>Last Failure</th></tr></thead><tbody><tr><td title="Admin login completes 2FA and lands authenticated">Admin login completes 2FA and lands authenticated</td><td title="auth\profile.spec.ts">auth\profile.spec.ts</td><td title="3">3</td><td title="Test timeout of 30000ms exceeded.">Test timeout of 30000ms exceeded.</td><td title="2026-10-06">2026-10-06</td></tr><tr><td title="Admin dashboard View shop link navigates to shop">Admin dashboard View shop link navigates to shop</td><td title="admin\admin.spec.ts">admin\admin.spec.ts</td><td title="1">1</td><td title="Test timeout 30000ms">Test timeout 30000ms</td><td title="2026-10-04">2026-10-04</td></tr><tr><td title="Admin dashboard notifications feed renders">Admin dashboard notifications feed renders</td><td title="admin\admin.spec.ts">admin\admin.spec.ts</td><td title="1">1</td><td title="Test timeout 30000ms">Test timeout 30000ms</td><td title="2026-10-04">2026-10-04</td></tr><tr><td title="Admin dashboard recent-orders table rows">Admin dashboard recent-orders table rows</td><td title="admin\admin.spec.ts">admin\admin.spec.ts</td><td title="1">1</td><td title="Test timeout 30000ms">Test timeout 30000ms</td><td title="2026-10-04">2026-10-04</td></tr><tr><td title="Admin dashboard renders title/heading/nav">Admin dashboard renders title/heading/nav</td><td title="admin\admin.spec.ts">admin\admin.spec.ts</td><td title="1">1</td><td title="Test timeout 30000ms">Test timeout 30000ms</td><td title="2026-10-04">2026-10-04</td></tr><tr><td title="Admin dashboard four KPI stat cards">Admin dashboard four KPI stat cards</td><td title="admin\admin.spec.ts">admin\admin.spec.ts</td><td title="1">1</td><td title="Test timeout 30000ms">Test timeout 30000ms</td><td title="2026-10-04">2026-10-04</td></tr><tr><td title="Admin profile page identity &amp; stats">Admin profile page identity &amp; stats</td><td title="auth\profile.spec.ts">auth\profile.spec.ts</td><td title="1">1</td><td title="Test timeout 30000ms">Test timeout 30000ms</td><td title="2026-10-04">2026-10-04</td></tr><tr><td title="Admin settings identity read-only/toggles">Admin settings identity read-only/toggles</td><td title="auth\profile.spec.ts">auth\profile.spec.ts</td><td title="1">1</td><td title="Test timeout 30000ms">Test timeout 30000ms</td><td title="2026-10-04">2026-10-04</td></tr><tr><td title="Admin settings save notification prefs">Admin settings save notification prefs</td><td title="auth\profile.spec.ts">auth\profile.spec.ts</td><td title="1">1</td><td title="Test timeout 30000ms">Test timeout 30000ms</td><td title="2026-10-04">2026-10-04</td></tr><tr><td title="Home · TestverQA: page identity">Home · TestverQA: page identity</td><td title="tests/home/home.spec.ts">tests/home/home.spec.ts</td><td title="1">1</td><td title="Failed">Failed</td><td title="2026-10-04">2026-10-04</td></tr></tbody></table></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 6;">
+      <div class="table-title">Flaky Tests</div>
+      <div class="table-scroll"><table><thead><tr><th>Test</th><th>File</th><th>Runs</th><th>Pass</th><th>Fail</th><th>Flakiness %</th></tr></thead><tbody><tr><td title="Home page heading text matches expectations">Home page heading text matches expectations</td><td title="home\home.spec.ts">home\home.spec.ts</td><td title="6">6</td><td title="5">5</td><td title="1">1</td><td title="40">40</td></tr><tr><td title="Admin login completes 2FA and lands authenticated (home)">Admin login completes 2FA and lands authenticated (home)</td><td title="auth\profile.spec.ts">auth\profile.spec.ts</td><td title="4">4</td><td title="1">1</td><td title="3">3</td><td title="33.3">33.3</td></tr></tbody></table></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 6;">
+      <div class="table-title">Test Health Scores (0–100)</div>
+      <div class="table-scroll"><table><thead><tr><th>Test</th><th>Score</th><th>Pass Rate %</th><th>Flakiness %</th><th>Runs</th></tr></thead><tbody><tr><td title="Admin login completes 2FA">Admin login completes 2FA</td><td title="44">44</td><td title="25">25</td><td title="33.33">33.33</td><td title="4">4</td></tr><tr><td title="Home page heading text">Home page heading text</td><td title="73">73</td><td title="83.33">83.33</td><td title="40">40</td><td title="6">6</td></tr><tr><td title="Home page loads with expected identity">Home page loads with expected identity</td><td title="92">92</td><td title="100">100</td><td title="0">0</td><td title="4">4</td></tr><tr><td title="Shop cart total &amp; coupon SAVE10">Shop cart total &amp; coupon SAVE10</td><td title="98">98</td><td title="100">100</td><td title="0">0</td><td title="3">3</td></tr></tbody></table></div>
+      
+    </div>
+<div class="cell markdown" style="grid-column: span 12;"><h3>Key Takeaways</h3>
+<ul><li><strong>Overall pass rate is 77.8%</strong> across the newest 20 finished runs (avg per-run rate 74.9%); <strong>14 of 63</strong> executed tests failed.</li><li><strong>Timeouts dominate failures (12 of 14)</strong> — concentrated in the <code>admin\admin.spec.ts</code> and <code>auth\profile.spec.ts</code> suites on Oct 4 (the <code>Test Release - Test Cycle One</code> run scored just <strong>9.1%</strong>), then again on Oct 6.</li><li><strong>Two flaky tests</strong> account for most instability: *Admin login 2FA* (33.3% flips, health score 44) and *Home page heading text* (40% flips).</li><li><strong>Automation coverage is strong at 88%</strong> (45/51 cases automated), but the <strong>between runs vs the newest 20</strong> — the single suite &quot;Sanity Test&quot; passed 10/10 on its last run.</li><li><strong>Gaps to watch:</strong> 6 unmapped test cases, 2 case-updated scripts needing review, and only <strong>1 of 6 critical-priority cases automated</strong>.</li></ul>
+<p>*Sources: <code>automation_report</code> summary/trends/top_failures/flaky/health (window since Sep 7, 2026); <code>testver get_automation_stats</code>; <code>suites_report summary</code>. Running/cancelled runs and Auto-Heal verification re-runs excluded.*</p></div>
+    </div>
+    <div class="footer">Generated by Testver</div>
+  </div>
+</body>
+</html>

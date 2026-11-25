@@ -1,0 +1,48 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests\auth\profile.spec.ts:59:5 › Admin settings: identity is read-only, preferences render as toggles (30.5s)
+
+
+  1) [chromium] › tests\auth\profile.spec.ts:59:5 › Admin settings: identity is read-only, preferences render as toggles 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('password')
+
+
+       at pages\LoginPage.ts:78
+
+      76 |   ): Promise<void> {
+      77 |     await this.usernameInput.fill(username);
+    > 78 |     await this.passwordInput.fill(password);
+         |                              ^
+      79 |     await this.submitButton.click();
+      80 |   }
+      81 |
+        at LoginPage.submitAdminCredentials (E:\TestverTesting\Agents\FirstTest\tests\pages\LoginPage.ts:78:30)
+        at loginAsAdmin (E:\TestverTesting\Agents\FirstTest\tests\auth\profile.spec.ts:25:3)
+        at E:\TestverTesting\Agents\FirstTest\tests\auth\profile.spec.ts:64:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .testver\runs\b5d1165d16ba8e58\test-results\auth-profile-Admin-setting-745bf-eferences-render-as-toggles-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    .testver\runs\b5d1165d16ba8e58\test-results\auth-profile-Admin-setting-745bf-eferences-render-as-toggles-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .testver\runs\b5d1165d16ba8e58\test-results\auth-profile-Admin-setting-745bf-eferences-render-as-toggles-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    .testver\runs\b5d1165d16ba8e58\test-results\auth-profile-Admin-setting-745bf-eferences-render-as-toggles-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace .testver\runs\b5d1165d16ba8e58\test-results\auth-profile-Admin-setting-745bf-eferences-render-as-toggles-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\auth\profile.spec.ts:59:5 › Admin settings: identity is read-only, preferences render as toggles 

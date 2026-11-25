@@ -1,0 +1,43 @@
+{
+  "runId": "admin-profile-001",
+  "target": "https://testplay.venomva.com/",
+  "environment": "staging",
+  "role": "admin",
+  "seedCredentials": {
+    "login": "admin / admin123 (seeded, documented on /debug/state 'Test credentials')",
+    "twoFactor": "admin login goes through /auth/2fa — OTP hint documented on page: 123456"
+  },
+  "pagesCrawled": [
+    { "url": "/", "title": "Home · TestverQA", "notes": "header shows user-pill admin (aria-label 'Open user menu') when authenticated", "issues": "none" },
+    { "url": "/auth/login", "title": "Sign in · TestverQA", "notes": "login form: username-input, password-input, remember-checkbox, login-submit; POST /auth/login -> /auth/2fa for admin", "issues": "none" },
+    { "url": "/auth/2fa", "title": "2FA · TestverQA", "notes": "otp-input + otp-submit; hint '123456' documented on page; POST /auth/2fa -> / (home)", "issues": "none" },
+    { "url": "/auth/profile", "title": "Profile · TestverQA", "notes": "h1 'Hello, Admin', h3 identity (full name), @username, email, role; account stats: orders placed 3, total spent $11,229, account id #00001; profile information card; recent orders table profile-orders-table (rows data-testid profile-order-<id>, view links profile-order-view-<id> -> /shop/order/<id>)", "issues": "none" },
+    { "url": "/auth/settings", "title": "Account settings · TestverQA", "notes": "sections: Profile details (settings-username readonly, settings-role readonly, settings-fullname editable, settings-email editable, settings-save-profile), Change password (pw-current/pw-new/pw-confirm, settings-save-password), Security (2FA enabled: admin; recovery codes sec-gen-codes DISABLED), Notification preferences (pref-email-toggle/pref-news-toggle/pref-digest-toggle/pref-sms-toggle, settings-save-prefs), Active sessions (sessions-table, revoke-mobile/revoke-desktop/revoke-all), Danger zone (delete-confirm-text + delete-account — RESTRICTED, not automated)", "issues": "none" },
+    { "url": "/shop/order/ORD-000127", "title": "Order ORD-000127 · TestverQA", "notes": "order confirmation reached from profile recent orders; h1 'Order placed successfully!', order number, items, total, 'Continue shopping'", "issues": "none" },
+    { "url": "/debug/state", "title": "State Inspector · TestverQA", "notes": "documents seeded test credentials: admin/admin123, tester/test123, manager/manager123; reset & reseed (reset-go) is DATA-DESTROYING — restricted, not automated", "issues": "none" }
+  ],
+  "writeContract": {
+    "saveProfile": "fill settings-fullname/settings-email then settings-save-profile -> .alert.alert-success[data-testid=settings-success] 'Profile details saved successfully.' and value persists to /auth/profile identity card",
+    "savePreferences": "toggle pref-*-toggle(s) then settings-save-prefs -> same success alert style 'Notification preferences saved.'",
+    "cleanupNote": "test writes on staging leave residue; original seeded values are restored after the live probe. reset-state / /debug/reset is the official reseed path but is data-destroying -> out of scope per restrictions",
+    "passwordChange": "NOT automated — no approved state recipe to restore the seeded password; out of scope",
+    "dangerZone": "delete-account / revoke-all — destructive or session-affecting; NOT automated"
+  },
+  "findings": {
+    "adminLoginFlow": ["/auth/login (admin/admin123)", "/auth/2fa (OTP 123456)", "/ (home, user-pill visible) -> /auth/profile accessible"],
+    "authGate": "profile and settings pages require a logged-in session; unauthenticated GET /auth/profile redirects to /auth/login (guest baseline)",
+    "readonly": "settings-username and settings-role are readonly (immutable identity); full name + email are editable",
+    "twoFaSteps": "2FA page exercises multi-page auth with session-stored state between requests",
+    "alertTestId": "success alerts share data-testid=settings-success with class alert alert-success",
+    "profileOrders": "recent orders table lists 3 orders for admin; each View -> /shop/order/<orderId>"
+  },
+  "issues": [],
+  "automationPlan": [
+    { "file": "tests/pages/ProfilePage.ts", "note": "additive: new page object for /auth/profile" },
+    { "file": "tests/pages/SettingsPage.ts", "note": "additive: new page object for /auth/settings" },
+    { "file": "tests/pages/TfaPage.ts", "note": "additive: new page object for /auth/2fa" },
+    { "file": "tests/fixtures/fixtures.ts", "note": "additive: register profilePage + settingsPage + tfaPage fixtures" },
+    { "file": "tests/auth/profile.spec.ts", "note": "new spec: admin login (incl. 2FA), profile identity, recent orders, settings read-only contract, save-profile write + persist, save-preferences write" },
+    { "note": "tests authenticate via UI with seeded admin/admin123 + OTP 123456 — documented playground credentials; session reuse via authRole=admin where a saved session exists" }
+  ]
+}

@@ -1,0 +1,47 @@
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order (31.6s)
+
+
+  1) [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order ───────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('add-cart-1')
+
+
+       at pages\ShopPage.ts:78
+
+      76 |   /** Add the first product on the current page to the cart. */
+      77 |   async addFirstProductToCart(): Promise<void> {
+    > 78 |     await this.firstAddToCartButton.click();
+         |                                     ^
+      79 |   }
+      80 |
+      81 |   /** Read the cart badge line-item count as an integer (e.g. "🛒 Cart (3)" → 3). */
+        at ShopPage.addFirstProductToCart (E:\TestverTesting\Agents\FirstTest\tests\pages\ShopPage.ts:78:37)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:81:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .testver\runs\fe925f4b43da27db\test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    .testver\runs\fe925f4b43da27db\test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .testver\runs\fe925f4b43da27db\test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    .testver\runs\fe925f4b43da27db\test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace .testver\runs\fe925f4b43da27db\test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order ────────

@@ -1,0 +1,21 @@
+{
+  "runId": "admin-dashboard-001",
+  "pages": [
+    {
+      "url": "/admin",
+      "title": "Admin Dashboard · TestverQA",
+      "areas": ["KPI stat cards", "Orders by status chart", "Notifications", "Recent orders", "nav-admin", "View shop link"],
+      "testedBy": ["tests/admin/admin.spec.ts"]
+    },
+    {
+      "url": "/shop",
+      "title": "Shop · TestverQA",
+      "areas": ["View shop navigation target"],
+      "testedBy": ["tests/admin/admin.spec.ts"]
+    }
+  ],
+  "automated": [
+    "tests/admin/admin.spec.ts"
+  ],
+  "notes": "Admin dashboard journeys automate the /admin read modules as admin (session restored). /admin serves dashboards data to guests — no access control (F-ADM-01)."
+}

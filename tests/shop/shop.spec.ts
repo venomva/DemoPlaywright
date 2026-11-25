@@ -13,7 +13,7 @@ import { CHECKOUT_TITLE, CHECKOUT_HEADING } from '../pages/CheckoutPage';
  * starting state — the same recipe the API docs instruct for test isolation.
  */
 
-const BASE_URL = 'https://testplay.venomva.com';
+const BASE_URL = (process.env.BASE_URL || 'https://testplay.venomva.com').replace(/\/$/, '');
 const RESET_BODY = { size: 'medium' };
 
 async function resetState(request: APIRequestContext): Promise<void> {

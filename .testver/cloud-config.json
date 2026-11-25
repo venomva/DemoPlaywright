@@ -1,0 +1,13 @@
+{
+  "providers": [],
+  "schedules": [
+    {
+      "id": "sched_d1228f453212ffe4",
+      "name": "sample",
+      "command": "npm install",
+      "cron": "0 8 * * *",
+      "enabled": true,
+      "nextRunTime": "2026-11-13T02:30:00.000Z"
+    }
+  ]
+}

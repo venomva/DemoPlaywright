@@ -1,0 +1,28 @@
+{
+  "runId": "admin-profile-001",
+  "seed": "https://testplay.venomva.com/",
+  "role": "admin",
+  "crawled": [
+    { "url": "/", "title": "Home · TestverQA", "issues": "none", "notes": "authenticated header shows user-pill admin" },
+    { "url": "/auth/login", "title": "Sign in · TestverQA", "issues": "none" },
+    { "url": "/auth/2fa", "title": "2FA · TestverQA", "issues": "none", "notes": "admin OTP hint '123456'; multi-page auth with session-stored state" },
+    { "url": "/auth/profile", "title": "Profile · TestverQA", "issues": "none", "coveredBy": "tests/auth/profile.spec.ts" },
+    { "url": "/auth/settings", "title": "Account settings · TestverQA", "issues": "none", "coveredBy": "tests/auth/profile.spec.ts" },
+    { "url": "/shop/order/ORD-000127", "title": "Order ORD-000127 · TestverQA", "issues": "none", "notes": "reached from profile recent orders" },
+    { "url": "/debug/state", "title": "State Inspector · TestverQA", "issues": "none", "notes": "documents seeded credentials admin/admin123 etc.; reset is data-destroying -> out of scope" }
+  ],
+  "writeContract": {
+    "saveProfile": "settings-save-profile -> .alert.alert-success[data-testid=settings-success] 'Profile details saved successfully.' and persists to /auth/profile identity-name",
+    "savePreferences": "settings-save-prefs -> same success alert 'Notification preferences saved.'",
+    "selfRestoring": "profile-name test restores the pre-existing full name in finally, leaving the shared staging account clean"
+  },
+  "findings": {
+    "adminLoginFlow": ["admin/admin123 (seeded, /debug/state)", "/auth/2fa OTP 123456 (hint on page)", "authenticated home + /auth/profile"],
+    "profileTestIds": ["profile-name", "profile-handle", "profile-email-display", "profile-role", "profile-orders-table", "profile-order-<id>", "profile-order-view-<id>", "profile-go-settings", "profile-logout"],
+    "settingsTestIds": ["settings-username (readonly)", "settings-role (readonly)", "settings-fullname", "settings-email", "settings-save-profile", "pref-email|news|digest|sms-toggle", "settings-save-prefs", "pw-current|new|confirm", "settings-save-password", "sec-gen-codes (disabled)", "sessions-table", "revoke-mobile|desktop|all", "delete-confirm-text", "delete-account", "settings-success (alert)"],
+    "h1Greeting": "H1 derives from the first token of the full name ('Hello, Admin 👋' for 'Admin User')",
+    "prefTogglesHidden": "notification switch inputs are visually hidden (custom switch); assert on wrapper row + checkbox state"
+  },
+  "issues": [],
+  "coveredBy": "tests/auth/profile.spec.ts (5 tests: admin login + 2FA, profile identity + recent orders, settings identity read-only + prefs toggles, save profile write self-restoring, save preferences success alert)"
+}

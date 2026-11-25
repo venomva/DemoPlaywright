@@ -1,0 +1,193 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\TestverTesting\\Agents\\FirstTest\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "playwright.testver.02f8de2c.config.ts",
+      "tests/auth/auth.spec.ts",
+      "-g",
+      "Sign in form exposes required username/password fields \\(guest, read-only\\)",
+      "--project=chromium"
+    ],
+    "configFile": "E:\\TestverTesting\\Agents\\FirstTest\\playwright.testver.02f8de2c.config.ts",
+    "rootDir": "E:/TestverTesting/Agents/FirstTest/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/TestverTesting/Agents/FirstTest/.testver/runs/02f8de2c69bc64bb/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "E:/TestverTesting/Agents/FirstTest/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/TestverTesting/Agents/FirstTest/.testver/runs/02f8de2c69bc64bb/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "E:/TestverTesting/Agents/FirstTest/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\02f8de2c69bc64bb\\playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\02f8de2c69bc64bb\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth\\auth.spec.ts",
+      "file": "auth/auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Sign in form exposes required username/password fields (guest, read-only)",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6507,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('remember-checkbox')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByTestId('remember-checkbox') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('remember-checkbox')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('remember-checkbox')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByTestId('remember-checkbox') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('remember-checkbox')\u001b[22m\n\n    at E:\\TestverTesting\\Agents\\FirstTest\\tests\\auth\\auth.spec.ts:57:26",
+                    "location": {
+                      "file": "E:\\TestverTesting\\Agents\\FirstTest\\tests\\auth\\auth.spec.ts",
+                      "column": 26,
+                      "line": 57
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 55 |\u001b[39m   \u001b[36mawait\u001b[39m expect(username)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[36mawait\u001b[39m expect(password)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 57 |\u001b[39m   \u001b[36mawait\u001b[39m expect(remember)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 58 |\u001b[39m\n \u001b[90m 59 |\u001b[39m   \u001b[90m// The two auth fields are required per the observed HTML contract.\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[36mawait\u001b[39m expect(username)\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m'required'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\TestverTesting\\Agents\\FirstTest\\tests\\auth\\auth.spec.ts",
+                        "column": 26,
+                        "line": 57
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('remember-checkbox')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByTestId('remember-checkbox') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('remember-checkbox')\u001b[22m\n\n\n  55 |   await expect(username).toBeVisible();\n  56 |   await expect(password).toBeVisible();\n> 57 |   await expect(remember).toBeVisible();\n     |                          ^\n  58 |\n  59 |   // The two auth fields are required per the observed HTML contract.\n  60 |   await expect(username).toHaveAttribute('required', '');\n    at E:\\TestverTesting\\Agents\\FirstTest\\tests\\auth\\auth.spec.ts:57:26"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-14T11:06:01.178Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\02f8de2c69bc64bb\\test-results\\auth-auth-Sign-in-form-exp-b772a-ord-fields-guest-read-only--chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\02f8de2c69bc64bb\\test-results\\auth-auth-Sign-in-form-exp-b772a-ord-fields-guest-read-only--chromium\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\02f8de2c69bc64bb\\test-results\\auth-auth-Sign-in-form-exp-b772a-ord-fields-guest-read-only--chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\TestverTesting\\Agents\\FirstTest\\.testver\\runs\\02f8de2c69bc64bb\\test-results\\auth-auth-Sign-in-form-exp-b772a-ord-fields-guest-read-only--chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\TestverTesting\\Agents\\FirstTest\\tests\\auth\\auth.spec.ts",
+                    "column": 26,
+                    "line": 57
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "11ab049aabb515b3eeb7-fad67afb24f933304276",
+          "file": "auth/auth.spec.ts",
+          "line": 45,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-14T11:06:00.317Z",
+    "duration": 8240.940999999999,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

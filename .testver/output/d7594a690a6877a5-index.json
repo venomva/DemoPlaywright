@@ -1,0 +1,7 @@
+[
+  {
+    "testName": "Sign in form exposes required username/password fields (guest, read-only)",
+    "startLine": 0,
+    "endLine": 3
+  }
+]

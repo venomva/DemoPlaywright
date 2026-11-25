@@ -1,0 +1,7 @@
+[
+  {
+    "testName": "Admin profile page shows identity, account stats and recent orders (30.5s)",
+    "startLine": 0,
+    "endLine": 3
+  }
+]

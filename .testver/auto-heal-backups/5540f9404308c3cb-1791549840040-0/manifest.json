@@ -1,0 +1,16 @@
+{
+  "targets": [
+    {
+      "file": "tests/pages/LoginPage.ts",
+      "find": "getByTestId('username')",
+      "replace": "getByTestId('username-input')"
+    }
+  ],
+  "patchedHash": {
+    "tests/pages/LoginPage.ts": "8e1fc71f1a7b32f5e1132eea414e568b60dfc5cd964b0ce8a96216ed87a10a66"
+  },
+  "encodings": {
+    "tests/pages/LoginPage.ts": "utf8"
+  },
+  "at": "2026-10-09T12:44:00.042Z"
+}

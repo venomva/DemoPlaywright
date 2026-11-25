@@ -1,0 +1,68 @@
+{
+  "mappings": [
+    {
+      "id": "map_31b3ecece7dd",
+      "name": "Sample CI Run",
+      "target": {
+        "type": "suite",
+        "suiteId": "suite_572170d33084b186"
+      },
+      "overrides": {
+        "environment": "Production",
+        "browser": "Chrome"
+      },
+      "syncGit": false,
+      "autoHeal": "off",
+      "enabled": true,
+      "createdAt": "2026-10-08T15:59:30.334Z",
+      "lastTriggeredAt": "2026-11-14T13:30:21.773Z",
+      "lastCiRunId": "ci_a8be011f8968"
+    }
+  ],
+  "tokens": [
+    {
+      "id": "tok_1f8d1754584d",
+      "name": "GitHub",
+      "hash": "81f37c47c5a9ba1c1a64e8893fb5b2ea66f929962a29ea98cc1e9bdba927a2f8",
+      "prefix": "tvci_31e87ab",
+      "scope": {
+        "adHoc": "none"
+      },
+      "expiresAt": "2027-10-08T16:00:58.831Z",
+      "createdAt": "2026-10-08T16:00:58.831Z",
+      "createdBy": "sadmin"
+    },
+    {
+      "id": "tok_7366ac3920f5",
+      "name": "LocalRun",
+      "hash": "a145e91c7a653447371e34e60b7c99aa652cb7eea056d50fe2a5f91a7d0e9ead",
+      "prefix": "tvci_c21a7e4",
+      "scope": {
+        "adHoc": "none"
+      },
+      "expiresAt": "2027-10-08T16:08:29.874Z",
+      "createdAt": "2026-10-08T16:08:29.874Z",
+      "createdBy": "sadmin",
+      "lastUsedAt": "2026-10-09T16:08:20.429Z"
+    },
+    {
+      "id": "tok_25d5e7cde539",
+      "name": "Auto-Heal video demo",
+      "hash": "13051261b90a6c44789f96a32e1412a37195911b9d31dc92b5bdd991d940ac58",
+      "prefix": "tvci_a7a45eb",
+      "scope": {
+        "mappingIds": [
+          "map_31b3ecece7dd"
+        ],
+        "adHoc": "none"
+      },
+      "expiresAt": "2026-11-21T10:44:05.087Z",
+      "createdAt": "2026-11-14T10:44:05.087Z",
+      "createdBy": "sadmin",
+      "lastUsedAt": "2026-11-14T13:32:07.299Z",
+      "revoked": true,
+      "revokedAt": "2026-11-14T14:17:25.158Z",
+      "revokedBy": "sadmin"
+    }
+  ]
+}

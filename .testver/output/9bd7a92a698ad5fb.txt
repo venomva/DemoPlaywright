@@ -1,0 +1,177 @@
+
+Running 5 tests using 1 worker
+
+  x  1 [chromium] › tests\auth\manager-profile.spec.ts:84:5 › Manager settings: identity is read-only, 2FA controls are disabled (7.2s)
+  ok 2 [chromium] › tests\shop\shop.spec.ts:24:5 › Shop · TestverQA: page identity (1.7s)
+  x  3 [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge (31.5s)
+  x  4 [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied (31.6s)
+  x  5 [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order (31.5s)
+
+
+  1) [chromium] › tests\auth\manager-profile.spec.ts:84:5 › Manager settings: identity is read-only, 2FA controls are disabled 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator: getByTestId('pref-email-toggle')
+    Expected: "checkbox"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveAttribute" getByTestId('pref-email-toggle') with timeout 5000ms
+      - waiting for getByTestId('pref-email-toggle')
+
+
+       at pages\SettingsPage.ts:119
+
+      117 |     for (const row of rows) {
+      118 |       await expect(this.page.getByTestId(row)).toBeVisible();
+    > 119 |       await expect(this.page.getByTestId(`${row}-toggle`)).toHaveAttribute('type', 'checkbox');
+          |                                                            ^
+      120 |     }
+      121 |   }
+      122 |
+        at SettingsPage.expectPreferenceToggles (E:\TestverTesting\Agents\FirstTest\tests\pages\SettingsPage.ts:119:60)
+        at E:\TestverTesting\Agents\FirstTest\tests\auth\manager-profile.spec.ts:94:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\auth-manager-profile-Manag-09e74-y-2FA-controls-are-disabled-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\auth-manager-profile-Manag-09e74-y-2FA-controls-are-disabled-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\auth-manager-profile-Manag-09e74-y-2FA-controls-are-disabled-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\auth-manager-profile-Manag-09e74-y-2FA-controls-are-disabled-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\auth-manager-profile-Manag-09e74-y-2FA-controls-are-disabled-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge ──
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('add-cart-1')
+
+
+       at pages\ShopPage.ts:78
+
+      76 |   /** Add the first product on the current page to the cart. */
+      77 |   async addFirstProductToCart(): Promise<void> {
+    > 78 |     await this.firstAddToCartButton.click();
+         |                                     ^
+      79 |   }
+      80 |
+      81 |   /** Read the cart badge line-item count as an integer (e.g. "🛒 Cart (3)" → 3). */
+        at ShopPage.addFirstProductToCart (E:\TestverTesting\Agents\FirstTest\tests\pages\ShopPage.ts:78:37)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:39:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('add-cart-1')
+
+
+       at pages\ShopPage.ts:78
+
+      76 |   /** Add the first product on the current page to the cart. */
+      77 |   async addFirstProductToCart(): Promise<void> {
+    > 78 |     await this.firstAddToCartButton.click();
+         |                                     ^
+      79 |   }
+      80 |
+      81 |   /** Read the cart badge line-item count as an integer (e.g. "🛒 Cart (3)" → 3). */
+        at ShopPage.addFirstProductToCart (E:\TestverTesting\Agents\FirstTest\tests\pages\ShopPage.ts:78:37)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:51:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order ───────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('add-cart-1')
+
+
+       at pages\ShopPage.ts:78
+
+      76 |   /** Add the first product on the current page to the cart. */
+      77 |   async addFirstProductToCart(): Promise<void> {
+    > 78 |     await this.firstAddToCartButton.click();
+         |                                     ^
+      79 |   }
+      80 |
+      81 |   /** Read the cart badge line-item count as an integer (e.g. "🛒 Cart (3)" → 3). */
+        at ShopPage.addFirstProductToCart (E:\TestverTesting\Agents\FirstTest\tests\pages\ShopPage.ts:78:37)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:81:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › tests\auth\manager-profile.spec.ts:84:5 › Manager settings: identity is read-only, 2FA controls are disabled 
+    [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge ───
+    [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied 
+    [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order ────────
+  1 passed (1.8m)

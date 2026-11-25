@@ -1,0 +1,45 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests\home\home.spec.ts:20:5 › Home page heading text matches expectations (695ms)
+
+
+  1) [chromium] › tests\home\home.spec.ts:20:5 › Home page heading text matches expectations ───────
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://staging.example.com/
+    Call log:
+      - navigating to "https://staging.example.com/", waiting until "domcontentloaded"
+
+
+       at pages\BasePage.ts:20
+
+      18 |
+      19 |   async goto(path = '/'): Promise<void> {
+    > 20 |     await this.page.goto(path, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      21 |   }
+      22 |
+      23 |   /** Navigate to the home page via the shared app-header brand link. */
+        at HomePage.goto (E:\TestverTesting\Agents\FirstTest\tests\pages\BasePage.ts:20:21)
+        at E:\TestverTesting\Agents\FirstTest\tests\home\home.spec.ts:21:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\home-home-Home-page-heading-text-matches-expectations-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\home-home-Home-page-heading-text-matches-expectations-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\home-home-Home-page-heading-text-matches-expectations-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\home-home-Home-page-heading-text-matches-expectations-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\home-home-Home-page-heading-text-matches-expectations-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\home\home.spec.ts:20:5 › Home page heading text matches expectations ────────

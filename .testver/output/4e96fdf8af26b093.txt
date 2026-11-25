@@ -1,0 +1,17 @@
+SyntaxError: Cannot use 'import.meta' outside a module
+
+   at testver-exploration\dd0abff99a2d3131ee724090.spec.ts:4
+
+  2 | import { test } from '@playwright/test';
+  3 | // @ts-ignore The generated ESM runtime is verified separately.
+> 4 | import { runStandalone } from "./dd0abff99a2d3131ee724090.mjs";
+    | ^
+  5 | test("Home · TestverQA: page identity [guest]", async () => {
+  6 |   test.setTimeout(180000);
+  7 |   await runStandalone();
+    at Object.<anonymous> (E:\TestverTesting\Agents\FirstTest\tests\testver-exploration\dd0abff99a2d3131ee724090.spec.ts:4:1)
+
+
+── stderr ──────────────────────────────────────────
+(node:60124) Warning: Failed to load the ES module: E:\TestverTesting\Agents\FirstTest\tests\testver-exploration\dd0abff99a2d3131ee724090.mjs. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+(Use `node --trace-warnings ...` to show where the warning was created)

@@ -1,0 +1,7 @@
+[
+  {
+    "testName": "Manager login lands directly authenticated (no 2FA step)",
+    "startLine": 0,
+    "endLine": 3
+  }
+]

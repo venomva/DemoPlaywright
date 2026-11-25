@@ -3,6 +3,3 @@ test-results/
 playwright-report/
 blob-report/
 playwright/.cache/
-# Testver data (users, runs, secrets) — never commit
-.testver/
-.testver-results.json

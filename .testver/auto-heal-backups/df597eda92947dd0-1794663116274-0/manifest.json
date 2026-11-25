@@ -1,0 +1,16 @@
+{
+  "targets": [
+    {
+      "file": "tests/auth/auth.spec.ts",
+      "find": "getByTestId('remember-checkbox')",
+      "replace": "getByTestId('remember-me')"
+    }
+  ],
+  "patchedHash": {
+    "tests/auth/auth.spec.ts": "1efffee28d5fbccf028429541eb1753f66c3e33dd7eb9066f0fe6be030248c75"
+  },
+  "encodings": {
+    "tests/auth/auth.spec.ts": "utf8"
+  },
+  "at": "2026-11-14T13:31:56.277Z"
+}

@@ -1,0 +1,411 @@
+{
+  "id": "dash_mwnna6qt_uculs1",
+  "version": 1,
+  "title": "Automation Coverage — Testver QA",
+  "subtitle": "Test-management cases + Test Explorer script library · as of 19 Nov 2026",
+  "generatedAt": "2026-11-19T14:27:53.381Z",
+  "summary": {
+    "verdict": "Coverage exists on paper (100% of requirements have cases) but automation is thin where it matters: only 3% of critical-priority cases are automated and 33 of 57 scripts have never run.",
+    "status": "warn",
+    "findings": [
+      {
+        "tone": "bad",
+        "title": "Critical-priority automation is 1 of 32 cases (3%).",
+        "detail": "High is 31/57 (54%) and medium 24/34 (71%) — the riskiest tier is the least automated (testver get_automation_stats)."
+      },
+      {
+        "tone": "bad",
+        "title": "33 of 57 scripts (57.9%) have never run.",
+        "detail": "Only 13 are passing and 11 failing on their last run; every never-run script is effectively untested (test_library summary)."
+      },
+      {
+        "tone": "warn",
+        "title": "28 of 57 scripts (49%) are not linked to any test case.",
+        "detail": "67 of 123 cases have no script mapped, so platform coverage under-reports the automation that actually exists (test_library vs get_automation_stats)."
+      },
+      {
+        "tone": "warn",
+        "title": "11 scripts fail on their last run — all on 30s timeouts.",
+        "detail": "5 in tests/admin, 6 in tests/auth (profile 2FA + settings); the whole admin module has no passing script (test_library failing set)."
+      },
+      {
+        "tone": "info",
+        "title": "Requirements are fully covered by cases, not by automation.",
+        "detail": "20/20 requirements and 3/3 sources covered, but automation coverage of cases is 46% — regression is still largely manual (get_coverage_stats)."
+      }
+    ]
+  },
+  "method": "Sources: testver get_automation_stats and get_coverage_stats (test-case side: 123 total cases / 122 in coverage stats, 56 vs 55 automated — the two endpoints disagree by one case, figures shown use get_automation_stats); testver query_requirements (20 active requirements); test_library summary (all 57 Playwright scripts in 14 files, status = each script's LAST run, never_run = no run recorded, flaky overlaps the status buckets); automation_report summary since 90d (63 finished runs, verification re-runs excluded) for executed-run context. Automation coverage = automated test cases ÷ total test cases. Script-link coverage = scripts linked to a test case ÷ 57. No target thresholds are stored in the platform, so status flags reflect priority-risk, not a formal gate.",
+  "cells": [
+    {
+      "type": "kpi",
+      "title": "Case automation coverage",
+      "value": 46,
+      "unit": "%",
+      "hint": "56 of 123 cases automated · 67 manual",
+      "span": 3,
+      "status": "warn"
+    },
+    {
+      "type": "kpi",
+      "title": "Critical-priority cases automated",
+      "value": 3.1,
+      "unit": "%",
+      "hint": "1 of 32 critical cases — lowest of all priorities",
+      "span": 3,
+      "status": "bad"
+    },
+    {
+      "type": "kpi",
+      "title": "Scripts never run",
+      "value": 33,
+      "hint": "of 57 scripts (57.9% of the library)",
+      "span": 3,
+      "status": "bad"
+    },
+    {
+      "type": "kpi",
+      "title": "Scripts linked to a test case",
+      "value": 29,
+      "hint": "of 57 — 28 unlinked; 67 of 123 cases unmapped",
+      "span": 3,
+      "status": "warn"
+    },
+    {
+      "type": "chart",
+      "title": "Automation by priority (cases)",
+      "chartType": "stacked_bar",
+      "labels": [
+        "Critical",
+        "High",
+        "Medium"
+      ],
+      "datasets": [
+        {
+          "label": "Automated",
+          "data": [
+            1,
+            31,
+            24
+          ]
+        },
+        {
+          "label": "Manual",
+          "data": [
+            31,
+            26,
+            10
+          ]
+        }
+      ],
+      "colorScheme": "status",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Script status in the automation library (57 scripts)",
+      "chartType": "doughnut",
+      "labels": [
+        "Never run",
+        "Failing (last run)",
+        "Passing (last run)"
+      ],
+      "data": [
+        33,
+        11,
+        13
+      ],
+      "colors": [
+        "#94A3B8",
+        "#EF4444",
+        "#22C55E"
+      ],
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Coverage funnel (%) — cases covered vs actually automated and executed",
+      "chartType": "bar",
+      "labels": [
+        "Requirements covered",
+        "Sources covered",
+        "Scripts linked to a case",
+        "Case automation",
+        "Scripts run at least once"
+      ],
+      "data": [
+        100,
+        100,
+        51,
+        46,
+        42
+      ],
+      "colorScheme": "vibrant",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Scripts by folder — never run vs failing vs passing",
+      "chartType": "stacked_bar",
+      "labels": [
+        "auth",
+        "forms",
+        "tables",
+        "admin",
+        "dynamic",
+        "shop",
+        "state",
+        "widgets",
+        "home",
+        "elements",
+        "modules"
+      ],
+      "datasets": [
+        {
+          "label": "Never run",
+          "data": [
+            7,
+            6,
+            4,
+            0,
+            5,
+            1,
+            4,
+            2,
+            1,
+            2,
+            1
+          ]
+        },
+        {
+          "label": "Failing",
+          "data": [
+            6,
+            0,
+            0,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "label": "Passing",
+          "data": [
+            3,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            2,
+            2,
+            0,
+            0
+          ]
+        }
+      ],
+      "colors": [
+        "#94A3B8",
+        "#EF4444",
+        "#22C55E"
+      ],
+      "span": 6
+    },
+    {
+      "type": "table",
+      "title": "Coverage gaps by folder",
+      "headers": [
+        "Folder",
+        "Scripts",
+        "Never run",
+        "Failing",
+        "Flaky"
+      ],
+      "rows": [
+        [
+          "tests/auth",
+          "16",
+          "7",
+          "6",
+          "3"
+        ],
+        [
+          "tests/forms",
+          "6",
+          "6",
+          "0",
+          "0"
+        ],
+        [
+          "tests/tables",
+          "6",
+          "4",
+          "0",
+          "2"
+        ],
+        [
+          "tests/admin",
+          "5",
+          "0",
+          "5",
+          "0"
+        ],
+        [
+          "tests/dynamic",
+          "5",
+          "5",
+          "0",
+          "0"
+        ],
+        [
+          "tests/shop",
+          "5",
+          "1",
+          "0",
+          "3"
+        ],
+        [
+          "tests/state",
+          "4",
+          "4",
+          "0",
+          "0"
+        ],
+        [
+          "tests/widgets",
+          "4",
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "tests/home",
+          "3",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "tests/elements",
+          "2",
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "tests/modules",
+          "1",
+          "1",
+          "0",
+          "0"
+        ]
+      ],
+      "span": 6
+    },
+    {
+      "type": "table",
+      "title": "Failing scripts (last run) — blocked coverage",
+      "headers": [
+        "Test",
+        "File",
+        "Test case",
+        "Error",
+        "Last run"
+      ],
+      "rows": [
+        [
+          "Admin dashboard renders with title, heading and nav active state",
+          "tests/admin/admin.spec.ts",
+          "TC-42",
+          "Test timeout of 30000ms exceeded",
+          "Oct 4, 21:56"
+        ],
+        [
+          "Admin dashboard shows all four KPI stat cards with seeded values",
+          "tests/admin/admin.spec.ts",
+          "TC-43",
+          "Test timeout of 30000ms exceeded",
+          "Oct 4, 21:57"
+        ],
+        [
+          "Admin dashboard notifications feed renders all seeded notifications",
+          "tests/admin/admin.spec.ts",
+          "TC-44",
+          "Test timeout of 30000ms exceeded",
+          "Oct 4, 21:55"
+        ],
+        [
+          "Admin dashboard recent-orders table shows headers and seeded rows",
+          "tests/admin/admin.spec.ts",
+          "TC-45",
+          "Test timeout of 30000ms exceeded",
+          "Oct 4, 21:56"
+        ],
+        [
+          "Admin dashboard View shop link navigates to the shop module",
+          "tests/admin/admin.spec.ts",
+          "TC-46",
+          "Test timeout of 30000ms exceeded",
+          "Oct 4, 21:55"
+        ],
+        [
+          "Manager login lands directly authenticated (no 2FA step)",
+          "tests/auth/manager-profile.spec.ts",
+          "— (unlinked)",
+          "Test timeout of 30000ms exceeded",
+          "Nov 14, 18:45"
+        ],
+        [
+          "Admin login completes 2FA and lands authenticated (home)",
+          "tests/auth/profile.spec.ts",
+          "TC-37",
+          "expect(locator).toBeVisible() failed",
+          "Oct 9, 18:20"
+        ],
+        [
+          "Admin profile page shows identity, account stats and recent orders",
+          "tests/auth/profile.spec.ts",
+          "TC-38",
+          "Test timeout of 30000ms exceeded",
+          "Oct 4, 21:58"
+        ],
+        [
+          "Admin settings: identity is read-only, preferences render as toggles",
+          "tests/auth/profile.spec.ts",
+          "TC-39",
+          "Test timeout of 30000ms exceeded",
+          "Oct 4, 21:59"
+        ],
+        [
+          "Admin settings: save profile persists (self-restoring)",
+          "tests/auth/profile.spec.ts",
+          "TC-40",
+          "Test timeout of 30000ms exceeded",
+          "Oct 4, 22:00"
+        ],
+        [
+          "Admin settings: notification preferences success alert",
+          "tests/auth/profile.spec.ts",
+          "TC-41",
+          "Test timeout of 30000ms exceeded",
+          "Oct 4, 21:59"
+        ]
+      ],
+      "span": 6,
+      "columnLinks": {
+        "Test": "test",
+        "File": "file"
+      }
+    },
+    {
+      "type": "markdown",
+      "content": "## Where the coverage gap actually is\n- **Critical tier:** 31 of 32 critical-priority cases are still manual — REQ-19 (RBI tokenization / PII), REQ-15, REQ-9 and REQ-6 are the requirement-level names to attack first.\n- **Never-run scripts (33):** concentrated in `tests/forms` (6/6), `tests/dynamic` (5/5), `tests/state` (4/4), `tests/elements` (2/2) and `tests/modules` (1/1) — these folders contribute **zero** verified automation today.\n- **Admin module:** 5 scripts, 5 failing (all 30s timeouts) — the module has no green script, so its 5 linked cases (TC-42 – TC-46) are coverage on paper only.\n- **Linking debt:** 28 scripts carry no test case and 67 of 123 cases carry no script; either direction of linking closes the reporting gap.\n- **Run context (automation_report, since 90d):** 63 finished runs, 168 executed tests, 79.2% test-level pass rate (avg run pass rate 67%), 14 verification re-runs excluded."
+    }
+  ]
+}

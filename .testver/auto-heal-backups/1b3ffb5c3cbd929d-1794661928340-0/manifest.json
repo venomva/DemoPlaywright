@@ -1,0 +1,16 @@
+{
+  "targets": [
+    {
+      "file": "tests/pages/ShopPage.ts",
+      "find": "getByTestId('add-cart-1')",
+      "replace": "getByTestId('add-to-cart-1')"
+    }
+  ],
+  "patchedHash": {
+    "tests/pages/ShopPage.ts": "2c957b8a83244c442036a41441eab9c1f4a7f3289fd5889ace22fb85af7f13f3"
+  },
+  "encodings": {
+    "tests/pages/ShopPage.ts": "utf8"
+  },
+  "at": "2026-11-14T13:12:08.346Z"
+}

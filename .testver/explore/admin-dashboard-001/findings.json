@@ -1,0 +1,23 @@
+{
+  "runId": "admin-dashboard-001",
+  "findings": [
+    {
+      "id": "F-ADM-01",
+      "severity": "medium",
+      "title": "/admin dashboard data is served to unauthenticated guests",
+      "page": "/admin",
+      "details": "Loading /admin without a session renders the full dashboard — all four KPI stat cards (50 / 500 / 201 / $1,233,808.23), the Orders-by-status Chart.js chart, the 8-item notifications feed and the 7-row recent-orders table — with a guest header ('Sign in'). No redirect to /auth/login and no data masking. The admin dashboard is an admin-only surface in name only.",
+      "evidence": ".testver/explore/admin-dashboard-001/shots/02-admin-as-guest.png",
+      "recommendation": "Gate /admin behind the authenticated route; redirect guests to /auth/login (or render an anonymous placeholder) so admin KPIs and order data are not exposed pre-login."
+    },
+    {
+      "id": "F-ADM-02",
+      "severity": "info",
+      "title": "Orders-by-status chart is a static canvas with no accessible tooltip",
+      "page": "/admin",
+      "details": "The Chart.js bar chart renders at canvas#chart-bar (data-testid=chart-bar) but hovering bars produces no tooltip DOM node and no accessible fallback (no aria-label on the canvas). Chart data is not exposed to assistive tech or observable via hover.",
+      "evidence": "probed live (hover) — no .chartjs-tooltip node",
+      "recommendation": "Add an aria-label/summary describing the chart, or render a data table fallback for the orders-by-status breakdown."
+    }
+  ]
+}

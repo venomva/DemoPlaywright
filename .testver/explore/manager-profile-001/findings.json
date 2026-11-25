@@ -1,0 +1,49 @@
+{
+  "runId": "manager-profile-001",
+  "target": "https://testplay.venomva.com/",
+  "environment": "staging",
+  "role": "manager",
+  "seedCredentials": {
+    "login": "manager / manager123 (seeded, documented on /debug/state 'Test credentials')",
+    "twoFactor": "NONE — manager login POST /auth/login lands directly on / (home); no /auth/2fa step (unlike admin)"
+  },
+  "pagesCrawled": [
+    { "url": "/", "title": "Home · TestverQA", "notes": "header shows user-pill manager (aria-label 'Open user menu') when authenticated; user menu -> View profile /auth/profile, Account settings /auth/settings, My cart, Sign out", "issues": "none" },
+    { "url": "/auth/login", "title": "Sign in · TestverQA", "notes": "login form: username-input, password-input, remember-checkbox, login-submit; manager+manager123 submits directly to authenticated home (no 2FA)", "issues": "none" },
+    { "url": "/auth/profile", "title": "Profile · TestverQA", "notes": "h1 'Hello, Manager 👋'; identity h3 'Manager User' (profile-name), @manager (profile-handle), manager@testverqa.io (profile-email-display), role badge 'manager' (profile-role) + status 'active' (profile-status); member since January 2024; stats: ORDERS PLACED 1 (stat-orders), TOTAL SPENT $7,062 (stat-spent), ACCOUNT ID #00003 (stat-id); profile-info-card; recent orders table profile-orders-table with 1 row ORD-000115 ($7062.00, 3 item(s), shipped, 3/23/2026) -> View link profile-order-view-115 -> /shop/order/ORD-000115", "issues": "none" },
+    { "url": "/auth/settings", "title": "Account settings · TestverQA", "notes": "sections identical to admin layout: Profile details (settings-username readonly=manager, settings-role readonly=manager, settings-fullname editable 'Manager User', settings-email editable manager@testverqa.io, settings-save-profile), Change password (pw-current/pw-new/pw-confirm, settings-save-password; page hint 'For tests: current password is your seeded one'), Security (sec-2fa-toggle DISABLED for manager — 2FA not enabled, sec-gen-codes DISABLED; Email verification manager@testverqa.io Verified; no recovery-code list), Notification preferences (pref-email/news/digest/sms toggles, settings-save-prefs), Active sessions (sessions-table 3 rows: This browser current/Local/Just now; iPhone Safari Bangalore; Windows Chrome San Francisco; revoke-mobile, revoke-desktop, revoke-all), Danger zone (delete-confirm-text, delete-account — RESTRICTED)", "issues": "none" },
+    { "url": "/shop/order/ORD-000115", "title": "Order ORD-000115 · TestverQA", "notes": "order confirmation reachable from profile recent orders; h1 'Order placed successfully!'; order number ORD-000115; 3 line items (2x $1920.00, 2x $3402.00, 1x $1740.00); Total $7062.00; 'Continue shopping' -> /shop", "issues": "none" },
+    { "url": "/debug/state", "title": "State Inspector · TestverQA", "notes": "documents seeded test credentials: admin/admin123 (2FA), tester/test123, manager/manager123; reset & reseed (reset-go) is DATA-DESTROYING — restricted, not automated", "issues": "none" }
+  ],
+  "roleDifferences": {
+    "managerVsAdmin": [
+      "manager login has NO 2FA step (admin goes through /auth/2fa with OTP 123456)",
+      "manager settings Security: sec-2fa-toggle DISABLED + sec-gen-codes DISABLED (admin: 2FA already enabled, recovery codes disabled)",
+      "manager profile: 1 order (ORD-000115, $7,062), account id #00003, member since January 2024 (admin: 3 orders, $11,229, id #00001)",
+      "manager full name 'Manager User', email manager@testverqa.io, role badge 'manager'"
+    ]
+  },
+  "writeContract": {
+    "saveProfile": "fill settings-fullname/settings-email then settings-save-profile -> .alert.alert-success[data-testid=settings-success] 'Profile details saved successfully.' and value persists to /auth/profile identity card",
+    "savePreferences": "toggle pref-*-toggle(s) then settings-save-prefs -> same success alert style 'Notification preferences saved.'",
+    "cleanupNote": "test writes on staging leave residue; original seeded values restored after live probe. reset-state / /debug/reset is official reseed path but data-destroying -> out of scope per restrictions",
+    "passwordChange": "NOT automated — no approved state recipe to restore the seeded password; out of scope",
+    "dangerZone": "delete-account / revoke-all / revoke-mobile / revoke-desktop — destructive or session-affecting; NOT automated"
+  },
+  "findings": {
+    "managerLoginNo2Fa": ["/auth/login (manager/manager123) lands DIRECTLY on authenticated / (home) — no /auth/2fa step (unlike admin which goes through OTP 123456)"],
+    "authGate": "profile and settings pages require a logged-in session; unauthenticated GET /auth/profile redirects to /auth/login (guest baseline)",
+    "readonly": "settings-username and settings-role are readonly (immutable identity); full name + email are editable",
+    "securityDisabled": "for manager, sec-2fa-toggle and sec-gen-codes are present but DISABLED (2FA never enabled for this account)",
+    "alertTestId": "success alerts share data-testid=settings-success with class alert alert-success",
+    "profileOrders": "recent orders table lists 1 order for manager (ORD-000115); View -> /shop/order/ORD-000115 shows matching total $7062.00 and 3 line items"
+  },
+  "issues": [],
+  "automationPlan": [
+    { "file": "tests/pages/ProfilePage.ts", "note": "ADDITIVE: extend with manager-aware assertions (role parameter) — keep admin contract intact" },
+    { "file": "tests/pages/SettingsPage.ts", "note": "additive: role-parameterized identity/security assertions (2FA disabled for manager)" },
+    { "file": "tests/fixtures/fixtures.ts", "note": "no change needed — profilePage/settingsPage fixtures already exist" },
+    { "file": "tests/auth/manager-profile.spec.ts", "note": "new spec: manager login (no 2FA), profile identity, account stats, recent orders -> order detail, settings read-only + security disabled + save profile/prefs writes with restore" },
+    { "note": "tests authenticate via UI with seeded manager/manager123 — documented playground credentials; session reuse via authRole=manager where a saved session exists" }
+  ]
+}

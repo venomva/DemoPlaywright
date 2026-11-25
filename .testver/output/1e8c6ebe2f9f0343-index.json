@@ -1,0 +1,42 @@
+[
+  {
+    "testName": "Shop · TestverQA: page identity",
+    "startLine": 0,
+    "endLine": 3
+  },
+  {
+    "testName": "Shop: adding a product increments the cart badge",
+    "startLine": 4,
+    "endLine": 4
+  },
+  {
+    "testName": "Shop: cart total and coupon SAVE10 discount are applied",
+    "startLine": 5,
+    "endLine": 5
+  },
+  {
+    "testName": "Shop: full checkout journey places an order",
+    "startLine": 6,
+    "endLine": 6
+  },
+  {
+    "testName": "Shop · TestverQA: page identity",
+    "startLine": 7,
+    "endLine": 7
+  },
+  {
+    "testName": "Shop: adding a product increments the cart badge",
+    "startLine": 8,
+    "endLine": 8
+  },
+  {
+    "testName": "Shop: cart total and coupon SAVE10 discount are applied",
+    "startLine": 9,
+    "endLine": 9
+  },
+  {
+    "testName": "Shop: full checkout journey places an order",
+    "startLine": 10,
+    "endLine": 10
+  }
+]

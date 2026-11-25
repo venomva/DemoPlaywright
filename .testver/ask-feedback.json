@@ -1,0 +1,15 @@
+{
+  "misses": [],
+  "ratings": [
+    {
+      "id": "session-1791221577101:text-chat-1791221577101-1-1",
+      "sessionId": "session-1791221577101",
+      "question": "is checkout working?",
+      "answer": "I'll check the recorded test results and any knowledge about checkout. Yes — as of the last automated run on Oct 4, 2026, the checkout test passed (10 passed, 0 failed overall, and the one checkout test, \"Shop: full checkout journey places an order\", passed). That test walks a guest through adding a product (cart badge = 1), filling shipping, accepting billing \"same as shipping\", keeping Standar",
+      "rating": "up",
+      "note": "",
+      "user": "sadmin",
+      "at": 1791221702538
+    }
+  ]
+}

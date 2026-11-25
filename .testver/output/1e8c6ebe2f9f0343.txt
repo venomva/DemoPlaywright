@@ -1,0 +1,13 @@
+
+Running 8 tests using 1 worker
+
+  ✓  1 [chromium] › tests\shop\shop.spec.ts:24:5 › Shop · TestverQA: page identity (1.7s)
+  ✓  2 [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge (3.7s)
+  ✓  3 [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied (5.7s)
+  ✓  4 [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order (9.3s)
+  ✓  5 [firefox] › tests\shop\shop.spec.ts:24:5 › Shop · TestverQA: page identity (2.1s)
+  ✓  6 [firefox] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge (2.6s)
+  ✓  7 [firefox] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied (4.6s)
+  ✓  8 [firefox] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order (9.1s)
+
+  8 passed (41.3s)

@@ -1,0 +1,7 @@
+[
+  {
+    "testName": "Admin settings: save profile shows success and persists to profile (self-restoring) (31.0s)",
+    "startLine": 0,
+    "endLine": 3
+  }
+]

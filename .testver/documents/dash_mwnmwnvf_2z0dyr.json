@@ -1,0 +1,279 @@
+{
+  "id": "dash_mwnmwnvf_2z0dyr",
+  "version": 1,
+  "title": "Daily QA Summary — Nov 19, 2026",
+  "subtitle": "Automation + test management | last 24h (Nov 18–19) with 7-day and library context | sources: automation_report, test_library, suites_report, testver",
+  "generatedAt": "2026-11-19T14:17:22.395Z",
+  "cells": [
+    {
+      "type": "kpi",
+      "title": "Automation Runs (24h)",
+      "value": 0,
+      "hint": "No finished runs since Nov 18 — automation_report summary, 24h window",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Pass Rate (7d)",
+      "value": 61.3,
+      "unit": "%",
+      "hint": "19 passed / 31 executed across 11 runs, Nov 12–16 (passRatePct)",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Failing Scripts",
+      "value": 11,
+      "hint": "of 57 scripts at their last run — test_library summary",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Open Defects",
+      "value": 1,
+      "hint": "1 open (D-2, critical) of 2 total — testver query_defects",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Health Score",
+      "value": 58,
+      "hint": "execution freshness 0 (nothing run in 7d by TM) — testver get_health_score",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Requirement Coverage",
+      "value": 100,
+      "unit": "%",
+      "hint": "20/20 requirements covered — testver get_coverage_stats",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Automation Coverage",
+      "value": 45,
+      "unit": "%",
+      "hint": "55/122 test cases automated — testver get_coverage_stats",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Never-Run Scripts",
+      "value": 33,
+      "hint": "of 57 scripts have no recorded run — test_library summary",
+      "span": 3
+    },
+    {
+      "type": "chart",
+      "title": "Automation Script Status (57 scripts, last-run result)",
+      "chartType": "bar",
+      "labels": [
+        "Passing",
+        "Failing",
+        "Never run"
+      ],
+      "data": [
+        13,
+        11,
+        33
+      ],
+      "colors": [
+        "#22C55E",
+        "#EF4444",
+        "#94A3B8"
+      ],
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Pass Rate by Suite (latest completed run)",
+      "chartType": "bar",
+      "labels": [
+        "Self Check (4 tests)",
+        "Sanity Test (10 tests)"
+      ],
+      "data": [
+        75,
+        90
+      ],
+      "colors": [
+        "#3B82F6",
+        "#8B5CF6"
+      ],
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Failures by Spec File (7d)",
+      "chartType": "horizontal_bar",
+      "labels": [
+        "tests/shop/manager-checkout.spec.ts",
+        "tests/auth/manager-profile.spec.ts",
+        "tests/shop/shop.spec.ts",
+        "tests/auth/auth.spec.ts"
+      ],
+      "data": [
+        4,
+        3,
+        3,
+        2
+      ],
+      "colors": [
+        "#EF4444",
+        "#F97316",
+        "#F59E0B",
+        "#FACC15"
+      ],
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Health Score Breakdown (weighted components)",
+      "chartType": "horizontal_bar",
+      "labels": [
+        "Requirement Coverage",
+        "Sync Health",
+        "Quality Score",
+        "Automation Coverage",
+        "Execution Freshness"
+      ],
+      "data": [
+        100,
+        96,
+        50,
+        45,
+        0
+      ],
+      "colors": [
+        "#22C55E",
+        "#84CC16",
+        "#F59E0B",
+        "#F97316",
+        "#EF4444"
+      ],
+      "span": 6
+    },
+    {
+      "type": "table",
+      "title": "Top Failures (7d, 12 failed tests across 8 distinct tests)",
+      "headers": [
+        "Test",
+        "File",
+        "Failures",
+        "Last failure (UTC)",
+        "Error summary"
+      ],
+      "rows": [
+        [
+          "Manager buys the cheapest electronics with a coupon - Maya Patel",
+          "tests/shop/manager-checkout.spec.ts",
+          2,
+          "2026-11-14 13:01",
+          "selectOption timeout on getByTestId('filter-category')"
+        ],
+        [
+          "Manager buys the cheapest electronics with a coupon - Leo Grant",
+          "tests/shop/manager-checkout.spec.ts",
+          2,
+          "2026-11-14 13:01",
+          "selectOption timeout on getByTestId('filter-category')"
+        ],
+        [
+          "Sign in form exposes required username/password fields (guest, read-only)",
+          "tests/auth/auth.spec.ts",
+          2,
+          "2026-11-14 13:30",
+          "getByTestId('remember-checkbox') not found"
+        ],
+        [
+          "Manager login lands directly authenticated (no 2FA step)",
+          "tests/auth/manager-profile.spec.ts",
+          2,
+          "2026-11-14 13:15",
+          "promo-overlay intercepts pointer events on login-submit (LoginPage.ts:94)"
+        ],
+        [
+          "Shop: full checkout journey places an order",
+          "tests/shop/shop.spec.ts",
+          1,
+          "2026-11-14 13:07",
+          "getByTestId('ck-agree') check timeout (CheckoutPage.ts:104)"
+        ],
+        [
+          "Shop: adding a product increments the cart badge",
+          "tests/shop/shop.spec.ts",
+          1,
+          "2026-11-14 13:11",
+          "getByTestId('add-cart-1') click timeout (ShopPage.ts:78)"
+        ],
+        [
+          "Shop · TestverQA: page identity",
+          "tests/shop/shop.spec.ts",
+          1,
+          "2026-11-14 13:16",
+          "h1 expected \"Shop\", received \"Store\""
+        ],
+        [
+          "Manager settings: identity is read-only, 2FA controls are disabled",
+          "tests/auth/manager-profile.spec.ts",
+          1,
+          "2026-11-14 12:54",
+          "getByTestId('pref-email-toggle') not found"
+        ]
+      ],
+      "span": 12
+    },
+    {
+      "type": "table",
+      "title": "Flaky Tests (≥20% outcome change, 14d)",
+      "headers": [
+        "Test",
+        "File",
+        "Runs",
+        "Pass",
+        "Fail",
+        "Flakiness %"
+      ],
+      "rows": [
+        [
+          "Sign in form exposes required username/password fields (guest, read-only)",
+          "tests/auth/auth.spec.ts",
+          3,
+          1,
+          2,
+          50
+        ],
+        [
+          "Shop · TestverQA: page identity",
+          "tests/shop/shop.spec.ts",
+          3,
+          2,
+          1,
+          50
+        ],
+        [
+          "Shop: adding a product increments the cart badge",
+          "tests/shop/shop.spec.ts",
+          3,
+          2,
+          1,
+          50
+        ],
+        [
+          "Shop: full checkout journey places an order",
+          "tests/shop/shop.spec.ts",
+          3,
+          2,
+          1,
+          50
+        ]
+      ],
+      "span": 12
+    },
+    {
+      "type": "markdown",
+      "content": "## Read this first\n\n- **Zero automation runs finished in the last 24 hours.** `automation_report summary` and `list_runs` both returned 0 for the window since Nov 18. The most recent finished run was **Nov 16, 06:11 UTC** (run `9d2e3651308bda4d`, 1/1 passed). Everything below the 24h KPIs is therefore **7-day / library context**, not today's execution.\n- **0 API calls** logged in the last 24h (`api_report summary`, 21-call log) — no API signal today.\n- Test management agrees: `get_health_score` reports **execution freshness 0 — \"0 executed in last 7 days\"**, which is what drags the health score to 58.\n\n## What the numbers say\n\n- **Pass rate 61.3% (7d)** = 19 passed ÷ 31 executed across 11 runs. The average of each run's own rate is only **25.5%** — many runs are single-test runs that failed outright (Nov 14 was the heavy day).\n- **8 distinct tests failed 12 times** in 7d; the two *Manager buys the cheapest electronics with a coupon* data rows (`Maya Patel`, `Leo Grant`) share the same root cause: `filter-category` never resolves in `ShopPage.applyProductFilters`.\n- **4 tests at 50% flakiness** — all four are green in the Sanity Test suite but red as standalone runs, so the suite path and the direct path disagree.\n- **Library is mostly unexercised:** 33 of 57 scripts have never run, 11 are failing at their last run, 13 passing. `tests/forms` (6) and `tests/dynamic` (5) have never run at all.\n- **Coverage is requirement-complete but automation-thin:** 20/20 requirements covered (100%) yet only 55/122 cases automated (45%), with 50 stale cases and 55 orphan test cases.\n\n## Sources\n\n| Number | Tool | Window / basis |\n|---|---|---|\n| 0 runs, 0 API calls | `automation_report summary`, `api_report summary` | since Nov 18, 2026 |\n| 61.3% pass rate, 11 runs, 31 tests | `automation_report summary` | since Nov 12 (7d) |\n| Top failures, flaky tests | `automation_report get_top_failures`, `get_flaky_tests` | 7d / 14d, verification re-runs excluded |\n| 57 scripts, 13/11/33, 28 unlinked | `test_library summary` | all scripts, last-run status |\n| Suite pass rates | `suites_report pass_rate_by_suite` | latest completed run per suite |\n| Health 58, coverage 100%/45%, defects 1 open | `testver get_health_score`, `get_coverage_stats`, `query_defects` | current platform state |"
+    }
+  ]
+}

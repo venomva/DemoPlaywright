@@ -1,0 +1,47 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests\shop\purchase-flow.spec.ts:43:5 › Manager buys the cheapest electronics with a coupon (31.1s)
+
+
+  1) [chromium] › tests\shop\purchase-flow.spec.ts:43:5 › Manager buys the cheapest electronics with a coupon 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.check: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('ship-exp')
+
+
+       at pages\CheckoutPage.ts:103
+
+      101 |     // "Express · 2-3 days · $19.99" shipping-method radio on the delivery step
+      102 |     // Alt: [css] #m-exp (0.97), [xpath] //input[@name='shippingMethod'] (0.77)
+    > 103 |     await this.page.getByTestId('ship-exp').check();
+          |                                             ^
+      104 |   }
+      105 |
+      106 |   /** Place the order on the review step ("Place order" submit). */
+        at CheckoutPage.selectExpressShipping (E:\TestverTesting\Agents\FirstTest\tests\pages\CheckoutPage.ts:103:45)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\purchase-flow.spec.ts:116:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-purchase-flow-Manager-36c73-t-electronics-with-a-coupon-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-purchase-flow-Manager-36c73-t-electronics-with-a-coupon-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-purchase-flow-Manager-36c73-t-electronics-with-a-coupon-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-purchase-flow-Manager-36c73-t-electronics-with-a-coupon-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-purchase-flow-Manager-36c73-t-electronics-with-a-coupon-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\shop\purchase-flow.spec.ts:43:5 › Manager buys the cheapest electronics with a coupon 

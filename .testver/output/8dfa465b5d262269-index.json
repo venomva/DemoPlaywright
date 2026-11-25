@@ -1,0 +1,7 @@
+[
+  {
+    "testName": "Manager settings: identity is read-only, 2FA controls are disabled",
+    "startLine": 0,
+    "endLine": 3
+  }
+]

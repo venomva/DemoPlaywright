@@ -1,0 +1,32 @@
+[
+  {
+    "testName": "Manager buys the cheapest electronics with a coupon - Maya Patel",
+    "startLine": 0,
+    "endLine": 3
+  },
+  {
+    "testName": "Manager buys the cheapest electronics with a coupon - Leo Grant",
+    "startLine": 4,
+    "endLine": 4
+  },
+  {
+    "testName": "Shop · TestverQA: page identity",
+    "startLine": 5,
+    "endLine": 5
+  },
+  {
+    "testName": "Shop: adding a product increments the cart badge",
+    "startLine": 6,
+    "endLine": 6
+  },
+  {
+    "testName": "Shop: cart total and coupon SAVE10 discount are applied",
+    "startLine": 7,
+    "endLine": 7
+  },
+  {
+    "testName": "Shop: full checkout journey places an order",
+    "startLine": 8,
+    "endLine": 8
+  }
+]

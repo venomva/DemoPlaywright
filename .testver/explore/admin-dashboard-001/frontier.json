@@ -1,0 +1,21 @@
+{
+  "runId": "admin-dashboard-001",
+  "entry": "https://testplay.venomva.com/admin",
+  "visited": [
+    {
+      "url": "https://testplay.venomva.com/admin",
+      "role": "admin (restored session)",
+      "title": "Admin Dashboard · TestverQA",
+      "result": "Dashboard renders: 4 KPI stat cards, Orders-by-status Chart.js canvas, Notifications list (8 items), Recent orders table (7 rows), nav-admin active, View shop link",
+      "issues": "none"
+    },
+    {
+      "url": "https://testplay.venomva.com/admin",
+      "role": "guest (no session)",
+      "title": "Admin Dashboard · TestverQA",
+      "result": "Same dashboard content served to guest: KPI values 50 / 500 / 201 / $1,233,808.23 and recent-orders table fully rendered; header shows 'Sign in' instead of user pill; no redirect to /auth/login",
+      "issues": "none"
+    }
+  ],
+  "todo": []
+}

@@ -1,0 +1,51 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied (8.2s)
+
+
+  1) [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('cart-count')
+    Expected: "1"
+    Received: "0"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByTestId('cart-count') with timeout 5000ms
+      - waiting for getByTestId('cart-count')
+        14 × locator resolved to <span data-testid="cart-count">0</span>
+           - unexpected value "0"
+
+
+      53 |   // The add is an async JS POST — wait for the badge to confirm it landed
+      54 |   // BEFORE navigating, otherwise the in-flight request gets aborted by goto.
+    > 55 |   await expect(shopPage.cartCount).toHaveText('1');
+         |                                    ^
+      56 |
+      57 |   // Cart shows the line item and the full price before any coupon.
+      58 |   await cartPage.goto('/shop/cart');
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:55:36
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .testver\runs\c9cb1628d7ce36c9\test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    .testver\runs\c9cb1628d7ce36c9\test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .testver\runs\c9cb1628d7ce36c9\test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    .testver\runs\c9cb1628d7ce36c9\test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace .testver\runs\c9cb1628d7ce36c9\test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied 

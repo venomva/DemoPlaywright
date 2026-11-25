@@ -1,0 +1,16 @@
+{
+  "targets": [
+    {
+      "file": "tests/pages/LoginPage.ts",
+      "find": "getByTestId('login-submit')",
+      "replace": "getByTestId('sign-in-submit')"
+    }
+  ],
+  "patchedHash": {
+    "tests/pages/LoginPage.ts": "d4457e9c55ce3d592011e30074cc76d8d9808f3807e1d2bc8f01af49203bb75b"
+  },
+  "encodings": {
+    "tests/pages/LoginPage.ts": "utf8"
+  },
+  "at": "2026-11-14T12:33:20.055Z"
+}

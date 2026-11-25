@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QA Summary Report</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: #f7f8fa; color: #1f2937; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
+  .header { border-bottom: 1px solid #e5e7eb; padding-bottom: 16px; margin-bottom: 20px; }
+  .header h1 { margin: 0; font-size: 24px; color: #111827; }
+  .header .sub { color: #6b7280; margin-top: 4px; font-size: 13px; }
+  .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+  .cell { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+  .kpi-title { font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
+  .kpi-value { font-size: 28px; font-weight: 700; color: #111827; margin-top: 6px; }
+  .kpi-unit { font-size: 16px; color: #6b7280; margin-left: 2px; font-weight: 500; }
+  .kpi-hint, .hint { color: #6b7280; font-size: 11px; margin-top: 6px; }
+  .chart-title, .table-title { font-weight: 600; color: #374151; margin-bottom: 10px; }
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: #6b7280; font-weight: 600; padding: 8px 10px; border-bottom: 1px solid #e5e7eb; text-transform: uppercase; letter-spacing: 0.05em; font-size: 10px; background: #f9fafb; }
+  td { padding: 8px 10px; border-bottom: 1px solid #f3f4f6; color: #374151; max-width: 360px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  td.empty { text-align: center; color: #9ca3af; padding: 24px 10px; white-space: normal; }
+  tbody tr:hover { background: #f9fafb; }
+  .markdown h2 { font-size: 18px; color: #111827; margin: 0 0 8px; }
+  .markdown h3 { font-size: 15px; color: #374151; margin: 12px 0 6px; }
+  .markdown p { margin: 6px 0; color: #4b5563; }
+  .markdown ul { margin: 6px 0; padding-left: 22px; }
+  .markdown li { margin: 3px 0; color: #4b5563; }
+  .markdown strong { color: #111827; }
+  .markdown code { background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 4px; padding: 1px 5px; font-family: Consolas, Menlo, monospace; font-size: 12px; color: #374151; }
+  .footer { margin-top: 24px; color: #9ca3af; font-size: 11px; text-align: center; }
+  /* Responsive collapse — parity with ReportCard's col-span-12 md:col-span-N:
+     below tablet width every cell goes full-width (KPIs pair up two-across).
+     !important is required because each cell carries an inline grid-column. */
+  @media (max-width: 720px) {
+    .wrap { padding: 12px; }
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .cell { grid-column: span 2 !important; }
+    .cell.kpi { grid-column: span 1 !important; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>QA Summary Report</h1>
+      <div class="sub">TestverQA playground · automation window 2026-09-18 → 2026-10-04 · sources: automation_report, suites_report, api_report, testver</div>
+      <div class="sub">Generated Oct 4, 2026, 5:59 PM UTC</div>
+    </div>
+    <div class="grid">
+      <div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Latest Run Pass Rate</div>
+      <div class="kpi-value">100<span class="kpi-unit">%</span></div>
+      <div style="color:#16A34A;font-size:12px;margin-top:4px;">▲ +11.1%</div>
+      <div class="kpi-hint">Sanity Test · 10/10 vs 88.9% prior run</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Overall Pass Rate (window)</div>
+      <div class="kpi-value">79.7<span class="kpi-unit">%</span></div>
+      
+      <div class="kpi-hint">51 passed / 13 failed of 64 tests, 20 runs</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Automation Coverage</div>
+      <div class="kpi-value">88<span class="kpi-unit">%</span></div>
+      
+      <div class="kpi-hint">44 of 50 test cases automated</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Test Mgmt Health</div>
+      <div class="kpi-value">64<span class="kpi-unit">/100</span></div>
+      
+      <div class="kpi-hint">Req coverage 50 · Freshness 38 · Sync 96</div>
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="chart-title">Pass Rate by Run (last 10 runs)</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;max-width:100%;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1787 938">
+  <rect width="1787" height="938" fill="#FFFFFF" rx="12"/>
+  <text x="893.5" y="60" text-anchor="middle" fill="#1F2937" font-size="44px" font-weight="bold" font-family="Arial"></text>
+  <line x1="223" y1="778" x2="1716" y2="778" stroke="rgba(0,0,0,0.08)"/><text x="213" y="792" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">0</text><line x1="223" y1="651" x2="1716" y2="651" stroke="rgba(0,0,0,0.08)"/><text x="213" y="665" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">20</text><line x1="223" y1="524" x2="1716" y2="524" stroke="rgba(0,0,0,0.08)"/><text x="213" y="538" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">40</text><line x1="223" y1="397" x2="1716" y2="397" stroke="rgba(0,0,0,0.08)"/><text x="213" y="411" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">60</text><line x1="223" y1="270" x2="1716" y2="270" stroke="rgba(0,0,0,0.08)"/><text x="213" y="284" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">80</text><line x1="223" y1="143" x2="1716" y2="143" stroke="rgba(0,0,0,0.08)"/><text x="213" y="157" text-anchor="end" fill="#6B7280" font-size="40px" font-family="Arial">100</text><text x="223" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 223 813)">09-26 14:55</text><text x="554.7777777777778" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 554.7777777777778 813)">09-26 15:14</text><text x="886.5555555555555" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 886.5555555555555 813)">09-26 16:30</text><text x="1218.3333333333333" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1218.3333333333333 813)">09-26 16:54</text><text x="1550.111111111111" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1550.111111111111 813)">10-04 16:34</text><text x="1716" y="813" text-anchor="end" fill="#1F2937" font-size="32px" font-family="Arial" transform="rotate(-22 1716 813)">10-04 16:59</text><path d="M223,778 L223,143 L388.8888888888889,143 L554.7777777777778,143 L720.6666666666666,143 L886.5555555555555,778 L1052.4444444444443,143 L1218.3333333333333,778 L1384.2222222222222,720.215 L1550.111111111111,213.485 L1716,143 L1716,778 Z" fill="#3B82F6" opacity="0.1"/><polyline points="223,143 388.8888888888889,143 554.7777777777778,143 720.6666666666666,143 886.5555555555555,778 1052.4444444444443,143 1218.3333333333333,778 1384.2222222222222,720.215 1550.111111111111,213.485 1716,143" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="223" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="223" y="129" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text><circle cx="388.8888888888889" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="554.7777777777778" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="554.7777777777778" y="129" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text><circle cx="720.6666666666666" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="886.5555555555555" cy="778" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="886.5555555555555" y="764" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">0</text><circle cx="1052.4444444444443" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="1218.3333333333333" cy="778" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="1218.3333333333333" y="764" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">0</text><circle cx="1384.2222222222222" cy="720.215" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><circle cx="1550.111111111111" cy="213.485" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="1550.111111111111" y="199.485" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">88.9</text><circle cx="1716" cy="143" r="4" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/><text x="1716" y="129" text-anchor="middle" fill="#1F2937" font-size="40px" font-family="Arial">100</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="chart-title">Failure Categories (13 failures in window)</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;max-width:100%;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1787 938">
+  <rect width="1787" height="938" fill="#FFFFFF" rx="12"/>
+  <text x="893.5" y="60" text-anchor="middle" fill="#1F2937" font-size="44px" font-weight="bold" font-family="Arial"></text>
+  <path d="M679,60 A429,429 0 1,1 325.93992153162134,245.30022365233424 L484.81695684239173,354.96512300878385 A235.95000000000002,235.95000000000002 0 1,0 679,253.04999999999998 Z" fill="[" stroke="#FFFFFF" stroke-width="2"/><text x="833.508836625252" y="783.391992129051" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40px" font-weight="bold" font-family="Arial">85%</text><path d="M325.93992153162134,245.30022365233424 A429,429 0 0,1 479.63375919322334,109.1393649947729 L569.3485675562729,280.0766507471251 A235.95000000000002,235.95000000000002 0 0,0 484.81695684239173,354.96512300878385 Z" fill=""" stroke="#FFFFFF" stroke-width="2"/><text x="458.52829420139153" y="240.13888900181323" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40px" font-weight="bold" font-family="Arial">8%</text><path d="M479.63375919322334,109.1393649947729 A429,429 0 0,1 678.9999999999999,60 L679,253.04999999999998 A235.95000000000002,235.95000000000002 0 0,0 569.3485675562729,280.0766507471251 Z" fill="#" stroke="#FFFFFF" stroke-width="2"/><text x="599.4335245159942" y="166.18611925127334" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40px" font-weight="bold" font-family="Arial">8%</text><rect x="1358" y="98" width="28" height="28" rx="4" fill="["/><text x="1398" y="122" fill="#1F2937" font-size="40px" font-family="Arial">Timeout (11)</text><rect x="1358" y="154" width="28" height="28" rx="4" fill="""/><text x="1398" y="178" fill="#1F2937" font-size="40px" font-family="Arial">Unknown (1)</text><rect x="1358" y="210" width="28" height="28" rx="4" fill="#"/><text x="1398" y="234" fill="#1F2937" font-size="40px" font-family="Arial">Environment (1)</text>
+</svg></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 7;">
+      <div class="table-title">Top Failing Tests</div>
+      <div class="table-scroll"><table><thead><tr><th>Test</th><th>File</th><th>Failures</th><th>Last Error</th></tr></thead><tbody><tr><td title="Admin login completes 2FA and lands authenticated (home)">Admin login completes 2FA and lands authenticated (home)</td><td title="auth/profile.spec.ts">auth/profile.spec.ts</td><td title="2">2</td><td title="Test timeout of 30000ms exceeded">Test timeout of 30000ms exceeded</td></tr><tr><td title="Home · TestverQA: page identity">Home · TestverQA: page identity</td><td title="tests/home/home.spec.ts">tests/home/home.spec.ts</td><td title="1">1</td><td title="Failed">Failed</td></tr><tr><td title="Admin dashboard View shop link navigates to the shop module">Admin dashboard View shop link navigates to the shop module</td><td title="admin/admin.spec.ts">admin/admin.spec.ts</td><td title="1">1</td><td title="Test timeout of 30000ms exceeded">Test timeout of 30000ms exceeded</td></tr><tr><td title="Admin dashboard notifications feed renders all seeded notifications">Admin dashboard notifications feed renders all seeded notifications</td><td title="admin/admin.spec.ts">admin/admin.spec.ts</td><td title="1">1</td><td title="Test timeout of 30000ms exceeded">Test timeout of 30000ms exceeded</td></tr><tr><td title="Admin dashboard recent-orders table shows headers and seeded rows">Admin dashboard recent-orders table shows headers and seeded rows</td><td title="admin/admin.spec.ts">admin/admin.spec.ts</td><td title="1">1</td><td title="Test timeout of 30000ms exceeded">Test timeout of 30000ms exceeded</td></tr><tr><td title="Admin dashboard renders with title, heading and nav active state">Admin dashboard renders with title, heading and nav active state</td><td title="admin/admin.spec.ts">admin/admin.spec.ts</td><td title="1">1</td><td title="Test timeout of 30000ms exceeded">Test timeout of 30000ms exceeded</td></tr><tr><td title="Admin dashboard shows all four KPI stat cards with seeded values">Admin dashboard shows all four KPI stat cards with seeded values</td><td title="admin/admin.spec.ts">admin/admin.spec.ts</td><td title="1">1</td><td title="Test timeout of 30000ms exceeded">Test timeout of 30000ms exceeded</td></tr><tr><td title="Admin profile page shows identity, account stats and recent orders">Admin profile page shows identity, account stats and recent orders</td><td title="auth/profile.spec.ts">auth/profile.spec.ts</td><td title="1">1</td><td title="Test timeout of 30000ms exceeded">Test timeout of 30000ms exceeded</td></tr><tr><td title="Admin settings: identity is read-only, preferences render as toggles">Admin settings: identity is read-only, preferences render as toggles</td><td title="auth/profile.spec.ts">auth/profile.spec.ts</td><td title="1">1</td><td title="Test timeout of 30000ms exceeded">Test timeout of 30000ms exceeded</td></tr><tr><td title="Admin settings: saving notification preferences confirms with success alert">Admin settings: saving notification preferences confirms with success alert</td><td title="auth/profile.spec.ts">auth/profile.spec.ts</td><td title="1">1</td><td title="Test timeout of 30000ms exceeded">Test timeout of 30000ms exceeded</td></tr></tbody></table></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 5;">
+      <div class="table-title">Flaky Tests (threshold ≥20%)</div>
+      <div class="table-scroll"><table><thead><tr><th>Test</th><th>Runs</th><th>Pass</th><th>Fail</th><th>Flakiness</th></tr></thead><tbody><tr><td title="Admin login completes 2FA and lands authenticated (home)">Admin login completes 2FA and lands authenticated (home)</td><td title="3">3</td><td title="1">1</td><td title="2">2</td><td title="50%">50%</td></tr><tr><td title="Home page heading text matches expectations">Home page heading text matches expectations</td><td title="6">6</td><td title="5">5</td><td title="1">1</td><td title="40%">40%</td></tr></tbody></table></div>
+      
+    </div>
+<div class="cell markdown" style="grid-column: span 12;"><h3>Root Cause &amp; Signals</h3>
+<ul><li><strong>11 of 13 failures are 30s timeouts</strong>, all in <code>admin/admin.spec.ts</code> and <code>auth/profile.spec.ts</code>. The <code>get_slowest_tests</code> action shows these same tests averaging <strong>30.5–31.1s</strong> against Playwright's 30000ms limit — they are failing *at the boundary*, not on assertions.</li><li>The failing run <code>crun_aaf24792d42fa94b</code> (10/11 failed, 9.1%) was followed by <code>crun_7fe8c1ab9cc9d561</code> (88.9%) and then the suite run at <strong>100%</strong> — so the defect is intermittent load/timing, not a broken feature.</li><li>Lowest health scores track the same cluster: Admin 2FA login <strong>42/100</strong>, Home heading text <strong>73/100</strong>; Shop cart/coupon <strong>98/100</strong> and Home identity <strong>92/100</strong> are stable.</li></ul></div>
+<div class="cell table" style="grid-column: span 6;">
+      <div class="table-title">Test Plans</div>
+      <div class="table-scroll"><table><thead><tr><th>Plan</th><th>Release / Sprint</th><th>Cases</th><th>Executed</th><th>Passed</th><th>Failed</th></tr></thead><tbody><tr><td title="TP-2 · Test Release">TP-2 · Test Release</td><td title="V1.1 / Sprint 2">V1.1 / Sprint 2</td><td title="9">9</td><td title="9">9</td><td title="8">8</td><td title="1">1</td></tr><tr><td title="TP-1 · Test Release">TP-1 · Test Release</td><td title="V1.0 / Sprint 1">V1.0 / Sprint 1</td><td title="11">11</td><td title="11">11</td><td title="1">1</td><td title="10">10</td></tr></tbody></table></div>
+      
+    </div>
+<div class="cell markdown" style="grid-column: span 6;"><h3>Coverage &amp; Quality Gaps</h3>
+<ul><li><strong>Requirements: 1 of 2 covered (50%)</strong> — <code>REQ-2 KAN-1: Checkout flow</code> (high) and <code>REQ-1 Shopping Flow</code> (medium); one is uncovered.</li><li><strong>Critical priority is the weak spot:</strong> 6 critical cases, only <strong>1 automated</strong> (high: 27/28, medium: 16/16).</li><li><strong>44 orphan test cases</strong> are not linked to any requirement — this is the main drag on requirement-coverage reporting.</li><li><strong>Quality score 0 test cases scored</strong> → Quality Score metric pinned at 50.</li><li><strong>Execution freshness 38/100</strong> — only 19 cases executed in the last 7 days.</li><li>Defects: <strong>1 total, 0 open</strong> (D-1, minor, resolved, KAN-2).</li><li><strong>API testing: no data</strong> — 0 calls recorded; <code>api_report</code> returned an empty history.</li></ul></div>
+    </div>
+    <div class="footer">Generated by Testver</div>
+  </div>
+</body>
+</html>

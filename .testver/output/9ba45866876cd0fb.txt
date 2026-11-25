@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ✓  1 [firefox] › tests\home\home.spec.ts:9:5 › Home page loads with expected identity (2.9s)
+
+  1 passed (5.7s)

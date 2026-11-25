@@ -1,0 +1,49 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests\tables\tables.spec.ts:70:5 › Tables & Grids: master checkbox selects all rows on the page (7.3s)
+
+
+  1) [chromium] › tests\tables\tables.spec.ts:70:5 › Tables & Grids: master checkbox selects all rows on the page 
+
+    Error: expect(locator).toBeChecked() failed
+
+    Locator:  getByTestId('t-row-1-check')
+    Expected: checked
+    Received: unchecked
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeChecked" getByTestId('t-row-1-check') with timeout 5000ms
+      - waiting for getByTestId('t-row-1-check')
+        13 × locator resolved to <input type="checkbox" class="row-check" data-testid="t-row-1-check"/>
+           - unexpected value "unchecked"
+
+
+      74 |
+      75 |   const firstRow = tablesPage.page.getByTestId('t-row-1-check');
+    > 76 |   await expect(firstRow).toBeChecked();
+         |                          ^
+      77 | });
+        at E:\TestverTesting\Agents\FirstTest\tests\tables\tables.spec.ts:76:26
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .testver\runs\529743488fc92d63\test-results\tables-tables-Tables-Grids-bdeaa-elects-all-rows-on-the-page-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    .testver\runs\529743488fc92d63\test-results\tables-tables-Tables-Grids-bdeaa-elects-all-rows-on-the-page-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .testver\runs\529743488fc92d63\test-results\tables-tables-Tables-Grids-bdeaa-elects-all-rows-on-the-page-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    .testver\runs\529743488fc92d63\test-results\tables-tables-Tables-Grids-bdeaa-elects-all-rows-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace .testver\runs\529743488fc92d63\test-results\tables-tables-Tables-Grids-bdeaa-elects-all-rows-on-the-page-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\tables\tables.spec.ts:70:5 › Tables & Grids: master checkbox selects all rows on the page 

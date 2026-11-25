@@ -1,0 +1,51 @@
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › tests\shop\shop.spec.ts:24:5 › Shop · TestverQA: page identity (6.3s)
+
+
+  1) [chromium] › tests\shop\shop.spec.ts:24:5 › Shop · TestverQA: page identity ───────────────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByRole('heading', { level: 1 })
+    Expected: "Shop"
+    Received: "Store"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByRole('heading', { level: 1 }) with timeout 5000ms
+      - waiting for getByRole('heading', { level: 1 })
+        13 × locator resolved to <h1 data-testid="page-title">Store</h1>
+           - unexpected value "Store"
+
+
+      27 |   await expect(page).toHaveTitle(SHOP_TITLE);
+      28 |   await expect(shopPage.heading).toBeVisible();
+    > 29 |   await expect(shopPage.heading).toHaveText(SHOP_HEADING);
+         |                                  ^
+      30 | });
+      31 |
+      32 | test('Shop: adding a product increments the cart badge', async ({ page, shopPage }) => {
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:29:34
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-·-TestverQA-page-identity-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-·-TestverQA-page-identity-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-shop-Shop-·-TestverQA-page-identity-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-·-TestverQA-page-identity-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-shop-Shop-·-TestverQA-page-identity-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\shop\shop.spec.ts:24:5 › Shop · TestverQA: page identity ────────────────────

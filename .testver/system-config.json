@@ -1,0 +1,16 @@
+{
+  "appMode": "web",
+  "appModeSetAt": "2026-09-18T14:02:09.551Z",
+  "apiTrace": {
+    "enabled": true,
+    "capturePassed": true
+  },
+  "autoHeal": {
+    "mode": "suggest",
+    "maxAttempts": 2,
+    "cooldownHours": 24,
+    "ciGate": "report-only",
+    "allowBrowserProbe": false,
+    "reviewWindowDays": 7
+  }
+}

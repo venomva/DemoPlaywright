@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied (2.7s)
+
+  1 passed (4.5s)

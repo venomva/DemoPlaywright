@@ -1,0 +1,228 @@
+{
+  "id": "dash_muu2ce8p_gph5xw",
+  "version": 1,
+  "title": "Execution Summary Report",
+  "subtitle": "Sep 18 – Oct 4, 2026 · 20 runs · 55 test executions · sources: automation_report (summary, trends, top_failures, flaky), testver (health, coverage)",
+  "generatedAt": "2026-10-04T16:56:43.033Z",
+  "cells": [
+    {
+      "type": "kpi",
+      "title": "Overall Pass Rate",
+      "value": 76.4,
+      "unit": "%",
+      "hint": "42/55 executions, 20 runs",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Latest Run Pass Rate",
+      "value": 88.9,
+      "unit": "%",
+      "delta": 79.8,
+      "deltaDirection": "up",
+      "deltaGood": "up",
+      "hint": "8/9 vs 9.1% prior run",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Failures",
+      "value": 13,
+      "unit": "",
+      "hint": "11 timeout · 1 assertion · 1 env",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Health Score",
+      "value": 64,
+      "unit": "/100",
+      "hint": "coverage 88% · freshness 38%",
+      "span": 3
+    },
+    {
+      "type": "chart",
+      "title": "Pass Rate Trend by Run",
+      "chartType": "line",
+      "labels": [
+        "09-26 11:34",
+        "09-26 14:55",
+        "09-26 15:11",
+        "09-26 15:14",
+        "09-26 16:29",
+        "09-26 16:30",
+        "09-26 16:31",
+        "09-26 16:54",
+        "10-04 16:24",
+        "10-04 16:34"
+      ],
+      "data": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        0,
+        100,
+        0,
+        9.1,
+        88.9
+      ],
+      "colorScheme": "vibrant",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Latest Two Runs — Passed vs Failed",
+      "chartType": "stacked_bar",
+      "labels": [
+        "Full suite (16:24)",
+        "Re-run (16:34)"
+      ],
+      "datasets": [
+        {
+          "label": "Passed",
+          "data": [
+            1,
+            8
+          ]
+        },
+        {
+          "label": "Failed",
+          "data": [
+            10,
+            1
+          ]
+        }
+      ],
+      "colorScheme": "status",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Failure Root-Cause Categories",
+      "chartType": "bar",
+      "labels": [
+        "Timeout (30s)",
+        "Unknown/Assertion",
+        "Environment (DNS)"
+      ],
+      "data": [
+        11,
+        1,
+        1
+      ],
+      "colors": [
+        "#EF4444",
+        "#F59E0B",
+        "#3B82F6"
+      ],
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Flakiest Tests (rate ≥ 20%)",
+      "chartType": "horizontal_bar",
+      "labels": [
+        "Admin login 2FA (auth/profile)",
+        "Home heading text (home)"
+      ],
+      "data": [
+        50,
+        50
+      ],
+      "colorScheme": "severity",
+      "span": 6
+    },
+    {
+      "type": "table",
+      "title": "Top Failing Tests",
+      "headers": [
+        "Test",
+        "File",
+        "Fails",
+        "Last Error"
+      ],
+      "rows": [
+        [
+          "Admin login completes 2FA and lands authenticated (home)",
+          "auth/profile.spec.ts",
+          2,
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Home · TestverQA: page identity",
+          "tests/home/home.spec.ts",
+          1,
+          "Failed (assertion)"
+        ],
+        [
+          "Admin dashboard View shop link navigates to the shop module",
+          "admin/admin.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Admin dashboard notifications feed renders all seeded notifications",
+          "admin/admin.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Admin dashboard recent-orders table shows headers and seeded rows",
+          "admin/admin.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Admin dashboard renders with title, heading and nav active state",
+          "admin/admin.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Admin dashboard shows all four KPI stat cards with seeded values",
+          "admin/admin.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Admin profile page shows identity, account stats and recent orders",
+          "auth/profile.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Admin settings: identity is read-only, preferences render as toggles",
+          "auth/profile.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Admin settings: saving notification preferences confirms with success alert",
+          "auth/profile.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Admin settings: save profile shows success and persists to profile",
+          "auth/profile.spec.ts",
+          1,
+          "Test timeout of 30000ms exceeded."
+        ],
+        [
+          "Home page heading text matches expectations",
+          "home/home.spec.ts",
+          1,
+          "net::ERR_NAME_NOT_RESOLVED (staging)"
+        ]
+      ],
+      "span": 12
+    },
+    {
+      "type": "markdown",
+      "content": "## Readout\n- **The 9.1% run was a single blocked precondition, not 10 broken features.** Run `crun_aaf24792d42fa94b` (16:24) failed 10/11 tests with the same `Test timeout of 30000ms exceeded.` signature across `admin/admin.spec.ts` and `auth/profile.spec.ts`. The immediate re-run `crun_7fe8c1ab9cc9d561` (16:34) went to **88.9% (8/9)** — 7 tests flipped to passing, 0 regressions. Root cause is login/2FA not completing within 30s, which cascades into every authenticated page.\n- **Two tests carry all the residual risk.** `Admin login completes 2FA…` (health 42, flakiness 50%, 2/3 runs failed) and `Home page heading text…` (health 69, flakiness 50%) are the only two above the 20% flakiness threshold. Both are the same auth-gate and env-resolution problems.\n- **The one genuine assertion failure is the open item.** `Home · TestverQA: page identity` failed the re-run with a bare `Failed` — a real expectation mismatch, not a timeout, and it is the only *new* failure vs. the prior run.\n- **Failure categories are dominated by timeouts:** 11 timeout, 1 assertion, 1 environment (DNS). Fixing the auth-gate wait removes ~85% of all recorded failures.\n- **Execution freshness is the weak metric (38/100).** Only 19 test cases executed in the last 7 days; the Sep 26 runs were single-test probes, so the 55-execution window is really 2 meaningful suite runs. Recommend a scheduled full-suite run to lift this.\n- **API layer: no data.** `api_report summary` returned 0 calls — this report covers web/UI execution only.",
+      "span": 12
+    }
+  ]
+}

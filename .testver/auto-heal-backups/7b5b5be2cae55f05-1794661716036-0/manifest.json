@@ -1,0 +1,16 @@
+{
+  "targets": [
+    {
+      "file": "tests/pages/CheckoutPage.ts",
+      "find": "getByTestId('ck-agree')",
+      "replace": "getByTestId('ck-terms')"
+    }
+  ],
+  "patchedHash": {
+    "tests/pages/CheckoutPage.ts": "0605dfaeaef97eb17851e1371deef46329badaa7443b22453ae13dbb2f899b32"
+  },
+  "encodings": {
+    "tests/pages/CheckoutPage.ts": "utf8"
+  },
+  "at": "2026-11-14T13:08:36.042Z"
+}

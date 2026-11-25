@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ✓  1 [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge (4.2s)
+
+  1 passed (5.9s)

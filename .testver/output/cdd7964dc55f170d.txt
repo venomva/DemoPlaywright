@@ -1,0 +1,7 @@
+
+Running 2 tests using 1 worker
+
+  ✓  1 [chromium] › tests\home\home.spec.ts:9:5 › Home page loads with expected identity (1.6s)
+  ✓  2 [firefox] › tests\home\home.spec.ts:9:5 › Home page loads with expected identity (4.2s)
+
+  2 passed (11.4s)

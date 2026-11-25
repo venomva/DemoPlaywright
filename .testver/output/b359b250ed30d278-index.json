@@ -1,0 +1,7 @@
+[
+  {
+    "testName": "Admin login completes 2FA and lands authenticated (home)",
+    "startLine": 0,
+    "endLine": 3
+  }
+]

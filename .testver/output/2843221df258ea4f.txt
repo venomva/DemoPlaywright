@@ -1,0 +1,78 @@
+
+Running 2 tests using 1 worker
+
+  ✘  1 [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Maya Patel (8.2s)
+  ✘  2 [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Leo Grant (8.2s)
+
+
+  1) [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Maya Patel 
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 1
+    Received:   0
+
+      67 |     // Check the products are sorted by price, cheapest first.
+      68 |     const prices = await shopPage.listedPrices();
+    > 69 |     expect(prices.length).toBeGreaterThan(1);
+         |                           ^
+      70 |     const ascending = [...prices].sort((a, b) => a - b);
+      71 |     expect(prices).toEqual(ascending);
+      72 |
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\manager-checkout.spec.ts:69:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-manager-checkout-Mana-e3925--with-a-coupon---Maya-Patel-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Leo Grant 
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 1
+    Received:   0
+
+      67 |     // Check the products are sorted by price, cheapest first.
+      68 |     const prices = await shopPage.listedPrices();
+    > 69 |     expect(prices.length).toBeGreaterThan(1);
+         |                           ^
+      70 |     const ascending = [...prices].sort((a, b) => a - b);
+      71 |     expect(prices).toEqual(ascending);
+      72 |
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\manager-checkout.spec.ts:69:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-manager-checkout-Mana-fd417-s-with-a-coupon---Leo-Grant-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Maya Patel 
+    [chromium] › tests\shop\manager-checkout.spec.ts:45:7 › Manager buys the cheapest electronics with a coupon - Leo Grant 

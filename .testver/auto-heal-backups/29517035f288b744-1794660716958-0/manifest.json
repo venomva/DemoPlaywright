@@ -1,0 +1,16 @@
+{
+  "targets": [
+    {
+      "file": "tests/pages/ShopPage.ts",
+      "find": "getByTestId('filter-category')",
+      "replace": "locator('select[name=\"category\"]')"
+    }
+  ],
+  "patchedHash": {
+    "tests/pages/ShopPage.ts": "7cd4496dc8f8366da8f0dcd6d12ecc66e699101d11d5f2873e27f5ee25d1a439"
+  },
+  "encodings": {
+    "tests/pages/ShopPage.ts": "utf8"
+  },
+  "at": "2026-11-14T12:51:56.963Z"
+}

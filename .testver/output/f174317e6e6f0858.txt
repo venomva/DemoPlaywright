@@ -1,0 +1,49 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests\tables\tables.spec.ts:61:5 › Tables & Grids: limit selector changes page size (8.0s)
+
+
+  1) [chromium] › tests\tables\tables.spec.ts:61:5 › Tables & Grids: limit selector changes page size 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByTestId('t-table').getByText('SKU-00025')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByTestId('t-table').getByText('SKU-00025') with timeout 5000ms
+      - waiting for getByTestId('t-table').getByText('SKU-00025')
+
+
+      65 |
+      66 |   // With 25 rows per page the grid renders more rows (spot-check).
+    > 67 |   await expect(tablesPage.table.getByText('SKU-00025')).toBeVisible();
+         |                                                         ^
+      68 | });
+      69 |
+      70 | test('Tables & Grids: master checkbox selects all rows on the page', async ({ tablesPage }) => {
+        at E:\TestverTesting\Agents\FirstTest\tests\tables\tables.spec.ts:67:57
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .testver\runs\f174317e6e6f0858\test-results\tables-tables-Tables-Grids-limit-selector-changes-page-size-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    .testver\runs\f174317e6e6f0858\test-results\tables-tables-Tables-Grids-limit-selector-changes-page-size-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .testver\runs\f174317e6e6f0858\test-results\tables-tables-Tables-Grids-limit-selector-changes-page-size-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    .testver\runs\f174317e6e6f0858\test-results\tables-tables-Tables-Grids-limit-selector-changes-page-size-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace .testver\runs\f174317e6e6f0858\test-results\tables-tables-Tables-Grids-limit-selector-changes-page-size-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\tables\tables.spec.ts:61:5 › Tables & Grids: limit selector changes page size 

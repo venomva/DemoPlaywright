@@ -1,0 +1,47 @@
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order (31.5s)
+
+
+  1) [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order ───────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.check: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('ck-agree')
+
+
+       at pages\CheckoutPage.ts:104
+
+      102 |   /** Accept terms on step 5 (required before placing the order). */
+      103 |   async acceptTerms(): Promise<void> {
+    > 104 |     await this.agreeCheckbox.check();
+          |                              ^
+      105 |   }
+      106 |
+      107 |   async goToNextStep(): Promise<void> {
+        at CheckoutPage.acceptTerms (E:\TestverTesting\Agents\FirstTest\tests\pages\CheckoutPage.ts:104:30)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:115:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order ────────

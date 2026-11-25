@@ -1,0 +1,52 @@
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › tests\auth\manager-profile.spec.ts:30:5 › Manager login lands directly authenticated (no 2FA step) (17.2s)
+
+
+  1) [chromium] › tests\auth\manager-profile.spec.ts:30:5 › Manager login lands directly authenticated (no 2FA step) 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByTestId('username-input')
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByTestId('username-input') with timeout 15000ms
+      - waiting for getByTestId('username-input')
+
+
+       at helpers\auth.ts:32
+
+      30 | export async function loginAsManager(loginPage: LoginPage): Promise<void> {
+      31 |   await loginPage.goto('/auth/login');
+    > 32 |   await expect(loginPage.usernameInput).toBeVisible({ timeout: 15000 });
+         |                                         ^
+      33 |   await loginPage.submitManagerCredentials();
+      34 |
+      35 |   // Authenticated landing: home page with the user pill in the header.
+        at loginAsManager (E:\TestverTesting\Agents\FirstTest\tests\helpers\auth.ts:32:41)
+        at E:\TestverTesting\Agents\FirstTest\tests\auth\manager-profile.spec.ts:33:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\auth-manager-profile-Manag-417e1--authenticated-no-2FA-step--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\auth-manager-profile-Manag-417e1--authenticated-no-2FA-step--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\auth-manager-profile-Manag-417e1--authenticated-no-2FA-step--chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\auth-manager-profile-Manag-417e1--authenticated-no-2FA-step--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\auth-manager-profile-Manag-417e1--authenticated-no-2FA-step--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\auth\manager-profile.spec.ts:30:5 › Manager login lands directly authenticated (no 2FA step) 

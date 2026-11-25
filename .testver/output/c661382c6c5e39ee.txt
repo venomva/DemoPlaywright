@@ -1,0 +1,47 @@
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge (31.7s)
+
+
+  1) [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge ──
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('add-cart-1')
+
+
+       at pages\ShopPage.ts:78
+
+      76 |   /** Add the first product on the current page to the cart. */
+      77 |   async addFirstProductToCart(): Promise<void> {
+    > 78 |     await this.firstAddToCartButton.click();
+         |                                     ^
+      79 |   }
+      80 |
+      81 |   /** Read the cart badge line-item count as an integer (e.g. "🛒 Cart (3)" → 3). */
+        at ShopPage.addFirstProductToCart (E:\TestverTesting\Agents\FirstTest\tests\pages\ShopPage.ts:78:37)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:39:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .testver\runs\c661382c6c5e39ee\test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    .testver\runs\c661382c6c5e39ee\test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .testver\runs\c661382c6c5e39ee\test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    .testver\runs\c661382c6c5e39ee\test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace .testver\runs\c661382c6c5e39ee\test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge ───

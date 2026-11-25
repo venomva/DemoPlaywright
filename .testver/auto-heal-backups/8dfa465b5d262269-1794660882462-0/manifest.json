@@ -1,0 +1,16 @@
+{
+  "targets": [
+    {
+      "file": "tests/pages/SettingsPage.ts",
+      "find": "`${row}-toggle`",
+      "replace": "`${row}-switch`"
+    }
+  ],
+  "patchedHash": {
+    "tests/pages/SettingsPage.ts": "ccb45eaec7ea4c371673ca8502fb8d1367dce3c5db6fcdc1aa46c91d838aef4b"
+  },
+  "encodings": {
+    "tests/pages/SettingsPage.ts": "utf8"
+  },
+  "at": "2026-11-14T12:54:42.467Z"
+}

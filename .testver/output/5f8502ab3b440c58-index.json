@@ -1,0 +1,7 @@
+[
+  {
+    "testName": "Shop: adding a product increments the cart badge (4.2s)",
+    "startLine": 0,
+    "endLine": 3
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "testName": "Admin settings: identity is read-only, preferences render as toggles (30.5s)",
+    "startLine": 0,
+    "endLine": 3
+  }
+]

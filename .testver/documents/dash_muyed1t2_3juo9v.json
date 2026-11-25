@@ -1,0 +1,153 @@
+{
+  "id": "dash_muyed1t2_3juo9v",
+  "version": 1,
+  "title": "QA Daily — October 7, 2026",
+  "subtitle": "Window: last 24h (since Oct 6, 2026) — 0 finished runs. Charts/tables show the most recent run activity for context. Source: automation_report (excludes running/cancelled runs and Auto-Heal/AI-fix verification re-runs).",
+  "generatedAt": "2026-10-07T17:44:13.670Z",
+  "cells": [
+    {
+      "type": "kpi",
+      "title": "Runs in Last 24h",
+      "value": 0,
+      "hint": "No finished runs since Oct 6, 2026",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Tests Executed",
+      "value": 0,
+      "hint": "Last 24h",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Pass Rate",
+      "value": 0,
+      "unit": "%",
+      "hint": "No tests executed in window",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "New Failures (since yesterday)",
+      "value": 0,
+      "hint": "No new failures",
+      "span": 3
+    },
+    {
+      "type": "chart",
+      "title": "Pass / Fail / Skip per Run — recent runs (none in last 24h)",
+      "chartType": "stacked_bar",
+      "labels": [
+        "9/26 928e",
+        "9/26 d960",
+        "9/26 3e6c",
+        "9/26 11f8",
+        "9/26 959c",
+        "9/26 8acf",
+        "9/26 af90",
+        "9/26 2c29",
+        "9/26 1d02",
+        "10/4 aaf2",
+        "10/4 7fe8",
+        "10/4 srun",
+        "10/6 2521"
+      ],
+      "datasets": [
+        {
+          "label": "Passed",
+          "data": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            8,
+            10,
+            0
+          ]
+        },
+        {
+          "label": "Failed",
+          "data": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            10,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "label": "Skipped",
+          "data": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "colorScheme": "status",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Failure Categories — Latest Run (Oct 6, 2026)",
+      "chartType": "doughnut",
+      "labels": [
+        "Timeout"
+      ],
+      "data": [
+        1
+      ],
+      "colorScheme": "severity",
+      "span": 6
+    },
+    {
+      "type": "table",
+      "title": "New Failures Today",
+      "headers": [
+        "Test Name",
+        "Error Signature",
+        "Run",
+        "First Seen"
+      ],
+      "rows": [
+        [
+          "Admin login completes 2FA and lands authenticated (home)",
+          "Test timeout of 30000ms exceeded.",
+          "25218d6e (Oct 6)",
+          "Recurring — failed 3 of last 4 runs"
+        ]
+      ],
+      "span": 12
+    },
+    {
+      "type": "markdown",
+      "content": "## What changed since yesterday\n- **No runs in the last 24h** — 0 finished runs since Oct 6, 2026, so the KPIs are 0 by design. Latest run: `25218d6e` (manual, Oct 6 10:31 UTC) — 1 test, 1 failed.\n- **No newly broken tests** — new-failure analysis on the latest run returns **0 new failures**.\n- **Recurring offender:** `auth/profile.spec.ts` — \"Admin login completes 2FA and lands authenticated (home)\" failed 3 of its last 4 runs (33.3% flakiness), timing out at 30s.\n- **Flakiest test:** \"Home page heading text matches expectations\" (`home/home.spec.ts`) at 40% across 6 runs; timeouts make up 12 of 14 categorized failures over the last 30 days.",
+      "span": 12
+    }
+  ]
+}

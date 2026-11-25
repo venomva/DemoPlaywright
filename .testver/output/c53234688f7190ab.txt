@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ✓  1 [chromium] › tests\shop\purchase-flow.spec.ts:43:5 › Manager buys the cheapest electronics with a coupon (9.8s)
+
+  1 passed (10.9s)

@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ✓  1 [chromium] › tests\tables\tables.spec.ts:61:5 › Tables & Grids: limit selector changes page size (2.3s)
+
+  1 passed (3.2s)

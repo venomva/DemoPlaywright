@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily QA Summary — Nov 19, 2026</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif; background: #F7F8FA; color: #374151; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 24px 36px; }
+  .header { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 18px 22px; margin-bottom: 14px; }
+  .brand { font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #9CA3AF; }
+  .header h1 { margin: 6px 0 0; font-size: 22px; line-height: 1.25; font-weight: 700; color: #111827; }
+  .header .sub { margin-top: 4px; font-size: 13.5px; color: #6B7280; }
+  .header .meta { margin-top: 6px; font-size: 11.5px; color: #9CA3AF; }
+  .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; }
+  .cell { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 16px 17px; min-width: 0; }
+  .kpi { display: flex; flex-direction: column; }
+  .kpi-title { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #6B7280; }
+  .kpi-value { margin-top: 8px; font-size: 26px; line-height: 1.1; font-weight: 700; color: #111827; font-variant-numeric: tabular-nums; }
+  .kpi-unit { margin-left: 3px; font-size: 14px; font-weight: 500; color: #6B7280; }
+  .kpi-delta { margin-top: 9px; display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .kpi-delta .arrow { flex: none; }
+  .kpi-hint-inline { margin-left: 4px; font-weight: 400; color: #6B7280; }
+  .kpi-hint { margin-top: 9px; font-size: 12px; color: #6B7280; }
+  .cell-title { font-size: 14px; font-weight: 600; color: #1F2937; margin-bottom: 10px; }
+  .chart-body svg { border-radius: 8px; }
+  .hint { margin-top: 8px; font-size: 11.5px; color: #6B7280; }
+  .empty { padding: 28px 8px; text-align: center; font-size: 12.5px; color: #9CA3AF; }
+  .table-frame { border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; }
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+  th { background: #F7F8FA; border-bottom: 1px solid #E5E7EB; padding: 9px 14px; text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: #6B7280; white-space: nowrap; }
+  td { padding: 10px 14px; border-bottom: 1px solid #EEF0F3; color: #374151; vertical-align: middle; max-width: 420px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:hover td { background: #F5F7FA; }
+  td.first { font-weight: 500; color: #1F2937; }
+  td.num, th.num { text-align: right; }
+  td.empty { text-align: center; color: #9CA3AF; white-space: normal; }
+  .pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 600; line-height: 1.5; }
+  .pill.ok { color: #047857; background: #ECFDF5; }
+  .pill.bad { color: #B91C1C; background: #FEF2F2; }
+  .pill.warn { color: #B45309; background: #FFFBEB; }
+  .pill.neutral { color: #4B5563; background: #F3F4F6; }
+  .pill-rest { color: #6B7280; }
+  .markdown h2 { margin: 2px 0 8px; font-size: 17px; color: #111827; }
+  .markdown h3 { margin: 2px 0 8px; font-size: 14.5px; color: #1F2937; }
+  .markdown p { margin: 6px 0; font-size: 13.5px; line-height: 1.6; color: #374151; }
+  .markdown ul { margin: 6px 0; padding-left: 20px; }
+  .markdown li { margin: 4px 0; font-size: 13.5px; line-height: 1.55; color: #374151; }
+  .markdown strong { color: #111827; }
+  .markdown code { background: #F3F4F6; border-radius: 5px; padding: 1px 6px; font-family: Consolas, Menlo, monospace; font-size: 12px; color: #1F2937; }
+  .footer { margin-top: 22px; text-align: center; font-size: 11px; color: #9CA3AF; }
+  /* Narrow screens: KPIs pair up, everything else goes full width (parity with the card). */
+  @media (max-width: 760px) {
+    .wrap { padding: 14px 12px 24px; }
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cell { grid-column: span 2 !important; }
+    .cell.kpi { grid-column: span 1 !important; }
+  }
+  @media print {
+    body { background: #fff; }
+    .wrap { padding: 0; }
+    .cell, .header { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">Testver · Report</div>
+      <h1>Daily QA Summary — Nov 19, 2026</h1>
+      <div class="sub">Automation + test management | last 24h (Nov 18–19) with 7-day and library context | sources: automation_report, test_library, suites_report, testver</div>
+      <div class="meta">Generated Nov 19, 2026, 7:47 PM GMT+5:30</div>
+    </div>
+    <div class="grid">
+      <div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Automation Runs (24h)</div>
+      <div class="kpi-value">0</div>
+      <div class="kpi-hint">No finished runs since Nov 18 — automation_report summary, 24h window</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Pass Rate (7d)</div>
+      <div class="kpi-value">61.3<span class="kpi-unit">%</span></div>
+      <div class="kpi-hint">19 passed / 31 executed across 11 runs, Nov 12–16 (passRatePct)</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Failing Scripts</div>
+      <div class="kpi-value">11</div>
+      <div class="kpi-hint">of 57 scripts at their last run — test_library summary</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Open Defects</div>
+      <div class="kpi-value">1</div>
+      <div class="kpi-hint">1 open (D-2, critical) of 2 total — testver query_defects</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Health Score</div>
+      <div class="kpi-value">58</div>
+      <div class="kpi-hint">execution freshness 0 (nothing run in 7d by TM) — testver get_health_score</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Requirement Coverage</div>
+      <div class="kpi-value">100<span class="kpi-unit">%</span></div>
+      <div class="kpi-hint">20/20 requirements covered — testver get_coverage_stats</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Automation Coverage</div>
+      <div class="kpi-value">45<span class="kpi-unit">%</span></div>
+      <div class="kpi-hint">55/122 test cases automated — testver get_coverage_stats</div>
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-title">Never-Run Scripts</div>
+      <div class="kpi-value">33</div>
+      <div class="kpi-hint">of 57 scripts have no recorded run — test_library summary</div>
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="cell-title">Automation Script Status (57 scripts, last-run result)</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1277 766" role="img">
+  <rect width="1277" height="766" fill="#FFFFFF" rx="12"/>
+  <line x1="73.6" y1="685.0" x2="1253.0" y2="685.0" stroke="#E5E7EB" stroke-width="2"/><text x="63.1" y="694.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">0</text><line x1="73.6" y1="560.0" x2="1253.0" y2="560.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="63.1" y="569.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">10</text><line x1="73.6" y1="435.0" x2="1253.0" y2="435.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="63.1" y="444.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">20</text><line x1="73.6" y1="310.0" x2="1253.0" y2="310.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="63.1" y="319.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">30</text><line x1="73.6" y1="185.0" x2="1253.0" y2="185.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="63.1" y="194.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">40</text><line x1="73.6" y1="60.0" x2="1253.0" y2="60.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="63.1" y="69.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">50</text><text x="270.1" y="724.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27.0" fill="#6B7280" text-anchor="middle">Passing</text><text x="663.3" y="724.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27.0" fill="#6B7280" text-anchor="middle">Failing</text><text x="1056.4" y="724.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27.0" fill="#6B7280" text-anchor="middle">Never run</text><path d="M230.5,685.0 V530.0 Q230.5,522.5 238.0,522.5 H302.2 Q309.7,522.5 309.7,530.0 V685.0 Z" fill="#22C55E"/><text x="270.1" y="510.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#374151" text-anchor="middle" font-weight="600">13</text><path d="M623.7,685.0 V555.0 Q623.7,547.5 631.2,547.5 H695.4 Q702.9,547.5 702.9,555.0 V685.0 Z" fill="#EF4444"/><text x="663.3" y="535.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#374151" text-anchor="middle" font-weight="600">11</text><path d="M1016.8,685.0 V280.0 Q1016.8,272.5 1024.3,272.5 H1088.5 Q1096.0,272.5 1096.0,280.0 V685.0 Z" fill="#94A3B8"/><text x="1056.4" y="260.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#374151" text-anchor="middle" font-weight="600">33</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="cell-title">Pass Rate by Suite (latest completed run)</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1277 766" role="img">
+  <rect width="1277" height="766" fill="#FFFFFF" rx="12"/>
+  <line x1="87.8" y1="685.0" x2="1253.0" y2="685.0" stroke="#E5E7EB" stroke-width="2"/><text x="77.3" y="694.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">0</text><line x1="87.8" y1="560.0" x2="1253.0" y2="560.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="569.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">20</text><line x1="87.8" y1="435.0" x2="1253.0" y2="435.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="444.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">40</text><line x1="87.8" y1="310.0" x2="1253.0" y2="310.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="319.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">60</text><line x1="87.8" y1="185.0" x2="1253.0" y2="185.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="194.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">80</text><line x1="87.8" y1="60.0" x2="1253.0" y2="60.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="69.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">100</text><text x="379.1" y="724.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27.0" fill="#6B7280" text-anchor="middle">Self Check (4 tests)</text><text x="961.7" y="724.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27.0" fill="#6B7280" text-anchor="middle">Sanity Test (10 tests)</text><path d="M339.5,685.0 V223.8 Q339.5,216.3 347.0,216.3 H411.2 Q418.7,216.3 418.7,223.8 V685.0 Z" fill="#3B82F6"/><text x="379.1" y="204.3" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#374151" text-anchor="middle" font-weight="600">75</text><path d="M922.1,685.0 V130.0 Q922.1,122.5 929.6,122.5 H993.8 Q1001.3,122.5 1001.3,130.0 V685.0 Z" fill="#8B5CF6"/><text x="961.7" y="110.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#374151" text-anchor="middle" font-weight="600">90</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="cell-title">Failures by Spec File (7d)</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1277 766" role="img">
+  <rect width="1277" height="766" fill="#FFFFFF" rx="12"/>
+  <line x1="509.3" y1="30.0" x2="509.3" y2="694.0" stroke="#E5E7EB" stroke-width="2"/><text x="509.3" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">0</text><line x1="650.2" y1="30.0" x2="650.2" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="650.2" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">1</text><line x1="791.1" y1="30.0" x2="791.1" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="791.1" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">2</text><line x1="932.0" y1="30.0" x2="932.0" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="932.0" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">3</text><line x1="1073.0" y1="30.0" x2="1073.0" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="1073.0" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">4</text><line x1="1213.9" y1="30.0" x2="1213.9" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="1213.9" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">5</text><path d="M509.3,85.3 H1058.4 Q1073.0,85.3 1073.0,99.8 V126.2 Q1073.0,140.7 1058.4,140.7 H509.3 Z" fill="#EF4444"/><text x="1082.0" y="122.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">4</text><text x="497.3" y="122.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>tests/shop/manager-checkout.spec.ts</title>tests/shop/manager-checkou…</text><path d="M509.3,251.3 H917.5 Q932.0,251.3 932.0,265.8 V292.2 Q932.0,306.7 917.5,306.7 H509.3 Z" fill="#F97316"/><text x="941.0" y="288.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">3</text><text x="497.3" y="288.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>tests/auth/manager-profile.spec.ts</title>tests/auth/manager-profile…</text><path d="M509.3,417.3 H917.5 Q932.0,417.3 932.0,431.8 V458.2 Q932.0,472.7 917.5,472.7 H509.3 Z" fill="#F59E0B"/><text x="941.0" y="454.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">3</text><text x="497.3" y="454.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>tests/shop/shop.spec.ts</title>tests/shop/shop.spec.ts</text><path d="M509.3,583.3 H776.6 Q791.1,583.3 791.1,597.8 V624.2 Q791.1,638.7 776.6,638.7 H509.3 Z" fill="#FACC15"/><text x="800.1" y="620.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">2</text><text x="497.3" y="620.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>tests/auth/auth.spec.ts</title>tests/auth/auth.spec.ts</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="cell-title">Health Score Breakdown (weighted components)</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1277 766" role="img">
+  <rect width="1277" height="766" fill="#FFFFFF" rx="12"/>
+  <line x1="384.0" y1="30.0" x2="384.0" y2="694.0" stroke="#E5E7EB" stroke-width="2"/><text x="384.0" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">0</text><line x1="543.9" y1="30.0" x2="543.9" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="543.9" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">20</text><line x1="703.9" y1="30.0" x2="703.9" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="703.9" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">40</text><line x1="863.8" y1="30.0" x2="863.8" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="863.8" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">60</text><line x1="1023.7" y1="30.0" x2="1023.7" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="1023.7" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">80</text><line x1="1183.6" y1="30.0" x2="1183.6" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="1183.6" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">100</text><path d="M384.0,68.7 H1169.1 Q1183.6,68.7 1183.6,83.2 V109.6 Q1183.6,124.1 1169.1,124.1 H384.0 Z" fill="#22C55E"/><text x="1192.6" y="106.3" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">100</text><text x="372.0" y="106.3" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>Requirement Coverage</title>Requirement Coverage</text><path d="M384.0,201.5 H1137.1 Q1151.7,201.5 1151.7,216.0 V242.4 Q1151.7,256.9 1137.1,256.9 H384.0 Z" fill="#84CC16"/><text x="1160.7" y="239.1" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">96</text><text x="372.0" y="239.1" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>Sync Health</title>Sync Health</text><path d="M384.0,334.3 H769.3 Q783.8,334.3 783.8,348.8 V375.2 Q783.8,389.7 769.3,389.7 H384.0 Z" fill="#F59E0B"/><text x="792.8" y="371.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">50</text><text x="372.0" y="371.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>Quality Score</title>Quality Score</text><path d="M384.0,467.1 H729.3 Q743.8,467.1 743.8,481.6 V508.0 Q743.8,522.5 729.3,522.5 H384.0 Z" fill="#F97316"/><text x="752.8" y="504.7" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">45</text><text x="372.0" y="504.7" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>Automation Coverage</title>Automation Coverage</text><text x="372.0" y="637.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>Execution Freshness</title>Execution Freshness</text>
+</svg></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 12;">
+      <div class="cell-title">Top Failures (7d, 12 failed tests across 8 distinct tests)</div>
+      <div class="table-frame"><div class="table-scroll"><table><thead><tr><th>Test</th><th>File</th><th class="num">Failures</th><th>Last failure (UTC)</th><th>Error summary</th></tr></thead><tbody><tr><td class="first" title="Manager buys the cheapest electronics with a coupon - Maya Patel">Manager buys the cheapest electronics with a coupon - Maya Patel</td><td title="tests/shop/manager-checkout.spec.ts">tests/shop/manager-checkout.spec.ts</td><td class="num" title="2">2</td><td title="2026-11-14 13:01">2026-11-14 13:01</td><td title="selectOption timeout on getByTestId('filter-category')">selectOption timeout on getByTestId('filter-category')</td></tr><tr><td class="first" title="Manager buys the cheapest electronics with a coupon - Leo Grant">Manager buys the cheapest electronics with a coupon - Leo Grant</td><td title="tests/shop/manager-checkout.spec.ts">tests/shop/manager-checkout.spec.ts</td><td class="num" title="2">2</td><td title="2026-11-14 13:01">2026-11-14 13:01</td><td title="selectOption timeout on getByTestId('filter-category')">selectOption timeout on getByTestId('filter-category')</td></tr><tr><td class="first" title="Sign in form exposes required username/password fields (guest, read-only)">Sign in form exposes required username/password fields (guest, read-only)</td><td title="tests/auth/auth.spec.ts">tests/auth/auth.spec.ts</td><td class="num" title="2">2</td><td title="2026-11-14 13:30">2026-11-14 13:30</td><td title="getByTestId('remember-checkbox') not found">getByTestId('remember-checkbox') not found</td></tr><tr><td class="first" title="Manager login lands directly authenticated (no 2FA step)">Manager login lands directly authenticated (no 2FA step)</td><td title="tests/auth/manager-profile.spec.ts">tests/auth/manager-profile.spec.ts</td><td class="num" title="2">2</td><td title="2026-11-14 13:15">2026-11-14 13:15</td><td title="promo-overlay intercepts pointer events on login-submit (LoginPage.ts:94)">promo-overlay intercepts pointer events on login-submit (LoginPage.ts:94)</td></tr><tr><td class="first" title="Shop: full checkout journey places an order">Shop: full checkout journey places an order</td><td title="tests/shop/shop.spec.ts">tests/shop/shop.spec.ts</td><td class="num" title="1">1</td><td title="2026-11-14 13:07">2026-11-14 13:07</td><td title="getByTestId('ck-agree') check timeout (CheckoutPage.ts:104)">getByTestId('ck-agree') check timeout (CheckoutPage.ts:104)</td></tr><tr><td class="first" title="Shop: adding a product increments the cart badge">Shop: adding a product increments the cart badge</td><td title="tests/shop/shop.spec.ts">tests/shop/shop.spec.ts</td><td class="num" title="1">1</td><td title="2026-11-14 13:11">2026-11-14 13:11</td><td title="getByTestId('add-cart-1') click timeout (ShopPage.ts:78)">getByTestId('add-cart-1') click timeout (ShopPage.ts:78)</td></tr><tr><td class="first" title="Shop · TestverQA: page identity">Shop · TestverQA: page identity</td><td title="tests/shop/shop.spec.ts">tests/shop/shop.spec.ts</td><td class="num" title="1">1</td><td title="2026-11-14 13:16">2026-11-14 13:16</td><td title="h1 expected &quot;Shop&quot;, received &quot;Store&quot;">h1 expected &quot;Shop&quot;, received &quot;Store&quot;</td></tr><tr><td class="first" title="Manager settings: identity is read-only, 2FA controls are disabled">Manager settings: identity is read-only, 2FA controls are disabled</td><td title="tests/auth/manager-profile.spec.ts">tests/auth/manager-profile.spec.ts</td><td class="num" title="1">1</td><td title="2026-11-14 12:54">2026-11-14 12:54</td><td title="getByTestId('pref-email-toggle') not found">getByTestId('pref-email-toggle') not found</td></tr></tbody></table></div></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 12;">
+      <div class="cell-title">Flaky Tests (≥20% outcome change, 14d)</div>
+      <div class="table-frame"><div class="table-scroll"><table><thead><tr><th>Test</th><th>File</th><th class="num">Runs</th><th class="num">Pass</th><th class="num">Fail</th><th class="num">Flakiness %</th></tr></thead><tbody><tr><td class="first" title="Sign in form exposes required username/password fields (guest, read-only)">Sign in form exposes required username/password fields (guest, read-only)</td><td title="tests/auth/auth.spec.ts">tests/auth/auth.spec.ts</td><td class="num" title="3">3</td><td class="num" title="1">1</td><td class="num" title="2">2</td><td class="num" title="50">50</td></tr><tr><td class="first" title="Shop · TestverQA: page identity">Shop · TestverQA: page identity</td><td title="tests/shop/shop.spec.ts">tests/shop/shop.spec.ts</td><td class="num" title="3">3</td><td class="num" title="2">2</td><td class="num" title="1">1</td><td class="num" title="50">50</td></tr><tr><td class="first" title="Shop: adding a product increments the cart badge">Shop: adding a product increments the cart badge</td><td title="tests/shop/shop.spec.ts">tests/shop/shop.spec.ts</td><td class="num" title="3">3</td><td class="num" title="2">2</td><td class="num" title="1">1</td><td class="num" title="50">50</td></tr><tr><td class="first" title="Shop: full checkout journey places an order">Shop: full checkout journey places an order</td><td title="tests/shop/shop.spec.ts">tests/shop/shop.spec.ts</td><td class="num" title="3">3</td><td class="num" title="2">2</td><td class="num" title="1">1</td><td class="num" title="50">50</td></tr></tbody></table></div></div>
+      
+    </div>
+<div class="cell markdown" style="grid-column: span 12;"><h3>Read this first</h3>
+<ul><li><strong>Zero automation runs finished in the last 24 hours.</strong> <code>automation_report summary</code> and <code>list_runs</code> both returned 0 for the window since Nov 18. The most recent finished run was <strong>Nov 16, 06:11 UTC</strong> (run <code>9d2e3651308bda4d</code>, 1/1 passed). Everything below the 24h KPIs is therefore <strong>7-day / library context</strong>, not today's execution.</li><li><strong>0 API calls</strong> logged in the last 24h (<code>api_report summary</code>, 21-call log) — no API signal today.</li><li>Test management agrees: <code>get_health_score</code> reports <strong>execution freshness 0 — &quot;0 executed in last 7 days&quot;</strong>, which is what drags the health score to 58.</li></ul>
+<h3>What the numbers say</h3>
+<ul><li><strong>Pass rate 61.3% (7d)</strong> = 19 passed ÷ 31 executed across 11 runs. The average of each run's own rate is only <strong>25.5%</strong> — many runs are single-test runs that failed outright (Nov 14 was the heavy day).</li><li><strong>8 distinct tests failed 12 times</strong> in 7d; the two *Manager buys the cheapest electronics with a coupon* data rows (<code>Maya Patel</code>, <code>Leo Grant</code>) share the same root cause: <code>filter-category</code> never resolves in <code>ShopPage.applyProductFilters</code>.</li><li><strong>4 tests at 50% flakiness</strong> — all four are green in the Sanity Test suite but red as standalone runs, so the suite path and the direct path disagree.</li><li><strong>Library is mostly unexercised:</strong> 33 of 57 scripts have never run, 11 are failing at their last run, 13 passing. <code>tests/forms</code> (6) and <code>tests/dynamic</code> (5) have never run at all.</li><li><strong>Coverage is requirement-complete but automation-thin:</strong> 20/20 requirements covered (100%) yet only 55/122 cases automated (45%), with 50 stale cases and 55 orphan test cases.</li></ul>
+<h3>Sources</h3>
+<p>| Number | Tool | Window / basis |</p>
+<p>|---|---|---|</p>
+<p>| 0 runs, 0 API calls | <code>automation_report summary</code>, <code>api_report summary</code> | since Nov 18, 2026 |</p>
+<p>| 61.3% pass rate, 11 runs, 31 tests | <code>automation_report summary</code> | since Nov 12 (7d) |</p>
+<p>| Top failures, flaky tests | <code>automation_report get_top_failures</code>, <code>get_flaky_tests</code> | 7d / 14d, verification re-runs excluded |</p>
+<p>| 57 scripts, 13/11/33, 28 unlinked | <code>test_library summary</code> | all scripts, last-run status |</p>
+<p>| Suite pass rates | <code>suites_report pass_rate_by_suite</code> | latest completed run per suite |</p>
+<p>| Health 58, coverage 100%/45%, defects 1 open | <code>testver get_health_score</code>, <code>get_coverage_stats</code>, <code>query_defects</code> | current platform state |</p></div>
+    </div>
+    <div class="footer">Generated by Testver</div>
+  </div>
+</body>
+</html>

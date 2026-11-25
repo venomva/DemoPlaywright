@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ✓  1 [chromium] › tests\tables\tables.spec.ts:70:5 › Tables & Grids: master checkbox selects all rows on the page (3.6s)
+
+  1 passed (5.9s)

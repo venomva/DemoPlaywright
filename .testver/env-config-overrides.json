@@ -1,0 +1,6 @@
+{
+  "included": [
+    "playwright.config.ts",
+    "tsconfig.json"
+  ]
+}

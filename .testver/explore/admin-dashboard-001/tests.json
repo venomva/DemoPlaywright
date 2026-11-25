@@ -1,0 +1,45 @@
+{
+  "runId": "admin-dashboard-001",
+  "tests": [
+    {
+      "scenario": "Admin dashboard renders with title, heading and nav active state",
+      "testCaseId": "TC-42",
+      "specPath": "tests/admin/admin.spec.ts",
+      "testName": "Admin dashboard renders with title, heading and nav active state",
+      "runs": { "passed": 2, "total": 2 },
+      "status": "green"
+    },
+    {
+      "scenario": "Admin dashboard shows all four KPI stat cards with seeded values",
+      "testCaseId": "TC-43",
+      "specPath": "tests/admin/admin.spec.ts",
+      "testName": "Admin dashboard shows all four KPI stat cards with seeded values",
+      "runs": { "passed": 2, "total": 2 },
+      "status": "green"
+    },
+    {
+      "scenario": "Admin dashboard notifications feed renders all seeded notifications",
+      "testCaseId": "TC-44",
+      "specPath": "tests/admin/admin.spec.ts",
+      "testName": "Admin dashboard notifications feed renders all seeded notifications",
+      "runs": { "passed": 2, "total": 2 },
+      "status": "green"
+    },
+    {
+      "scenario": "Admin dashboard recent-orders table shows headers and seeded rows",
+      "testCaseId": "TC-45",
+      "specPath": "tests/admin/admin.spec.ts",
+      "testName": "Admin dashboard recent-orders table shows headers and seeded rows",
+      "runs": { "passed": 2, "total": 2 },
+      "status": "green"
+    },
+    {
+      "scenario": "Admin dashboard View shop link navigates to the shop module",
+      "testCaseId": "TC-46",
+      "specPath": "tests/admin/admin.spec.ts",
+      "testName": "Admin dashboard View shop link navigates to the shop module",
+      "runs": { "passed": 2, "total": 2 },
+      "status": "green"
+    }
+  ]
+}

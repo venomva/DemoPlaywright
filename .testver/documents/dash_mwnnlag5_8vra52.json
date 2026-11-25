@@ -1,0 +1,193 @@
+{
+  "id": "dash_mwnnlag5_8vra52",
+  "version": 1,
+  "title": "Executive QA Summary — Sprint 2 (V1.1)",
+  "subtitle": "Last 30 days · 19 finished runs + 123 test cases · Test Plan TP-2 active",
+  "generatedAt": "2026-11-19T14:36:31.397Z",
+  "summary": {
+    "verdict": "Sprint 2 QA is functional but amber: the latest 10-test suite run passed 90%, yet 8 distinct tests failed in the last 30 days and automation coverage sits at 46%.",
+    "status": "warn",
+    "findings": [
+      {
+        "tone": "bad",
+        "title": "1 critical defect open",
+        "detail": "D-2 — Admin login 2FA test fails at LoginPage: getByTestId('username') never becomes visible (15s timeout); severity critical, status open."
+      },
+      {
+        "tone": "bad",
+        "title": "Checkout/shop filter flow is the top breaker",
+        "detail": "'Manager buys the cheapest electronics with a coupon' (Maya Patel and Leo Grant) failed 4 times each on ShopPage.applyProductFilters — selectOption on filter-category times out at 30s."
+      },
+      {
+        "tone": "warn",
+        "title": "Automation coverage is 46%",
+        "detail": "56 of 123 test cases are automated; critical-priority coverage is the weak spot at just 1 of 32 critical cases automated."
+      },
+      {
+        "tone": "warn",
+        "title": "Overall window pass rate is 59%",
+        "detail": "23 passed / 39 executed across 19 runs (avg run pass rate 35.8%), dragged down by a cluster of single-test runs on 14 Nov; the last two CI suite runs were 90% each and the newest run was 100% (1 test)."
+      },
+      {
+        "tone": "info",
+        "title": "Requirement coverage is not the problem",
+        "detail": "20 of 20 requirements covered (100%), 0 orphans on the requirement side and 0 uncovered requirements."
+      }
+    ]
+  },
+  "method": "Sources: `testver get_automation_stats` and `dashboard` (Total Test Cases 123, automated 56 → 46%), `testver get_coverage_stats` (automationCoverage 45% on 122 cases — 1-case discrepancy with the 123 total, so 46% is reported), `testver query_defects` (1 of 2 defects open: D-2, severity critical), `testver query_plans` (TP-2 \"Test Release\", Sprint 2 / V1.1: 9 executed, 8 passed, 1 failed). Run analytics: `automation_report summary`, `get_trends`, `get_top_failures`, `get_failure_category_trends`, all for window since 20 Oct 2026 and excluding running/cancelled runs plus 13 Auto-Heal/AI-fix verification re-runs. \"Latest Pass Rate %\" = the most recent full suite run (Sanity Test, CI, 10 tests, 9 passed = 90%); the newest run overall was a 1-test manual run at 100%, which is why the trend's last point is 100. Summary passRatePct = passed ÷ executed tests across all runs (59%); avgRunPassRatePct = mean of each run's own rate (35.8%). Failure categories for all 12 recorded failure runs are classified 'test-issue', so every table row carries that category. Times shown are UTC.",
+  "cells": [
+    {
+      "type": "kpi",
+      "title": "Total Test Cases",
+      "value": 123,
+      "hint": "32 critical · 57 high · 34 medium",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Automation Coverage",
+      "value": 46,
+      "unit": "%",
+      "hint": "56 automated / 67 manual",
+      "span": 3,
+      "status": "warn"
+    },
+    {
+      "type": "kpi",
+      "title": "Latest Pass Rate",
+      "value": 90,
+      "unit": "%",
+      "delta": 0,
+      "deltaDirection": "flat",
+      "hint": "Sanity Test CI · 10 tests, 9 passed",
+      "span": 3,
+      "status": "warn",
+      "trend": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        90,
+        90,
+        100
+      ]
+    },
+    {
+      "type": "kpi",
+      "title": "Critical Failures (open)",
+      "value": 1,
+      "hint": "D-2 Admin login 2FA — critical, open",
+      "span": 3,
+      "status": "bad"
+    },
+    {
+      "type": "chart",
+      "title": "Automation Status — Automated vs Manual",
+      "chartType": "doughnut",
+      "labels": [
+        "Automated",
+        "Manual"
+      ],
+      "data": [
+        56,
+        67
+      ],
+      "colorScheme": "status",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Pass Rate Trend — Last 10 Runs (%)",
+      "chartType": "line",
+      "labels": [
+        "14 Nov 12:50",
+        "14 Nov 12:54",
+        "14 Nov 13:01",
+        "14 Nov 13:07",
+        "14 Nov 13:11",
+        "14 Nov 13:15",
+        "14 Nov 13:16",
+        "Sanity 13:27",
+        "Sanity 13:30",
+        "16 Nov 06:11"
+      ],
+      "data": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        90,
+        90,
+        100
+      ],
+      "colorScheme": "vibrant",
+      "span": 6,
+      "runIds": [
+        "29517035f288b744",
+        "8dfa465b5d262269",
+        "5b9f42a3c9b56971",
+        "7b5b5be2cae55f05",
+        "1b3ffb5c3cbd929d",
+        "279abed4edf52685",
+        "fcbe6e81d908e84a",
+        "srun_7613e85653a6288f",
+        "srun_a902ff369be40b70",
+        "9d2e3651308bda4d"
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Top 5 Failing Tests (last 30 days)",
+      "headers": [
+        "Test Name",
+        "Failure Count",
+        "Last Failure",
+        "Category"
+      ],
+      "rows": [
+        [
+          "Manager buys the cheapest electronics with a coupon - Maya Patel",
+          "4",
+          "2026-11-14 13:01 UTC",
+          "test-issue"
+        ],
+        [
+          "Manager buys the cheapest electronics with a coupon - Leo Grant",
+          "4",
+          "2026-11-14 13:01 UTC",
+          "test-issue"
+        ],
+        [
+          "Sign in form exposes required username/password fields (guest, read-only)",
+          "2",
+          "2026-11-14 13:30 UTC",
+          "test-issue"
+        ],
+        [
+          "Manager login lands directly authenticated (no 2FA step)",
+          "2",
+          "2026-11-14 13:15 UTC",
+          "test-issue"
+        ],
+        [
+          "Shop · TestverQA: page identity",
+          "1",
+          "2026-11-14 13:16 UTC",
+          "test-issue"
+        ]
+      ],
+      "span": 12
+    },
+    {
+      "type": "markdown",
+      "content": "## Executive Summary — Sprint 2 (V1.1)\n\n- **Sprint health: amber.** The last two CI suite runs (*Sanity Test*) both passed 9 of 10 tests (90%), and the newest run was green — but across the full 30-day window only 23 of 39 executed tests passed (59%) and the sprint plan TP-2 stands at 8 passed / 1 failed of 9 executed.\n- **Biggest risk #1 — shop filter/checkout path.** `ShopPage.applyProductFilters` times out on `selectOption` for `filter-category` (30s) in 4 consecutive runs each for the Maya Patel and Leo Grant checkout personas — this single page-object method accounts for the two highest failure counts in the project.\n- **Biggest risk #2 — auth entry points.** The only open **critical** defect (D-2) is the Admin 2FA login (`getByTestId('username')` never visible), and the Manager login is blocked by the `promo-overlay` intercepting the Sign-in click. Both are on the login journey, so a release gate on authentication is not currently satisfied.\n- **Coverage is the quiet gap.** 46% of cases are automated and only **1 of 32 critical-priority** cases has a script; requirement coverage is nevertheless 100% (20/20), so the risk is depth of verification, not traceability.\n- **Recommended next steps.** (1) Stabilise `ShopPage.applyProductFilters` — wait for the filter panel before `selectOption`, or route filters via URL params. (2) Fix `promo-overlay` handling in `LoginPage.submitManagerCredentials` and assign D-2 to the auth owner. (3) Automate the 31 un-scripted critical cases before the V1.1 release gate, prioritising auth and checkout. (4) Re-baseline on the next full suite run so the trend stops being dominated by 1-test runs."
+    }
+  ]
+}

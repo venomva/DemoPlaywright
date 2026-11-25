@@ -1,0 +1,48 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests\auth\profile.spec.ts:35:5 › Admin login completes 2FA and lands authenticated (home) (30.6s)
+
+
+  1) [chromium] › tests\auth\profile.spec.ts:35:5 › Admin login completes 2FA and lands authenticated (home) 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('password')
+
+
+       at pages\LoginPage.ts:78
+
+      76 |   ): Promise<void> {
+      77 |     await this.usernameInput.fill(username);
+    > 78 |     await this.passwordInput.fill(password);
+         |                              ^
+      79 |     await this.submitButton.click();
+      80 |   }
+      81 |
+        at LoginPage.submitAdminCredentials (E:\TestverTesting\Agents\FirstTest\tests\pages\LoginPage.ts:78:30)
+        at loginAsAdmin (E:\TestverTesting\Agents\FirstTest\tests\auth\profile.spec.ts:25:3)
+        at E:\TestverTesting\Agents\FirstTest\tests\auth\profile.spec.ts:36:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\auth-profile-Admin-login-c-6b951-d-lands-authenticated-home--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\auth-profile-Admin-login-c-6b951-d-lands-authenticated-home--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\auth-profile-Admin-login-c-6b951-d-lands-authenticated-home--chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\auth-profile-Admin-login-c-6b951-d-lands-authenticated-home--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\auth-profile-Admin-login-c-6b951-d-lands-authenticated-home--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\auth\profile.spec.ts:35:5 › Admin login completes 2FA and lands authenticated (home) 

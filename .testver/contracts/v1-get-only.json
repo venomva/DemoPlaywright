@@ -1,0 +1,261 @@
+{
+  "spec": "api/openapi-v1.json",
+  "baseUrl": "http://localhost:4300",
+  "source": "collection Playground API",
+  "generatedAt": "2026-10-27T05:09:48.833Z",
+  "summary": {
+    "pass": 13,
+    "fail": 5,
+    "error": 0,
+    "skipped": 12,
+    "notCovered": 0
+  },
+  "results": [
+    {
+      "operation": "GET /api/health",
+      "request": "Health check",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "POST /api/reset",
+      "request": "Reset & reseed in-memory state",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "GET /api/users",
+      "request": "List all users",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /api/users/{id}",
+      "request": "Get a user by id",
+      "status": 404,
+      "result": "fail",
+      "issues": [
+        {
+          "severity": "error",
+          "where": "path \"id\"",
+          "message": "\"{{id}}\" must be integer"
+        }
+      ]
+    },
+    {
+      "operation": "GET /api/products",
+      "request": "List products (first 50)",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /api/products/{id}",
+      "request": "Get product by id",
+      "status": 404,
+      "result": "fail",
+      "issues": [
+        {
+          "severity": "error",
+          "where": "path \"id\"",
+          "message": "\"{{id}}\" must be integer"
+        }
+      ]
+    },
+    {
+      "operation": "GET /api/orders",
+      "request": "List orders (first 50)",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /api/categories",
+      "request": "List categories",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /api/notifications",
+      "request": "List notifications",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /ajax/get",
+      "request": "Plain GET",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "POST /ajax/post",
+      "request": "POST that echoes the body",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "PUT /ajax/put",
+      "request": "PUT that echoes the body",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "DELETE /ajax/delete",
+      "request": "DELETE",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "GET /ajax/slow",
+      "request": "4-second delayed response",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /ajax/fail/{code}",
+      "request": "Forced HTTP error",
+      "status": 500,
+      "result": "fail",
+      "issues": [
+        {
+          "severity": "error",
+          "where": "path \"code\"",
+          "message": "\"{{code}}\" must be integer"
+        }
+      ]
+    },
+    {
+      "operation": "GET /ajax/sse",
+      "request": "Server-Sent Events stream",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /tables/data",
+      "request": "Server-side paginated/sorted/filtered products",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "PUT /tables/data/{id}",
+      "request": "Update a product row",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "DELETE /tables/data/{id}",
+      "request": "Delete a product row",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "GET /forms/cascade",
+      "request": "Cascading dropdown data",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "POST /files/upload",
+      "request": "Upload one or more files (multipart/form-data, field \"files\")",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "DELETE /files/upload/{id}",
+      "request": "Delete an uploaded file",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "GET /files/download/{type}",
+      "request": "Download a sample file",
+      "status": 404,
+      "result": "fail",
+      "issues": [
+        {
+          "severity": "error",
+          "where": "path \"type\"",
+          "message": "\"{{type}}\" must be one of: \"csv\", \"json\", \"txt\", \"html\""
+        },
+        {
+          "severity": "error",
+          "where": "status",
+          "message": "404 is not a documented response (documented: 200)"
+        }
+      ]
+    },
+    {
+      "operation": "POST /shop/cart/add",
+      "request": "Add item to cart",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "POST /shop/cart/update",
+      "request": "Update item quantity",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "POST /shop/cart/remove",
+      "request": "Remove item",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "POST /shop/cart/coupon",
+      "request": "Apply coupon (try SAVE10, WELCOME20, EXPIRED, MAXEDOUT)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "GET /api/products",
+      "request": "List products and extract first id",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /api/products/{id}",
+      "request": "Get product by productId",
+      "status": 404,
+      "result": "fail",
+      "issues": [
+        {
+          "severity": "error",
+          "where": "path \"id\"",
+          "message": "\"{{productId}}\" must be integer"
+        }
+      ]
+    },
+    {
+      "operation": "GET /ajax/slow",
+      "request": "Slow endpoint until ok is true",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    }
+  ],
+  "notCovered": []
+}

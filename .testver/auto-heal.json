@@ -1,0 +1,13 @@
+{
+  "attempts": {
+    "auth\\profile.spec.ts::Admin login completes 2FA and lands authenticated (home)": {
+      "count": 1,
+      "lastAt": "2026-10-09T12:44:00.039Z"
+    }
+  },
+  "rejected": {
+    "tests/pages/LoginPage.ts|getByTestId('login-submit')|getByTestId('sign-in-submit')": {
+      "at": "2026-11-14T12:34:58.624Z"
+    }
+  }
+}

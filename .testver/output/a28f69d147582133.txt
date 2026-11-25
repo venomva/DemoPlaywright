@@ -1,0 +1,49 @@
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order (8.8s)
+
+
+  1) [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order ───────
+
+    Error: expect(page).toHaveTitle(expected) failed
+
+    Expected pattern: /Order ORD-\d+ · TestverQA/
+    Received string:  "Order ORD-000201 confirmed · TestverQA"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        13 × locator resolved to <html lang="en" data-theme="light">…</html>
+           - unexpected value "Order ORD-000201 confirmed · TestverQA"
+
+
+      118 |   // Order confirmation.
+      119 |   await expect(page).toHaveURL(/\/shop\/order\/ORD-\d+$/);
+    > 120 |   await expect(page).toHaveTitle(/Order ORD-\d+ · TestverQA/);
+          |                      ^
+      121 |   await expect(page.getByText('Order placed successfully!')).toBeVisible();
+      122 |   await expect(page.getByText('Incredible Wooden Ball')).toBeVisible();
+      123 | });
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:120:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-shop-Shop-full-checkout-journey-places-an-order-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order ────────

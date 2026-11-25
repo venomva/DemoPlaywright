@@ -1,0 +1,61 @@
+{
+  "runId": "manager-profile-001",
+  "environment": "staging",
+  "role": "manager",
+  "automatedTests": [
+    {
+      "scenario": "Manager login lands directly authenticated (no 2FA step)",
+      "status": "PASS",
+      "verifiedRuns": 2,
+      "tracked": false,
+      "note": "TM test-case creation was denied by user; test verified green twice in runs 1 and 2"
+    },
+    {
+      "scenario": "Manager profile shows identity, account stats and recent orders",
+      "status": "PASS",
+      "verifiedRuns": 2,
+      "tracked": false,
+      "note": "TM test-case creation was denied by user; test verified green twice in runs 1 and 2"
+    },
+    {
+      "scenario": "Manager recent-order View opens the order confirmation",
+      "status": "PASS",
+      "verifiedRuns": 2,
+      "tracked": false,
+      "note": "TM test-case creation was denied by user; test verified green twice in runs 1 and 2"
+    },
+    {
+      "scenario": "Manager settings: identity is read-only, 2FA controls are disabled",
+      "status": "PASS",
+      "verifiedRuns": 2,
+      "tracked": false,
+      "note": "TM test-case creation was denied by user; test verified green twice in runs 1 and 2"
+    },
+    {
+      "scenario": "Manager settings: save profile shows success and persists to profile (self-restoring)",
+      "status": "PASS",
+      "verifiedRuns": 2,
+      "tracked": false,
+      "note": "TM test-case creation was denied by user; test verified green twice in runs 1 and 2"
+    },
+    {
+      "scenario": "Manager settings: saving notification preferences confirms with success alert",
+      "status": "PASS",
+      "verifiedRuns": 2,
+      "tracked": false,
+      "note": "TM test-case creation was denied by user; test verified green twice in runs 1 and 2"
+    }
+  ],
+  "impactCheck": {
+    "sharedFilesTouched": [
+      "tests/pages/LoginPage.ts",
+      "tests/pages/ProfilePage.ts",
+      "tests/pages/SettingsPage.ts",
+      "tests/helpers/auth.ts"
+    ],
+    "changeType": "additive only — no existing member modified; admin defaults preserved",
+    "dependentTestsVerified": [
+      { "spec": "tests/auth/profile.spec.ts", "result": "PASS", "count": 5, "note": "admin profile/settings contracts unchanged" }
+    ]
+  }
+}

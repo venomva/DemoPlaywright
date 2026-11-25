@@ -1,0 +1,238 @@
+{
+  "id": "dash_mwnojxt2_ocwksz",
+  "version": 1,
+  "title": "Test Case Portfolio — Current State",
+  "subtitle": "Current state · 123 test cases · 2 plans · 2 defects (Testver, 19 Nov 2026)",
+  "generatedAt": "2026-11-19T15:03:27.974Z",
+  "summary": {
+    "verdict": "Requirement coverage is complete (20/20), but with 46% automation and zero executions in the last 7 days the portfolio is broad rather than proven — health score 58/100.",
+    "status": "warn",
+    "findings": [
+      {
+        "tone": "bad",
+        "title": "Execution freshness scores 0/100.",
+        "detail": "0 test cases executed in the last 7 days — the largest single drag on the 58/100 health score (weight 20)."
+      },
+      {
+        "tone": "bad",
+        "title": "Automation is inverted against risk.",
+        "detail": "Of 32 critical cases exactly 1 is automated (3%); medium is best covered at 24/34 (71%), high 31/57 (54%)."
+      },
+      {
+        "tone": "warn",
+        "title": "121 of 123 cases are still draft.",
+        "detail": "Only 1 case is active — the authored suite has not been promoted to an approved baseline."
+      },
+      {
+        "tone": "warn",
+        "title": "2 defects, 1 open and critical.",
+        "detail": "D-2 (P2): admin login 2FA test fails on getByTestId('username') — element not found after 15s."
+      },
+      {
+        "tone": "info",
+        "title": "Plan V1.1 is a large step up from V1.0.",
+        "detail": "TP-1 (V1.0) ran 1/11 passed (9.1%); TP-2 (V1.1) ran 8/9 passed (88.9%)."
+      }
+    ]
+  },
+  "method": "Data from Testver actions get_analytics, get_automation_stats, get_health_score, dashboard, query_plans (json) and query_defects (json), read on 19 Nov 2026 — a current-state snapshot, not a time window. Counts: 123 test cases / 56 automated taken from get_analytics, get_automation_stats and dashboard; get_coverage_stats and get_health_score report 122 / 55 (a 1-case lagging index), and the health-score sub-scores that derive from it (automationCoverage 45, syncHealth 96) are shown as returned. Plan pass rates = passedCount / testCaseCount per plan. Health score is the weighted sum of automationCoverage 45 (25%), requirementCoverage 100 (25%), executionFreshness 0 (20%), qualityAverage 50 (15%, 0 cases scored) and syncHealth 96 (15%). Requirement coverage 20/20; 50 cases counted stale; 0 updated recently.",
+  "cells": [
+    {
+      "type": "kpi",
+      "title": "Test cases",
+      "value": 123,
+      "hint": "121 draft · 1 active · 1 archived",
+      "span": 3
+    },
+    {
+      "type": "kpi",
+      "title": "Automated",
+      "value": 46,
+      "unit": "%",
+      "hint": "56 of 123 · 67 manual",
+      "span": 3,
+      "status": "warn"
+    },
+    {
+      "type": "kpi",
+      "title": "Requirement coverage",
+      "value": 100,
+      "unit": "%",
+      "hint": "20 of 20 requirements",
+      "span": 3,
+      "status": "good"
+    },
+    {
+      "type": "kpi",
+      "title": "Health score",
+      "value": 58,
+      "unit": "/100",
+      "hint": "freshness 0 · quality 50 · sync 96",
+      "span": 3,
+      "status": "warn"
+    },
+    {
+      "type": "chart",
+      "title": "Test cases by priority",
+      "chartType": "bar",
+      "labels": [
+        "Critical",
+        "High",
+        "Medium"
+      ],
+      "data": [
+        32,
+        57,
+        34
+      ],
+      "colorScheme": "priority",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Test cases by type",
+      "chartType": "horizontal_bar",
+      "labels": [
+        "e2e",
+        "web",
+        "api",
+        "security",
+        "performance",
+        "integration",
+        "mobile"
+      ],
+      "data": [
+        68,
+        35,
+        6,
+        5,
+        3,
+        3,
+        3
+      ],
+      "colorScheme": "vibrant",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Automation by priority — automated vs manual",
+      "chartType": "stacked_bar",
+      "labels": [
+        "Critical",
+        "High",
+        "Medium"
+      ],
+      "datasets": [
+        {
+          "label": "Automated",
+          "data": [
+            1,
+            31,
+            24
+          ]
+        },
+        {
+          "label": "Manual",
+          "data": [
+            31,
+            26,
+            10
+          ]
+        }
+      ],
+      "colorScheme": "status",
+      "span": 6
+    },
+    {
+      "type": "chart",
+      "title": "Health score breakdown (0–100)",
+      "chartType": "horizontal_bar",
+      "labels": [
+        "Requirement coverage",
+        "Sync health",
+        "Quality score",
+        "Automation coverage",
+        "Execution freshness"
+      ],
+      "data": [
+        100,
+        96,
+        50,
+        45,
+        0
+      ],
+      "colorScheme": "vibrant",
+      "span": 6
+    },
+    {
+      "type": "table",
+      "title": "Test plans",
+      "headers": [
+        "Plan",
+        "Release",
+        "Sprint",
+        "Cases",
+        "Executed",
+        "Passed",
+        "Failed",
+        "Pass rate"
+      ],
+      "rows": [
+        [
+          "TP-1 · Test Release",
+          "V1.0",
+          "Sprint 1",
+          11,
+          11,
+          1,
+          10,
+          "9.1%"
+        ],
+        [
+          "TP-2 · Test Release",
+          "V1.1",
+          "Sprint 2",
+          9,
+          9,
+          8,
+          1,
+          "88.9%"
+        ]
+      ],
+      "span": 12
+    },
+    {
+      "type": "table",
+      "title": "Defects",
+      "headers": [
+        "ID",
+        "Title",
+        "Severity",
+        "Priority",
+        "Status"
+      ],
+      "rows": [
+        [
+          "D-2",
+          "Admin login completes 2FA and lands authenticated (home)",
+          "critical",
+          "P2",
+          "open"
+        ],
+        [
+          "D-1",
+          "Test-authoring issues found during exploration (add-to-cart race; infinite-scroll global counter)",
+          "minor",
+          "P3",
+          "resolved"
+        ]
+      ],
+      "span": 12
+    },
+    {
+      "type": "markdown",
+      "content": "## Reading this dashboard\n\n- **Portfolio shape:** e2e (68) + web (35) = 84% of all cases; api 6, security 5, performance 3, integration 3, mobile 3.\n- **Automation risk gap:** critical is 1/32 automated (3%), high 31/57 (54%), medium 24/34 (71%) — the highest-risk cases are the least automated.\n- **Sync:** 55 script mappings, 54 synced, 0 script-updated, 2 case-updated (sync health 96).\n- **Staleness:** 50 cases counted stale, 0 updated recently.\n- **Data caveat:** get_coverage_stats / get_health_score report 122 cases / 55 automated, one fewer than get_analytics, get_automation_stats and dashboard (123 / 56); 123/56 is used throughout and the 1-case gap looks like a lagging index.",
+      "span": 12
+    }
+  ]
+}

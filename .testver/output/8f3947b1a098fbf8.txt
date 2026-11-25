@@ -1,0 +1,43 @@
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied (8.1s)
+
+
+  1) [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied 
+
+    Error: expect(received).resolves.toContain(expected) // indexOf
+
+    Expected substring: "2146.23"
+    Received string:    "Total
+    $1082.43"
+
+      60 |   await expect(cartPage.heading).toBeVisible();
+      61 |   await expect(cartPage.heading).toHaveText(CART_HEADING);
+    > 62 |   await expect(cartPage.totalText()).resolves.toContain('2146.23');
+         |                                               ^
+      63 |
+      64 |   // Apply SAVE10 → 10% discount on subtotal; totals shift accordingly.
+      65 |   await cartPage.applyCoupon('SAVE10');
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:62:47
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-shop-Shop-cart-total--af3f9-SAVE10-discount-are-applied-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\shop\shop.spec.ts:44:5 › Shop: cart total and coupon SAVE10 discount are applied 

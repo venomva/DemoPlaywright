@@ -1,0 +1,49 @@
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › tests\auth\auth.spec.ts:45:5 › Sign in form exposes required username/password fields (guest, read-only) (6.5s)
+
+
+  1) [chromium] › tests\auth\auth.spec.ts:45:5 › Sign in form exposes required username/password fields (guest, read-only) 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByTestId('remember-checkbox')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByTestId('remember-checkbox') with timeout 5000ms
+      - waiting for getByTestId('remember-checkbox')
+
+
+      55 |   await expect(username).toBeVisible();
+      56 |   await expect(password).toBeVisible();
+    > 57 |   await expect(remember).toBeVisible();
+         |                          ^
+      58 |
+      59 |   // The two auth fields are required per the observed HTML contract.
+      60 |   await expect(username).toHaveAttribute('required', '');
+        at E:\TestverTesting\Agents\FirstTest\tests\auth\auth.spec.ts:57:26
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .testver\runs\02f8de2c69bc64bb\test-results\auth-auth-Sign-in-form-exp-b772a-ord-fields-guest-read-only--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    .testver\runs\02f8de2c69bc64bb\test-results\auth-auth-Sign-in-form-exp-b772a-ord-fields-guest-read-only--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .testver\runs\02f8de2c69bc64bb\test-results\auth-auth-Sign-in-form-exp-b772a-ord-fields-guest-read-only--chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    .testver\runs\02f8de2c69bc64bb\test-results\auth-auth-Sign-in-form-exp-b772a-ord-fields-guest-read-only--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace .testver\runs\02f8de2c69bc64bb\test-results\auth-auth-Sign-in-form-exp-b772a-ord-fields-guest-read-only--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\auth\auth.spec.ts:45:5 › Sign in form exposes required username/password fields (guest, read-only) 

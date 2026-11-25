@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test Case Portfolio — Current State</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif; background: #F7F8FA; color: #374151; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 24px 36px; }
+  .header { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 18px 22px; margin-bottom: 14px; }
+  .brand { font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #9CA3AF; }
+  .header h1 { margin: 6px 0 0; font-size: 22px; line-height: 1.25; font-weight: 700; color: #111827; }
+  .header .sub { margin-top: 4px; font-size: 13.5px; color: #6B7280; }
+  .header .meta { margin-top: 6px; font-size: 11.5px; color: #9CA3AF; }
+  .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; }
+  .cell { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 16px 17px; min-width: 0; }
+  .kpi { display: flex; flex-direction: column; }
+  .kpi-title { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #6B7280; }
+  .kpi-value { margin-top: 8px; font-size: 26px; line-height: 1.1; font-weight: 700; color: #111827; font-variant-numeric: tabular-nums; }
+  .kpi-unit { margin-left: 3px; font-size: 14px; font-weight: 500; color: #6B7280; }
+  .kpi-delta { margin-top: 9px; display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .kpi-delta .arrow { flex: none; }
+  .kpi-hint-inline { margin-left: 4px; font-weight: 400; color: #6B7280; }
+  .kpi-hint { margin-top: 9px; font-size: 12px; color: #6B7280; }
+  .kpi-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .spark { margin-top: 10px; width: 100%; height: 30px; display: block; }
+  .summary { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; display: grid; grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr); gap: 22px; }
+  .summary.one { grid-template-columns: 1fr; }
+  .verdict-col { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .verdict { font-size: 18px; line-height: 1.35; font-weight: 700; color: #111827; }
+  .by { font-size: 11.5px; color: #6B7280; }
+  .findings { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .findings li { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; line-height: 1.5; color: #374151; }
+  .findings strong { color: #111827; }
+  .mark { flex: none; margin-top: 2px; width: 18px; height: 18px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+  .mark.ok { color: #047857; background: #ECFDF5; }
+  .mark.bad { color: #B91C1C; background: #FEF2F2; }
+  .mark.warn { color: #B45309; background: #FFFBEB; }
+  .mark.neutral { color: #4B5563; background: #F3F4F6; }
+  .method { margin-top: 14px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 14px 18px; font-size: 12.5px; line-height: 1.6; color: #374151; }
+  .method strong { color: #111827; }
+  .cell-title { font-size: 14px; font-weight: 600; color: #1F2937; margin-bottom: 10px; }
+  .chart-body svg { border-radius: 8px; }
+  .hint { margin-top: 8px; font-size: 11.5px; color: #6B7280; }
+  .empty { padding: 28px 8px; text-align: center; font-size: 12.5px; color: #9CA3AF; }
+  .table-frame { border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; }
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+  th { background: #F7F8FA; border-bottom: 1px solid #E5E7EB; padding: 9px 14px; text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: #6B7280; white-space: nowrap; }
+  td { padding: 10px 14px; border-bottom: 1px solid #EEF0F3; color: #374151; vertical-align: middle; max-width: 420px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:hover td { background: #F5F7FA; }
+  td.first { font-weight: 500; color: #1F2937; }
+  td.num, th.num { text-align: right; }
+  td.empty { text-align: center; color: #9CA3AF; white-space: normal; }
+  .pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 600; line-height: 1.5; }
+  .pill.ok { color: #047857; background: #ECFDF5; }
+  .pill.bad { color: #B91C1C; background: #FEF2F2; }
+  .pill.warn { color: #B45309; background: #FFFBEB; }
+  .pill.neutral { color: #4B5563; background: #F3F4F6; }
+  .pill-rest { color: #6B7280; }
+  .markdown h2 { margin: 2px 0 8px; font-size: 17px; color: #111827; }
+  .markdown h3 { margin: 2px 0 8px; font-size: 14.5px; color: #1F2937; }
+  .markdown p { margin: 6px 0; font-size: 13.5px; line-height: 1.6; color: #374151; }
+  .markdown ul { margin: 6px 0; padding-left: 20px; }
+  .markdown li { margin: 4px 0; font-size: 13.5px; line-height: 1.55; color: #374151; }
+  .markdown strong { color: #111827; }
+  .markdown code { background: #F3F4F6; border-radius: 5px; padding: 1px 6px; font-family: Consolas, Menlo, monospace; font-size: 12px; color: #1F2937; }
+  .footer { margin-top: 22px; text-align: center; font-size: 11px; color: #9CA3AF; }
+  /* Narrow screens: KPIs pair up, everything else goes full width (parity with the card). */
+  @media (max-width: 760px) {
+    .wrap { padding: 14px 12px 24px; }
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .summary { grid-template-columns: 1fr; }
+    .cell { grid-column: span 2 !important; }
+    .cell.kpi { grid-column: span 1 !important; }
+  }
+  @media print {
+    body { background: #fff; }
+    .wrap { padding: 0; }
+    .cell, .header { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">Testver · Report</div>
+      <h1>Test Case Portfolio — Current State</h1>
+      <div class="sub">Current state · 123 test cases · 2 plans · 2 defects (Testver, 19 Nov 2026)</div>
+      <div class="meta">Data as of Nov 19, 2026, 8:33 PM GMT+5:30</div>
+    </div>
+    <div class="summary">
+    <div class="verdict-col"><span class="pill warn">Watch</span><div class="verdict">Requirement coverage is complete (20/20), but with 46% automation and zero executions in the last 7 days the portfolio is broad rather than proven — health score 58/100.</div><div class="by">Summary written by the AI Assistant</div></div>
+    <ul class="findings"><li><span class="mark bad" aria-hidden="true">!</span><span><strong>Execution freshness scores 0/100.</strong> 0 test cases executed in the last 7 days — the largest single drag on the 58/100 health score (weight 20).</span></li><li><span class="mark bad" aria-hidden="true">!</span><span><strong>Automation is inverted against risk.</strong> Of 32 critical cases exactly 1 is automated (3%); medium is best covered at 24/34 (71%), high 31/57 (54%).</span></li><li><span class="mark warn" aria-hidden="true">~</span><span><strong>121 of 123 cases are still draft.</strong> Only 1 case is active — the authored suite has not been promoted to an approved baseline.</span></li><li><span class="mark warn" aria-hidden="true">~</span><span><strong>2 defects, 1 open and critical.</strong> D-2 (P2): admin login 2FA test fails on getByTestId('username') — element not found after 15s.</span></li><li><span class="mark neutral" aria-hidden="true">i</span><span><strong>Plan V1.1 is a large step up from V1.0.</strong> TP-1 (V1.0) ran 1/11 passed (9.1%); TP-2 (V1.1) ran 8/9 passed (88.9%).</span></li></ul>
+  </div>
+    <div class="grid">
+      <div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-head"><div class="kpi-title">Test cases</div></div>
+      <div class="kpi-value">123</div>
+      <div class="kpi-hint">121 draft · 1 active · 1 archived</div>
+      
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-head"><div class="kpi-title">Automated</div><span class="pill warn">Watch</span></div>
+      <div class="kpi-value">46<span class="kpi-unit">%</span></div>
+      <div class="kpi-hint">56 of 123 · 67 manual</div>
+      
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-head"><div class="kpi-title">Requirement coverage</div><span class="pill ok">On target</span></div>
+      <div class="kpi-value">100<span class="kpi-unit">%</span></div>
+      <div class="kpi-hint">20 of 20 requirements</div>
+      
+    </div>
+<div class="cell kpi" style="grid-column: span 3;">
+      <div class="kpi-head"><div class="kpi-title">Health score</div><span class="pill warn">Watch</span></div>
+      <div class="kpi-value">58<span class="kpi-unit">/100</span></div>
+      <div class="kpi-hint">freshness 0 · quality 50 · sync 96</div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="cell-title">Test cases by priority</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1277 766" role="img">
+  <rect width="1277" height="766" fill="#FFFFFF" rx="12"/>
+  <line x1="87.8" y1="685.0" x2="1253.0" y2="685.0" stroke="#E5E7EB" stroke-width="2"/><text x="77.3" y="694.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">0</text><line x1="87.8" y1="560.0" x2="1253.0" y2="560.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="569.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">20</text><line x1="87.8" y1="435.0" x2="1253.0" y2="435.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="444.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">40</text><line x1="87.8" y1="310.0" x2="1253.0" y2="310.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="319.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">60</text><line x1="87.8" y1="185.0" x2="1253.0" y2="185.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="194.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">80</text><line x1="87.8" y1="60.0" x2="1253.0" y2="60.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="69.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">100</text><text x="282.0" y="724.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27.0" fill="#6B7280" text-anchor="middle">Critical</text><text x="670.4" y="724.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27.0" fill="#6B7280" text-anchor="middle">High</text><text x="1058.8" y="724.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27.0" fill="#6B7280" text-anchor="middle">Medium</text><path d="M242.4,685.0 V492.5 Q242.4,485.0 249.9,485.0 H314.1 Q321.6,485.0 321.6,492.5 V685.0 Z" fill="#EF4444"/><text x="282.0" y="473.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#374151" text-anchor="middle" font-weight="600">32</text><path d="M630.8,685.0 V336.3 Q630.8,328.8 638.3,328.8 H702.5 Q710.0,328.8 710.0,336.3 V685.0 Z" fill="#F97316"/><text x="670.4" y="316.8" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#374151" text-anchor="middle" font-weight="600">57</text><path d="M1019.2,685.0 V480.0 Q1019.2,472.5 1026.7,472.5 H1090.9 Q1098.4,472.5 1098.4,480.0 V685.0 Z" fill="#F59E0B"/><text x="1058.8" y="460.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#374151" text-anchor="middle" font-weight="600">34</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="cell-title">Test cases by type</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1277 875" role="img">
+  <rect width="1277" height="875" fill="#FFFFFF" rx="12"/>
+  <line x1="232.8" y1="30.0" x2="232.8" y2="803.0" stroke="#E5E7EB" stroke-width="2"/><text x="232.8" y="840.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">0</text><line x1="426.0" y1="30.0" x2="426.0" y2="803.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="426.0" y="840.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">20</text><line x1="619.2" y1="30.0" x2="619.2" y2="803.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="619.2" y="840.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">40</text><line x1="812.4" y1="30.0" x2="812.4" y2="803.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="812.4" y="840.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">60</text><line x1="1005.6" y1="30.0" x2="1005.6" y2="803.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="1005.6" y="840.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">80</text><line x1="1198.8" y1="30.0" x2="1198.8" y2="803.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="1198.8" y="840.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">100</text><path d="M232.8,57.5 H875.1 Q889.7,57.5 889.7,72.0 V98.4 Q889.7,112.9 875.1,112.9 H232.8 Z" fill="#3B82F6"/><text x="898.7" y="95.1" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">68</text><text x="220.8" y="95.1" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>e2e</title>e2e</text><path d="M232.8,167.9 H556.4 Q570.9,167.9 570.9,182.4 V208.8 Q570.9,223.4 556.4,223.4 H232.8 Z" fill="#3B82F6"/><text x="579.9" y="205.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">35</text><text x="220.8" y="205.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>web</title>web</text><path d="M232.8,278.4 H276.2 Q290.8,278.4 290.8,292.9 V319.3 Q290.8,333.8 276.2,333.8 H232.8 Z" fill="#3B82F6"/><text x="299.8" y="316.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">6</text><text x="220.8" y="316.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>api</title>api</text><path d="M232.8,388.8 H266.6 Q281.1,388.8 281.1,403.3 V429.7 Q281.1,444.2 266.6,444.2 H232.8 Z" fill="#3B82F6"/><text x="290.1" y="426.4" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">5</text><text x="220.8" y="426.4" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>security</title>security</text><path d="M232.8,499.2 H247.3 Q261.8,499.2 261.8,513.7 V540.1 Q261.8,554.6 247.3,554.6 H232.8 Z" fill="#3B82F6"/><text x="270.8" y="536.8" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">3</text><text x="220.8" y="536.8" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>performance</title>performance</text><path d="M232.8,609.6 H247.3 Q261.8,609.6 261.8,624.2 V650.6 Q261.8,665.1 247.3,665.1 H232.8 Z" fill="#3B82F6"/><text x="270.8" y="647.3" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">3</text><text x="220.8" y="647.3" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>integration</title>integration</text><path d="M232.8,720.1 H247.3 Q261.8,720.1 261.8,734.6 V761.0 Q261.8,775.5 247.3,775.5 H232.8 Z" fill="#3B82F6"/><text x="270.8" y="757.7" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">3</text><text x="220.8" y="757.7" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>mobile</title>mobile</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="cell-title">Automation by priority — automated vs manual</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1277 766" role="img">
+  <rect width="1277" height="766" fill="#FFFFFF" rx="12"/>
+  <rect x="24.0" y="31.8" width="20.5" height="20.5" rx="4.5" fill="#3B82F6"/><text x="55.9" y="49.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="28.5" fill="#374151" text-anchor="start"><title>Automated</title>Automated</text><rect x="230.9" y="31.8" width="20.5" height="20.5" rx="4.5" fill="#EF4444"/><text x="262.8" y="49.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="28.5" fill="#374151" text-anchor="start"><title>Manual</title>Manual</text><line x1="87.8" y1="685.0" x2="1253.0" y2="685.0" stroke="#E5E7EB" stroke-width="2"/><text x="77.3" y="694.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">0</text><line x1="87.8" y1="569.8" x2="1253.0" y2="569.8" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="578.8" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">20</text><line x1="87.8" y1="454.5" x2="1253.0" y2="454.5" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="463.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">40</text><line x1="87.8" y1="339.3" x2="1253.0" y2="339.3" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="348.3" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">60</text><line x1="87.8" y1="224.0" x2="1253.0" y2="224.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="233.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">80</text><line x1="87.8" y1="108.8" x2="1253.0" y2="108.8" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="77.3" y="117.8" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="end">100</text><text x="282.0" y="724.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27.0" fill="#6B7280" text-anchor="middle">Critical</text><text x="670.4" y="724.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27.0" fill="#6B7280" text-anchor="middle">High</text><text x="1058.8" y="724.0" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27.0" fill="#6B7280" text-anchor="middle">Medium</text><rect x="231.0" y="679.2" width="102.0" height="5.8" fill="#3B82F6"/><path d="M231.0,679.2 V508.1 Q231.0,500.6 238.5,500.6 H325.5 Q333.0,500.6 333.0,508.1 V679.2 Z" fill="#EF4444"/><text x="282.0" y="598.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#FFFFFF" text-anchor="middle" font-weight="600">31</text><text x="282.0" y="488.6" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="middle" font-weight="600">32</text><rect x="619.4" y="506.4" width="102.0" height="178.6" fill="#3B82F6"/><text x="670.4" y="604.7" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#FFFFFF" text-anchor="middle" font-weight="600">31</text><path d="M619.4,506.4 V364.0 Q619.4,356.5 626.9,356.5 H713.9 Q721.4,356.5 721.4,364.0 V506.4 Z" fill="#EF4444"/><text x="670.4" y="440.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#FFFFFF" text-anchor="middle" font-weight="600">26</text><text x="670.4" y="344.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="middle" font-weight="600">57</text><rect x="1007.8" y="546.7" width="102.0" height="138.3" fill="#3B82F6"/><text x="1058.8" y="624.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#FFFFFF" text-anchor="middle" font-weight="600">24</text><path d="M1007.8,546.7 V496.6 Q1007.8,489.1 1015.3,489.1 H1102.3 Q1109.8,489.1 1109.8,496.6 V546.7 Z" fill="#EF4444"/><text x="1058.8" y="526.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24.0" fill="#FFFFFF" text-anchor="middle" font-weight="600">10</text><text x="1058.8" y="477.1" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="middle" font-weight="600">34</text>
+</svg></div>
+      
+    </div>
+<div class="cell chart" style="grid-column: span 6;">
+      <div class="cell-title">Health score breakdown (0–100)</div>
+      <div class="chart-body"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1277 766" role="img">
+  <rect width="1277" height="766" fill="#FFFFFF" rx="12"/>
+  <line x1="384.0" y1="30.0" x2="384.0" y2="694.0" stroke="#E5E7EB" stroke-width="2"/><text x="384.0" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">0</text><line x1="543.9" y1="30.0" x2="543.9" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="543.9" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">20</text><line x1="703.9" y1="30.0" x2="703.9" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="703.9" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">40</text><line x1="863.8" y1="30.0" x2="863.8" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="863.8" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">60</text><line x1="1023.7" y1="30.0" x2="1023.7" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="1023.7" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">80</text><line x1="1183.6" y1="30.0" x2="1183.6" y2="694.0" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="7 7"/><text x="1183.6" y="731.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#6B7280" text-anchor="middle">100</text><path d="M384.0,68.7 H1169.1 Q1183.6,68.7 1183.6,83.2 V109.6 Q1183.6,124.1 1169.1,124.1 H384.0 Z" fill="#3B82F6"/><text x="1192.6" y="106.3" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">100</text><text x="372.0" y="106.3" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>Requirement coverage</title>Requirement coverage</text><path d="M384.0,201.5 H1137.1 Q1151.7,201.5 1151.7,216.0 V242.4 Q1151.7,256.9 1137.1,256.9 H384.0 Z" fill="#3B82F6"/><text x="1160.7" y="239.1" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">96</text><text x="372.0" y="239.1" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>Sync health</title>Sync health</text><path d="M384.0,334.3 H769.3 Q783.8,334.3 783.8,348.8 V375.2 Q783.8,389.7 769.3,389.7 H384.0 Z" fill="#3B82F6"/><text x="792.8" y="371.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">50</text><text x="372.0" y="371.9" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>Quality score</title>Quality score</text><path d="M384.0,467.1 H729.3 Q743.8,467.1 743.8,481.6 V508.0 Q743.8,522.5 729.3,522.5 H384.0 Z" fill="#3B82F6"/><text x="752.8" y="504.7" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25.5" fill="#374151" text-anchor="start">45</text><text x="372.0" y="504.7" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>Automation coverage</title>Automation coverage</text><text x="372.0" y="637.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30.0" fill="#374151" text-anchor="end"><title>Execution freshness</title>Execution freshness</text>
+</svg></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 12;">
+      <div class="cell-title">Test plans</div>
+      <div class="table-frame"><div class="table-scroll"><table><thead><tr><th>Plan</th><th>Release</th><th>Sprint</th><th class="num">Cases</th><th class="num">Executed</th><th class="num">Passed</th><th class="num">Failed</th><th class="num">Pass rate</th></tr></thead><tbody><tr><td class="first" title="TP-1 · Test Release">TP-1 · Test Release</td><td title="V1.0">V1.0</td><td title="Sprint 1">Sprint 1</td><td class="num" title="11">11</td><td class="num" title="11">11</td><td class="num" title="1">1</td><td class="num" title="10">10</td><td class="num" title="9.1%">9.1%</td></tr><tr><td class="first" title="TP-2 · Test Release">TP-2 · Test Release</td><td title="V1.1">V1.1</td><td title="Sprint 2">Sprint 2</td><td class="num" title="9">9</td><td class="num" title="9">9</td><td class="num" title="8">8</td><td class="num" title="1">1</td><td class="num" title="88.9%">88.9%</td></tr></tbody></table></div></div>
+      
+    </div>
+<div class="cell table" style="grid-column: span 12;">
+      <div class="cell-title">Defects</div>
+      <div class="table-frame"><div class="table-scroll"><table><thead><tr><th>ID</th><th>Title</th><th>Severity</th><th>Priority</th><th>Status</th></tr></thead><tbody><tr><td class="first" title="D-2">D-2</td><td title="Admin login completes 2FA and lands authenticated (home)">Admin login completes 2FA and lands authenticated (home)</td><td title="critical">critical</td><td title="P2">P2</td><td title="open"><span class="pill bad">open</span></td></tr><tr><td class="first" title="D-1">D-1</td><td title="Test-authoring issues found during exploration (add-to-cart race; infinite-scroll global counter)">Test-authoring issues found during exploration (add-to-cart race; infinite-scroll global counter)</td><td title="minor">minor</td><td title="P3">P3</td><td title="resolved"><span class="pill ok">resolved</span></td></tr></tbody></table></div></div>
+      
+    </div>
+<div class="cell markdown" style="grid-column: span 12;"><h3>Reading this dashboard</h3>
+<ul><li><strong>Portfolio shape:</strong> e2e (68) + web (35) = 84% of all cases; api 6, security 5, performance 3, integration 3, mobile 3.</li><li><strong>Automation risk gap:</strong> critical is 1/32 automated (3%), high 31/57 (54%), medium 24/34 (71%) — the highest-risk cases are the least automated.</li><li><strong>Sync:</strong> 55 script mappings, 54 synced, 0 script-updated, 2 case-updated (sync health 96).</li><li><strong>Staleness:</strong> 50 cases counted stale, 0 updated recently.</li><li><strong>Data caveat:</strong> get_coverage_stats / get_health_score report 122 cases / 55 automated, one fewer than get_analytics, get_automation_stats and dashboard (123 / 56); 123/56 is used throughout and the 1-case gap looks like a lagging index.</li></ul></div>
+    </div>
+    <div class="method"><strong>How this was calculated.</strong> Data from Testver actions get_analytics, get_automation_stats, get_health_score, dashboard, query_plans (json) and query_defects (json), read on 19 Nov 2026 — a current-state snapshot, not a time window. Counts: 123 test cases / 56 automated taken from get_analytics, get_automation_stats and dashboard; get_coverage_stats and get_health_score report 122 / 55 (a 1-case lagging index), and the health-score sub-scores that derive from it (automationCoverage 45, syncHealth 96) are shown as returned. Plan pass rates = passedCount / testCaseCount per plan. Health score is the weighted sum of automationCoverage 45 (25%), requirementCoverage 100 (25%), executionFreshness 0 (20%), qualityAverage 50 (15%, 0 cases scored) and syncHealth 96 (15%). Requirement coverage 20/20; 50 cases counted stale; 0 updated recently.</div>
+    <div class="footer">Generated by Testver</div>
+  </div>
+</body>
+</html>

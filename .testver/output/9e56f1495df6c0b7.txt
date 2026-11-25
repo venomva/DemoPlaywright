@@ -1,0 +1,111 @@
+
+Running 2 tests using 1 worker
+
+  x  1 [chromium] › tests\auth\manager-profile.spec.ts:30:5 › Manager login lands directly authenticated (no 2FA step) (30.8s)
+  x  2 [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge (31.6s)
+
+
+  1) [chromium] › tests\auth\manager-profile.spec.ts:30:5 › Manager login lands directly authenticated (no 2FA step) 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('login-submit')
+        - locator resolved to <button type="submit" data-testid="login-submit" class="btn btn-primary btn-block btn-lg">Sign in</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div data-testid="promo-overlay"></div> intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div data-testid="promo-overlay"></div> intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        55 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <div data-testid="promo-overlay"></div> intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+
+
+       at pages\LoginPage.ts:94
+
+      92 |     await this.usernameInput.fill(username);
+      93 |     await this.passwordInput.fill(password);
+    > 94 |     await this.submitButton.click();
+         |                             ^
+      95 |   }
+      96 | }
+        at LoginPage.submitManagerCredentials (E:\TestverTesting\Agents\FirstTest\tests\pages\LoginPage.ts:94:29)
+        at loginAsManager (E:\TestverTesting\Agents\FirstTest\tests\helpers\auth.ts:33:3)
+        at E:\TestverTesting\Agents\FirstTest\tests\auth\manager-profile.spec.ts:33:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\auth-manager-profile-Manag-417e1--authenticated-no-2FA-step--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\auth-manager-profile-Manag-417e1--authenticated-no-2FA-step--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\auth-manager-profile-Manag-417e1--authenticated-no-2FA-step--chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\auth-manager-profile-Manag-417e1--authenticated-no-2FA-step--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\auth-manager-profile-Manag-417e1--authenticated-no-2FA-step--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge ──
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('add-cart-1')
+
+
+       at pages\ShopPage.ts:78
+
+      76 |   /** Add the first product on the current page to the cart. */
+      77 |   async addFirstProductToCart(): Promise<void> {
+    > 78 |     await this.firstAddToCartButton.click();
+         |                                     ^
+      79 |   }
+      80 |
+      81 |   /** Read the cart badge line-item count as an integer (e.g. "🛒 Cart (3)" → 3). */
+        at ShopPage.addFirstProductToCart (E:\TestverTesting\Agents\FirstTest\tests\pages\ShopPage.ts:78:37)
+        at E:\TestverTesting\Agents\FirstTest\tests\shop\shop.spec.ts:39:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\shop-shop-Shop-adding-a-product-increments-the-cart-badge-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests\auth\manager-profile.spec.ts:30:5 › Manager login lands directly authenticated (no 2FA step) 
+    [chromium] › tests\shop\shop.spec.ts:32:5 › Shop: adding a product increments the cart badge ───

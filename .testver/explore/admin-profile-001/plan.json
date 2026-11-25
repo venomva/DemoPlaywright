@@ -1,0 +1,25 @@
+{
+  "runId": "admin-profile-001",
+  "createdAt": "recorded at start of run",
+  "target": "https://testplay.venomva.com/",
+  "environment": "staging",
+  "scope": {
+    "origins": ["https://testplay.venomva.com"],
+    "pathPrefix": "/",
+    "include": "all paths under https://testplay.venomva.com/",
+    "exclude": []
+  },
+  "restrictions": "Explore and Automate only logged-in user Profile; no data-destroying actions, no purchases/payments, no contacting real people, no logouts",
+  "role": "admin",
+  "credentials": "admin role — session captured securely via browser_auth_state await_login (never in chat)",
+  "documents": "none",
+  "plan": [
+    "Persist intake to plan.json (this file)",
+    "Capture admin session via await_login on the sign-in page (secure, no passwords in chat)",
+    "Verify session: navigate authenticated pages (/admin, profile pages), confirm the logged-in state persists",
+    "Crawl the admin/user-profile area: snapshot + page-issues + screenshot per page, dedupe by URL template, record findings.json",
+    "Automate critical profile journeys depth-first in existing Playwright+TS framework (additive only: new page object(s) + new spec + new fixture registration) -> scoped run -> fix -> green twice",
+    "Register green tests in Test Management (create_test_case with scriptPath/testName, automationStatus=automated)",
+    "Final report: pages visited, findings, tests added, testver records"
+  ]
+}

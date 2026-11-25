@@ -1,0 +1,50 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests\auth\profile.spec.ts:35:5 › Admin login completes 2FA and lands authenticated (home) (17.1s)
+
+
+  1) [chromium] › tests\auth\profile.spec.ts:35:5 › Admin login completes 2FA and lands authenticated (home) 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByTestId('username')
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByTestId('username') with timeout 15000ms
+      - waiting for getByTestId('username')
+
+
+      22 | async function loginAsAdmin(loginPage: LoginPage, tfaPage: TfaPage): Promise<void> {
+      23 |   await loginPage.goto('/auth/login');
+    > 24 |   await expect(loginPage.usernameInput).toBeVisible({ timeout: 15000 });
+         |                                         ^
+      25 |   await loginPage.submitAdminCredentials();
+      26 |
+      27 |   await expect(tfaPage.otpInput).toBeVisible({ timeout: 15000 });
+        at loginAsAdmin (E:\TestverTesting\Agents\FirstTest\tests\auth\profile.spec.ts:24:41)
+        at E:\TestverTesting\Agents\FirstTest\tests\auth\profile.spec.ts:36:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .testver\runs\a6747fc5cef6d583\test-results\auth-profile-Admin-login-c-6b951-d-lands-authenticated-home--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    .testver\runs\a6747fc5cef6d583\test-results\auth-profile-Admin-login-c-6b951-d-lands-authenticated-home--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .testver\runs\a6747fc5cef6d583\test-results\auth-profile-Admin-login-c-6b951-d-lands-authenticated-home--chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    .testver\runs\a6747fc5cef6d583\test-results\auth-profile-Admin-login-c-6b951-d-lands-authenticated-home--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace .testver\runs\a6747fc5cef6d583\test-results\auth-profile-Admin-login-c-6b951-d-lands-authenticated-home--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\auth\profile.spec.ts:35:5 › Admin login completes 2FA and lands authenticated (home) 

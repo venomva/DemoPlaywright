@@ -1,0 +1,25 @@
+{
+  "runId": "explore-guest-001",
+  "createdAt": "recorded at start of run",
+  "target": "https://testplay.venomva.com/",
+  "environment": "staging",
+  "scope": {
+    "origins": ["https://testplay.venomva.com"],
+    "pathPrefix": "/",
+    "include": "all paths under https://testplay.venomva.com/",
+    "exclude": []
+  },
+  "restrictions": "none declared",
+  "role": "guest",
+  "credentials": "none (guest)",
+  "documents": "none",
+  "plan": [
+    "Persist intake to plan.json (this file)",
+    "Check for saved browser session (guest -> none needed)",
+    "Crawl site: snapshot + page-issues + screenshot per page, dedupe by URL template, enqueue in-scope links, checkpoint frontier.json",
+    "Record findings: page text, snapshot anomalies, console/network issues, drift",
+    "Automate critical journeys depth-first in existing Playwright+TS framework -> scoped run -> fix -> green-twice",
+    "Register green tests in Test Management (create_test_case with scriptPath/testName)",
+    "Final report: pages visited, issues found, tests added, testver records"
+  ]
+}

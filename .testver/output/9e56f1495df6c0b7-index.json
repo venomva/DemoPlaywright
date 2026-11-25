@@ -1,0 +1,12 @@
+[
+  {
+    "testName": "Manager login lands directly authenticated (no 2FA step)",
+    "startLine": 0,
+    "endLine": 3
+  },
+  {
+    "testName": "Shop: adding a product increments the cart badge",
+    "startLine": 4,
+    "endLine": 4
+  }
+]

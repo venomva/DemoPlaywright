@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ✓  1 [chromium] › tests\shop\shop.spec.ts:71:5 › Shop: full checkout journey places an order (10.9s)
+
+  1 passed (12.7s)

@@ -1,0 +1,7 @@
+[
+  {
+    "testName": "Admin dashboard shows all four KPI stat cards with seeded values (31.1s)",
+    "startLine": 0,
+    "endLine": 3
+  }
+]

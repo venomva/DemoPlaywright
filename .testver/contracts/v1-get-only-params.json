@@ -1,0 +1,205 @@
+{
+  "spec": "api/openapi-v1.json",
+  "baseUrl": "http://localhost:4300",
+  "source": "spec",
+  "generatedAt": "2026-10-27T05:10:18.920Z",
+  "summary": {
+    "pass": 15,
+    "fail": 0,
+    "error": 0,
+    "skipped": 12,
+    "notCovered": 0
+  },
+  "results": [
+    {
+      "operation": "GET /api/health",
+      "request": "http://localhost:4300/api/health",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "POST /api/reset",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "GET /api/users",
+      "request": "http://localhost:4300/api/users",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /api/users/{id}",
+      "request": "http://localhost:4300/api/users/1",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /api/products",
+      "request": "http://localhost:4300/api/products",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /api/products/{id}",
+      "request": "http://localhost:4300/api/products/1",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /api/orders",
+      "request": "http://localhost:4300/api/orders",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /api/categories",
+      "request": "http://localhost:4300/api/categories",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /api/notifications",
+      "request": "http://localhost:4300/api/notifications",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /ajax/get",
+      "request": "http://localhost:4300/ajax/get",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "POST /ajax/post",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "PUT /ajax/put",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "DELETE /ajax/delete",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "GET /ajax/slow",
+      "request": "http://localhost:4300/ajax/slow",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /ajax/fail/{code}",
+      "request": "http://localhost:4300/ajax/fail/500",
+      "status": 500,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /ajax/sse",
+      "request": "http://localhost:4300/ajax/sse",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "GET /tables/data",
+      "request": "http://localhost:4300/tables/data?page=1",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "PUT /tables/data/{id}",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "DELETE /tables/data/{id}",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "GET /forms/cascade",
+      "request": "http://localhost:4300/forms/cascade",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "POST /files/upload",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "DELETE /files/upload/{id}",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "GET /files/download/{type}",
+      "request": "http://localhost:4300/files/download/csv",
+      "status": 200,
+      "result": "pass",
+      "issues": []
+    },
+    {
+      "operation": "POST /shop/cart/add",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "POST /shop/cart/update",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "POST /shop/cart/remove",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    },
+    {
+      "operation": "POST /shop/cart/coupon",
+      "request": "(built from the spec)",
+      "result": "skipped",
+      "issues": [],
+      "note": "unsafe method — pass include_unsafe: true to send it"
+    }
+  ],
+  "notCovered": []
+}
